@@ -79,26 +79,84 @@ import UIKit
 
 // Find majority element in the given array
 
-let array = [ 3, 2, 2, 2, 3, 3, 2, 2, 2, 3, 3, 3, 3 ]
-//            1  1  2  3  2  1  1  2
+//let array = [ 3, 2, 2, 2, 3, 3, 2, 2, 2, 3, 3, 3, 3 ]
+////            1  1  2  3  2  1  1  2
+//
+//func findMajorityElement (_ arr: [Int]) -> Int {
+//    var counter = 0
+//    var majotiryElement = arr[0]
+//
+//    for n in arr {
+//        if n == majotiryElement {
+//            counter += 1
+//        } else {
+//            counter -= 1
+//        }
+//        if counter == 0 {
+//            majotiryElement = n
+//            counter += 1
+//        }
+//    }
+//    return majotiryElement
+//}
+//
+//print(findMajorityElement(array))
 
-func findMajorityElement (_ arr: [Int]) -> Int {
-    var counter = 0
-    var majotiryElement = arr[0]
+
+
+
+
+
+
+// Given an array if size n, find all elements that appear more than [n/3] times
+
+//let array1 = [3,2,3]
+//let array2 = [1,1,1,3,3,2,2,2]
+//
+//func findElements (_ array: [Int]) -> [Int] {
+//    var dictionary = [Int: Int]()
+//    var mostAppeared = [Int]()
+//
+//    for item in array {
+//        if dictionary[item] != nil {
+//            dictionary[item]! += 1
+//        } else {
+//            dictionary[item] = 1
+//        }
+//    }
+//    var x = 3
+//    for (key, value) in dictionary {
+//        if value > array.count/x {
+//            mostAppeared.append(key)
+//        }
+//    }
+//    return mostAppeared
+//}
+//
+//print(findElements(array2))
+
+
+
+
+
+
+// Given two arrays, write a function to compute their intersection
+
+let arr = [1,2,2,1]
+let arr2 = [2,2]
+
+func computeIntersection (_ array: [Int], _ array2: [Int]) -> [Int] {
     
-    for n in arr {
-        if n == majotiryElement {
-            counter += 1
-        } else {
-            counter -= 1
-        }
-        if counter == 0 {
-            majotiryElement = n
-            counter += 1
-        }
+    var set1 = Set<Int>()
+    for item in array {
+        set1.insert(item)
     }
-    return majotiryElement
+    var set2 = Set<Int>()
+    for item in array2 {
+        set2.insert(item)
+    }
+    let intersection = Array(set1.intersection(set2))
+    return intersection
 }
 
-print(findMajorityElement(array))
- 
+print(computeIntersection(arr, arr2))
