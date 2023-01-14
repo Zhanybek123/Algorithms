@@ -142,21 +142,53 @@ import UIKit
 
 // Given two arrays, write a function to compute their intersection
 
-let arr = [1,2,2,1]
-let arr2 = [2,2]
+//let arr = [1,2,2,1]
+//let arr2 = [2,2]
+//
+//func computeIntersection (_ array: [Int], _ array2: [Int]) -> [Int] {
+//
+//    var set1 = Set<Int>()
+//    for item in array {
+//        set1.insert(item)
+//    }
+//    var set2 = Set<Int>()
+//    for item in array2 {
+//        set2.insert(item)
+//    }
+//    let intersection = Array(set1.intersection(set2))
+//    return intersection
+//}
+//
+//print(computeIntersection(arr, arr2))
 
-func computeIntersection (_ array: [Int], _ array2: [Int]) -> [Int] {
-    
-    var set1 = Set<Int>()
-    for item in array {
-        set1.insert(item)
-    }
-    var set2 = Set<Int>()
-    for item in array2 {
-        set2.insert(item)
-    }
-    let intersection = Array(set1.intersection(set2))
-    return intersection
-}
 
-print(computeIntersection(arr, arr2))
+
+
+
+// Given an array of integers, find if the array contains any duplicates
+
+//let arr = [1,2,3,1]
+//let arr2 = [1,2,3,4]
+//let arr3 = [1,1,1,3,3,4,3,2,4,2]
+//
+//func findDuplicates (_ arr: [Int]) -> Bool {
+//    var dictionary = [Int: Int] ()
+//    for item in arr {
+//        if dictionary[item] != nil {
+//            return true
+//        } else {
+//            dictionary[item] = 1
+//        }
+//    }
+//    return false
+//}
+//
+//print(findDuplicates(arr3))
+
+
+var min = Int.max
+
+print(min)
+
+// -9223372036854775808
+
