@@ -186,9 +186,35 @@ import UIKit
 //print(findDuplicates(arr3))
 
 
-var min = Int.max
 
-print(min)
+// Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the absolute difference between i and j is at most k
 
-// -9223372036854775808
+let nums1 = [1,2,3,1]; let k1 = 3 // output: true
+let nums2 = [1,0,1,1]; let k2 = 1 // output: true
+let nums3 = [1,2,3,1,2,3]; let k3 = 2 // output: false
+
+func duplicatesDist(_ arr: [Int], _ k: Int ) -> Bool {
+    var dictionary: Dictionary<Int, Int> = [:]
+    var distance = Int()
+    print("Input \(arr)")
+    for (index, item) in arr.enumerated() {
+        print("item:", item)
+        if dictionary[item] != nil {
+            let previousIndex = dictionary[item]!
+            print("previousIndex:", previousIndex)
+            let difference = index - previousIndex
+            print("defference:", difference)
+            distance = difference
+            print("minimum distanse:", distance)
+        }
+         dictionary[item] = index
+        print("dictionary:", dictionary)
+    }
+    if distance <= k {
+        return true
+    }
+    return false
+}
+
+print(duplicatesDist(nums3, k3))
 
