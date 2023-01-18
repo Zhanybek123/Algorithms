@@ -189,32 +189,61 @@ import UIKit
 
 // Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the absolute difference between i and j is at most k
 
-let nums1 = [1,2,3,1]; let k1 = 3 // output: true
-let nums2 = [1,0,1,1]; let k2 = 1 // output: true
-let nums3 = [1,2,3,1,2,3]; let k3 = 2 // output: false
+//let nums1 = [1,2,3,1]; let k1 = 3 // output: true
+//let nums2 = [1,0,1,1]; let k2 = 1 // output: true
+//let nums3 = [1,2,3,1,2,3]; let k3 = 2 // output: false
+//
+//func duplicatesDist(_ arr: [Int], _ k: Int ) -> Bool {
+//    var dictionary: Dictionary<Int, Int> = [:]
+//    var distance = Int()
+//    print("Input \(arr)")
+//    for (index, item) in arr.enumerated() {
+//        print("item:", item)
+//        if dictionary[item] != nil {
+//            let previousIndex = dictionary[item]!
+//            print("previousIndex:", previousIndex)
+//            let difference = index - previousIndex
+//            print("defference:", difference)
+//            distance = difference
+//            print("minimum distanse:", distance)
+//        }
+//         dictionary[item] = index
+//        print("dictionary:", dictionary)
+//    }
+//    if distance <= k {
+//        return true
+//    }
+//    return false
+//}
+//
+//print(duplicatesDist(nums3, k3))
+   
+var array = [1,1,2,2,2,3,3,3,3,4,4,4,4]
 
-func duplicatesDist(_ arr: [Int], _ k: Int ) -> Bool {
-    var dictionary: Dictionary<Int, Int> = [:]
-    var distance = Int()
-    print("Input \(arr)")
-    for (index, item) in arr.enumerated() {
-        print("item:", item)
-        if dictionary[item] != nil {
-            let previousIndex = dictionary[item]!
-            print("previousIndex:", previousIndex)
-            let difference = index - previousIndex
-            print("defference:", difference)
-            distance = difference
-            print("minimum distanse:", distance)
+func removeDuplicates() -> Int {
+    guard !array.isEmpty else {return 0}
+    
+    var index = 0
+    for i in array {
+//        print(arr)
+//        print(i)
+//        print(index)
+        if i != array[index] {
+            index += 1
+            array[index] = i
+//            print(arr)
+//            print(i)
+//            print(index)
         }
-         dictionary[item] = index
-        print("dictionary:", dictionary)
     }
-    if distance <= k {
-        return true
-    }
-    return false
+    return index + 1
 }
 
-print(duplicatesDist(nums3, k3))
+
+for i in 0..<removeDuplicates() {
+    print(array[i])
+}
+
+print(array)
+
 
