@@ -24,6 +24,15 @@ import UIKit
 
 // complexity 1 + 1 + n + n + n +1 = O(n)
 
+
+
+
+
+
+
+
+
+
 // Find majority elements in the given array
 //
 //let array = [2, 2, 3, 2, 3, 2, 3, 3, 2]
@@ -55,6 +64,14 @@ import UIKit
 // in order to get majority element in the array, I have to increment counter each time if it's equals to the majorityItem, and decremant counter if it's not. when counter
 
 
+
+
+
+
+
+
+
+
 // find count of executive 1's in the array
 
 //let arr = [1, 2, 3, 1, 2, 1, 1, 1, 1]
@@ -75,6 +92,13 @@ import UIKit
 //}
 
 //print(findExecutiveOnes(arr))
+
+
+
+
+
+
+
 
 
 // Find majority element in the given array
@@ -140,6 +164,8 @@ import UIKit
 
 
 
+
+
 // Given two arrays, write a function to compute their intersection
 
 //let arr = [1,2,2,1]
@@ -165,6 +191,8 @@ import UIKit
 
 
 
+
+
 // Given an array of integers, find if the array contains any duplicates
 
 //let arr = [1,2,3,1]
@@ -184,6 +212,8 @@ import UIKit
 //}
 //
 //print(findDuplicates(arr3))
+
+
 
 
 
@@ -217,33 +247,98 @@ import UIKit
 //}
 //
 //print(duplicatesDist(nums3, k3))
-   
-var array = [1,1,2,2,2,3,3,3,3,4,4,4,4]
 
-func removeDuplicates() -> Int {
-    guard !array.isEmpty else {return 0}
+
+
+
+
+
+
+
+
+// Given a sorted array "array", remove the duplicates in-place such that each element appreat only once and return the new length.
+// Do not allocate extra space fot another array, you must do this by modifying the input array in-place with 0(1) extra memory
+
+//var array = [1,1,2,2,2,3,3,3,3,4,4,4,4,5,6]
+
+//func removeDuplicates() -> Int {
+//    guard !array.isEmpty else {return 0}
+//
+//    var index = 0
+//    for i in array {
+////        print(arr)
+////        print(i)
+////        print(index)
+//        if i != array[index] {
+//            index += 1
+//            array[index] = i
+////            print(arr)
+////            print(i)
+////            print(index)
+//        }
+//    }
+//    return index + 1
+//}
+//
+//
+//for i in 0..<removeDuplicates() {
+//    print(array[i])
+//}
+//
+//print(array)
+
+
+
+
+
+
+
+// Given a sorted array "array", remove the duplicates in-place such that duplicates appear at most twice and return the new length.
+
+
+
+var array = [0,0,1,1,1,1,2,3,3]
+
+func removeDuplicate(_ arr: inout [Int]) -> Int {
+    guard !arr.isEmpty else {return 0}
     
-    var index = 0
-    for i in array {
-//        print(arr)
-//        print(i)
-//        print(index)
-        if i != array[index] {
+    var index = 1
+    for i in 2..<arr.count {
+        if arr[index] != arr[index - 1] || arr[index] != arr[i] {
             index += 1
-            array[index] = i
-//            print(arr)
-//            print(i)
+            arr[index] = arr[i]
 //            print(index)
+//            print(arr[index])
+            print(arr)
         }
     }
     return index + 1
 }
 
+//removeDuplicate(&array)
 
-for i in 0..<removeDuplicates() {
-    print(array[i])
-}
-
-print(array)
+print(removeDuplicate(&array))
 
 
+
+
+
+
+
+
+
+//func removeDuplicates(_ arr: inout [Int]) -> Int {
+//    if arr.count  <= 2 {return arr.count}
+//
+//    var index = 1
+//    for i in 2..<arr.count {
+//        if arr[index] != arr[index - 1] || arr[index] != arr[i] {
+//            index += 1
+//            arr[index] = arr[i]
+//            print(arr)
+//        }
+//    }
+//    return index + 1
+//}
+//
+//print(removeDuplicates(&array))
