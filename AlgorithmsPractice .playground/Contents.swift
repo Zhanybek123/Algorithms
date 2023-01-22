@@ -297,33 +297,47 @@ import UIKit
 
 
 
-var array = [0,0,1,1,1,1,2,3,3]
-
-func removeDuplicate(_ arr: inout [Int]) -> Int {
-    guard !arr.isEmpty else {return 0}
-    
-    var index = 1
-    for i in 2..<arr.count {
-        if arr[index] != arr[index - 1] || arr[index] != arr[i] {
-            index += 1
-            arr[index] = arr[i]
+//var array = [0,0,1,1,1,1,2,3,3]
+//
+//func removeDuplicates(_ arr: inout [Int]) -> Int {
+//    guard !arr.isEmpty else {return 0}
+//
+//    var index = 1
+//    for i in 2..<arr.count {
+//        print(arr)
+//        if arr[index] != arr[index - 1] || arr[i] != arr[index] {
+//            index += 1
 //            print(index)
-//            print(arr[index])
-            print(arr)
-        }
-    }
-    return index + 1
-}
-
-//removeDuplicate(&array)
-
-print(removeDuplicate(&array))
-
+//            arr[index] = arr[i]
+//        }
+//        print(arr)
+//    }
+//    return index + 1
+//}
+//
+//
+//print(removeDuplicates(&array))
 
 
-
-
-
+//func removeDuplicate(_ arr: inout [Int]) -> Int {
+//    guard !arr.isEmpty else {return 0}
+//
+//    var index = 1
+//    for i in 2..<arr.count {
+//        if arr[index] != arr[index - 1] || arr[index] != arr[i] {
+//            index += 1
+//            arr[index] = arr[i]
+////            print(index)
+////            print(arr[index])
+//            print(arr)
+//        }
+//    }
+//    return index + 1
+//}
+//
+////removeDuplicate(&array)
+//
+//print(removeDuplicate(&array))
 
 
 
@@ -342,3 +356,59 @@ print(removeDuplicate(&array))
 //}
 //
 //print(removeDuplicates(&array))
+
+
+
+//  Given an array "array", write a function to move all 0's to the end of it while maintaining the relative order if the non-zero elements
+
+
+//var array = [0,1,0,3,12]
+//
+//func moveZeros (_ arr: inout [Int]) -> [Int] {
+//    guard !arr.isEmpty else {return arr}
+//
+//    var index = 0
+//    for i in arr {
+//        if i != 0 {
+//            arr[index] = i
+//            index += 1
+//        }
+//        print(arr)
+//    }
+//
+//    for n in index..<arr.count {
+//        arr[n] = 0
+//        print(arr)
+//    }
+//return arr
+//
+//}
+//
+//print(moveZeros(&array))
+
+
+
+
+
+
+var array = [3,2,2,3]; let val = 3
+var array2 = [0,1,2,2,3,3,0,4,2]; let val2 = 2
+
+func removeElement(_ arr: inout [Int], _ val: Int) -> Int {
+    var index = 0
+    for i in arr {
+        if i != val {
+            arr[index] = i
+            index += 1
+//            print(index)
+//            print(arr)
+        }
+    }
+    for n in index..<arr.count {
+        arr[n] = val
+    }
+    print(arr)
+    return index
+}
+
+print(removeElement(&array2, val2))
