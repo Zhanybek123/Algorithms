@@ -391,24 +391,52 @@ import UIKit
 
 
 
-var array = [3,2,2,3]; let val = 3
-var array2 = [0,1,2,2,3,3,0,4,2]; let val2 = 2
+//var array = [3,2,2,3]; let val = 3
+//var array2 = [0,1,2,2,3,3,0,4,2]; let val2 = 2
+//
+//func removeElement(_ arr: inout [Int], _ val: Int) -> Int {
+//    var index = 0
+//    for i in arr {
+//        if i != val {
+//            arr[index] = i
+//            index += 1
+////            print(index)
+////            print(arr)
+//        }
+//    }
+//    for n in index..<arr.count {
+//        arr[n] = val
+//    }
+//    print(arr)
+//    return index
+//}
+//
+//print(removeElement(&array2, val2))
 
-func removeElement(_ arr: inout [Int], _ val: Int) -> Int {
-    var index = 0
-    for i in arr {
-        if i != val {
-            arr[index] = i
-            index += 1
-//            print(index)
-//            print(arr)
+
+
+
+
+let number = 15
+
+func fizzBuzz(_ number: Int) {
+ 
+    let three = 3
+    let five = 5
+  
+    for n in 1...number {
+        if n % 3 == 0 {
+            print("\"fizz\"")
+        }
+        else if n % 5 == 0 {
+            print("\"buzz\"")
+        }
+        else if n == 3 * 5 {
+            print("\"fizzbuzz\"")
+        } else {
+            print(String("\"\(n)\""))
         }
     }
-    for n in index..<arr.count {
-        arr[n] = val
-    }
-    print(arr)
-    return index
 }
 
-print(removeElement(&array2, val2))
+print(fizzBuzz(number))
