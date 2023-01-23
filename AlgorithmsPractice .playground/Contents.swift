@@ -387,10 +387,6 @@ import UIKit
 //print(moveZeros(&array))
 
 
-
-
-
-
 //var array = [3,2,2,3]; let val = 3
 //var array2 = [0,1,2,2,3,3,0,4,2]; let val2 = 2
 //
@@ -417,7 +413,13 @@ import UIKit
 
 
 
-let number = 15
+
+
+
+
+
+
+//let number = [2,3,3,5,15]
 
 func fizzBuzz(_ number: Int) {
  
@@ -439,4 +441,60 @@ func fizzBuzz(_ number: Int) {
     }
 }
 
-print(fizzBuzz(number))
+//print(fizzBuzz(number))
+
+
+
+
+
+
+
+
+
+
+
+
+// whrite a func to check if string is palindrome or not
+
+//let polindrome = "bob"
+let polindrome2 = "A man, a plan, a canal: Panama"
+
+func isPolindrome(_ word: String) -> Bool {
+    if word.isEmpty { return false }
+
+    let arr = Array(word.lowercased())
+    var pointer1 = 0
+    var pointer2 = arr.count - 1
+    
+   
+
+    while pointer1 <= pointer2 {
+        
+        if isAlphaNum(arr[pointer1]) == false && pointer1 < pointer2 {
+            pointer1 += 1
+            continue
+        }
+        
+        if isAlphaNum(arr[pointer2]) == false && pointer1 < pointer2 {
+            pointer2 -= 1
+            continue
+        }
+        
+        if arr[pointer1] == arr[pointer2] {
+            pointer1 += 1
+            pointer2 -= 1
+        }
+        else {
+            return false
+        }
+    }
+    return true
+}
+
+func isAlphaNum (_ char: Character) -> Bool {
+    return char.isNumber || char.isLetter
+}
+
+print(isPolindrome(polindrome2))
+
+
