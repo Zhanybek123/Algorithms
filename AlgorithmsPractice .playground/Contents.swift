@@ -227,7 +227,7 @@ import UIKit
 //    var dictionary: Dictionary<Int, Int> = [:]
 //    var distance = Int()
 //    print("Input \(arr)")
-//    for (index, item) in arr.enumerated() {
+//for (index, item) in arr.enumerated() {                           00000
 //        print("item:", item)
 //        if dictionary[item] != nil {
 //            let previousIndex = dictionary[item]!
@@ -420,32 +420,28 @@ import UIKit
 
 
 //let number = [2,3,3,5,15]
-
-func fizzBuzz(_ number: Int) {
- 
-    let three = 3
-    let five = 5
-  
-    for n in 1...number {
-        if n % 3 == 0 {
-            print("\"fizz\"")
-        }
-        else if n % 5 == 0 {
-            print("\"buzz\"")
-        }
-        else if n == 3 * 5 {
-            print("\"fizzbuzz\"")
-        } else {
-            print(String("\"\(n)\""))
-        }
-    }
-}
+//
+//func fizzBuzz(_ number: Int) {
+//
+//    let three = 3
+//    let five = 5
+//
+//    for n in 1...number {
+//        if n % 3 == 0 {
+//            print("\"fizz\"")
+//        }
+//        else if n % 5 == 0 {
+//            print("\"buzz\"")
+//        }
+//        else if n == 3 * 5 {
+//            print("\"fizzbuzz\"")
+//        } else {
+//            print(String("\"\(n)\""))
+//        }
+//    }
+//}
 
 //print(fizzBuzz(number))
-
-
-
-
 
 
 
@@ -457,44 +453,86 @@ func fizzBuzz(_ number: Int) {
 // whrite a func to check if string is palindrome or not
 
 //let polindrome = "bob"
-let polindrome2 = "A man, a plan, a canal: Panama"
+//let polindrome2 = "A man, a plan, a canal: Panama"
+//
+//func isPolindrome(_ word: String) -> Bool {
+//    if word.isEmpty { return false }
+//
+//    let arr = Array(word.lowercased())
+//    var pointer1 = 0
+//    var pointer2 = arr.count - 1
+//
+//    while pointer1 <= pointer2 {
+//
+//        if isAlphaNum(arr[pointer1]) == false && pointer1 < pointer2 {
+//            pointer1 += 1
+//            continue
+//        }
+//
+//        if isAlphaNum(arr[pointer2]) == false && pointer1 < pointer2 {
+//            pointer2 -= 1
+//            continue
+//        }
+//
+//        if arr[pointer1] == arr[pointer2] {
+//            pointer1 += 1
+//            pointer2 -= 1
+//        }
+//        else {
+//            return false
+//        }
+//    }
+//    return true
+//}
+//
+//func isAlphaNum (_ char: Character) -> Bool {
+//    return char.isNumber || char.isLetter
+//}
 
-func isPolindrome(_ word: String) -> Bool {
-    if word.isEmpty { return false }
+//print(isPolindrome(polindrome2))
 
-    let arr = Array(word.lowercased())
-    var pointer1 = 0
-    var pointer2 = arr.count - 1
-    
+
+
+
+
+
+
+
+
+// Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, retrurn -1
+
+
+let example = "devtechie"   //  return should be 0
+let example2 = "interctiven"
+
+
+
+
+func firstUniqueCharacter(_ word: String) -> Int {
+    guard !word.isEmpty else {return 0}
+
+//    var dictionaty: Dictionary<Int, String> = [:]
+//    var dictionary = [Int: Character]()
+//    let arr = Array(word.enumerated())
    
-
-    while pointer1 <= pointer2 {
-        
-        if isAlphaNum(arr[pointer1]) == false && pointer1 < pointer2 {
-            pointer1 += 1
-            continue
-        }
-        
-        if isAlphaNum(arr[pointer2]) == false && pointer1 < pointer2 {
-            pointer2 -= 1
-            continue
-        }
-        
-        if arr[pointer1] == arr[pointer2] {
-            pointer1 += 1
-            pointer2 -= 1
-        }
-        else {
-            return false
+    let arr = Array(word)
+    var dictionary: Dictionary<Character, Bool> = [:]
+    
+    for item in arr {
+        if dictionary[item] != nil {
+            dictionary[item] = false
+        } else {
+            dictionary[item] = true
         }
     }
-    return true
+    
+    for (index, item) in arr.enumerated() {
+        if dictionary[item] == true{
+            return index
+        }
+    }
+    
+    return -1
 }
 
-func isAlphaNum (_ char: Character) -> Bool {
-    return char.isNumber || char.isLetter
-}
-
-print(isPolindrome(polindrome2))
-
-
+print(firstUniqueCharacter(example2))
