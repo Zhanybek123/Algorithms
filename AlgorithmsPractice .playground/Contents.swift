@@ -18,12 +18,32 @@ import UIKit
 //    }
 //    return globalCount // 1
 //}
-
+//
 //print(returnMaxNum(array))
 
 
 // complexity 1 + 1 + n + n + n +1 = O(n)
 
+
+//let array = [1,1,0,1,1,1,2,2,1,1,1,1,1,1]
+//
+//func  findConsecutives(_ arr: [Int]) -> Int {
+//    guard !arr.isEmpty else {return 0}
+//
+//    var count = 0
+//    var overallCount = 0
+//
+//    for n in arr {
+//        if n == 1 {
+//            count += 1
+//            overallCount = max(overallCount, count)
+//        } else {
+//            count = 0
+//        }
+//    }
+//    return overallCount
+//}
+//print(findConsecutives(array))
 
 
 
@@ -502,37 +522,37 @@ import UIKit
 // Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, retrurn -1
 
 
-let example = "devtechie"   //  return should be 0
-let example2 = "interctiven"
-
-
-
-
-func firstUniqueCharacter(_ word: String) -> Int {
-    guard !word.isEmpty else {return 0}
-
-//    var dictionaty: Dictionary<Int, String> = [:]
-//    var dictionary = [Int: Character]()
-//    let arr = Array(word.enumerated())
-   
-    let arr = Array(word)
-    var dictionary: Dictionary<Character, Bool> = [:]
-    
-    for item in arr {
-        if dictionary[item] != nil {
-            dictionary[item] = false
-        } else {
-            dictionary[item] = true
-        }
-    }
-    
-    for (index, item) in arr.enumerated() {
-        if dictionary[item] == true{
-            return index
-        }
-    }
-    
-    return -1
-}
-
-print(firstUniqueCharacter(example2))
+//let example = "devtechie"   //  return should be 0
+//let example2 = "interctiven"
+//
+//
+//
+//
+//func firstUniqueCharacter(_ word: String) -> Int {
+//    guard !word.isEmpty else {return 0}
+//
+////    var dictionaty: Dictionary<Int, String> = [:]
+////    var dictionary = [Int: Character]()
+////    let arr = Array(word.enumerated())
+//
+//    let arr = Array(word)
+//    var dictionary: Dictionary<Character, Bool> = [:]
+//
+//    for item in arr {
+//        if dictionary[item] != nil {
+//            dictionary[item] = false
+//        } else {
+//            dictionary[item] = true
+//        }
+//    }
+//
+//    for (index, item) in arr.enumerated() {
+//        if dictionary[item] == true{
+//            return index
+//        }
+//    }
+//
+//    return -1
+//}
+//
+//print(firstUniqueCharacter(example2))
