@@ -526,19 +526,17 @@ import UIKit
 //let example2 = "interctiven"
 //
 //
-//
-//
 //func firstUniqueCharacter(_ word: String) -> Int {
-//    guard !word.isEmpty else {return 0}
+//    guard !word.isEmpty else { return 0 }
 //
 ////    var dictionaty: Dictionary<Int, String> = [:]
 ////    var dictionary = [Int: Character]()
 ////    let arr = Array(word.enumerated())
 //
-//    let arr = Array(word)
+////    let arr = Array(word)
 //    var dictionary: Dictionary<Character, Bool> = [:]
 //
-//    for item in arr {
+//    for item in word {
 //        if dictionary[item] != nil {
 //            dictionary[item] = false
 //        } else {
@@ -546,8 +544,8 @@ import UIKit
 //        }
 //    }
 //
-//    for (index, item) in arr.enumerated() {
-//        if dictionary[item] == true{
+//    for (index, item) in word.enumerated() {
+//        if dictionary[item] == true {
 //            return index
 //        }
 //    }
@@ -556,3 +554,97 @@ import UIKit
 //}
 //
 //print(firstUniqueCharacter(example2))
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+// Construction of Stack data structure
+
+//struct Stack {
+//    private var items: [String] = []
+//
+//    func peek() -> String {
+//        guard let topElement = items.first else { fatalError("This stack is empty.") }
+//        return topElement
+//    }
+//
+//    mutating func pop() -> String {
+//        return items.removeFirst()
+//    }
+//
+//    mutating func push(_ element: String) {
+//        items.insert(element, at: 0)
+//    }
+//}
+
+//extension Stack: CustomStringConvertible {
+//    var description: String {
+//        let topDivider = "---Stack---\n"
+//        let bottomDivider = "\n-----------\n"
+//
+//        let stackElements = items.joined(separator: "\n")
+//
+//        return topDivider + stackElements + bottomDivider
+//    }
+//}
+
+//var nameStack = Stack()
+//
+//nameStack.push("Caleb")
+//nameStack.push("Charles")
+//nameStack.push("Tina")
+//
+//print(nameStack)
+
+//var nameStack2 = Stack()
+//nameStack2.push(8)
+//nameStack2.push(7)
+//nameStack2.push(6)
+//
+//print(nameStack2)
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+    // Given a non-empty string s, you may delete at most one character. Judge whether uou can make it a palindtome
+
+var word = "abcbavb"
+
+func isPalindrome(_ string: String) -> Bool {
+    var array = Array(string)
+    return canBePalindrome(array, 0, array.count - 1, false)
+}
+
+func canBePalindrome(_ arr:[Character], _ firstIndex: Int, _ lastIndex: Int, _ removed: Bool) -> Bool {
+    
+    var firstIndex = firstIndex
+    var lastIndex = lastIndex
+    
+    while firstIndex < lastIndex {
+        if arr[firstIndex] == arr[lastIndex] {
+            firstIndex += 1
+            lastIndex -= 1
+        } else {
+            if removed == true {
+                return false
+            } else {
+                return canBePalindrome(arr, firstIndex + 1, lastIndex, true) || canBePalindrome(arr, firstIndex, lastIndex - 1, true)
+            }
+        }
+    }
+    return true
+}
+
+
+print(isPalindrome(word))
