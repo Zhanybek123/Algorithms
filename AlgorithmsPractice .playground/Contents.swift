@@ -617,7 +617,7 @@ import UIKit
 
 
 
-    // Given a non-empty string s, you may delete at most one character. Judge whether uou can make it a palindtome
+// Given a non-empty string word, you may delete at most one character. Judge whether you can make it a palindtome
 
 var word = "abcbavb"
 
@@ -648,3 +648,6 @@ func canBePalindrome(_ arr:[Character], _ firstIndex: Int, _ lastIndex: Int, _ r
 
 
 print(isPalindrome(word))
+
+
+
