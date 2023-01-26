@@ -619,35 +619,87 @@ import UIKit
 
 // Given a non-empty string word, you may delete at most one character. Judge whether you can make it a palindtome
 
-var word = "abcbavb"
+//var word = "abcbavb"
+//
+//func isPalindrome(_ string: String) -> Bool {
+//    var array = Array(string)
+//    return canBePalindrome(array, 0, array.count - 1, false)
+//}
+//
+//func canBePalindrome(_ arr:[Character], _ firstIndex: Int, _ lastIndex: Int, _ removed: Bool) -> Bool {
+//
+//    var firstIndex = firstIndex
+//    var lastIndex = lastIndex
+//
+//    while firstIndex < lastIndex {
+//        if arr[firstIndex] == arr[lastIndex] {
+//            firstIndex += 1
+//            lastIndex -= 1
+//        } else {
+//            if removed == true {
+//                return false
+//            } else {
+//                return canBePalindrome(arr, firstIndex + 1, lastIndex, true) || canBePalindrome(arr, firstIndex, lastIndex - 1, true)
+//            }
+//        }
+//    }
+//    return true
+//}
+//
+//
+//print(isPalindrome(word))
 
-func isPalindrome(_ string: String) -> Bool {
-    var array = Array(string)
-    return canBePalindrome(array, 0, array.count - 1, false)
-}
-
-func canBePalindrome(_ arr:[Character], _ firstIndex: Int, _ lastIndex: Int, _ removed: Bool) -> Bool {
-    
-    var firstIndex = firstIndex
-    var lastIndex = lastIndex
-    
-    while firstIndex < lastIndex {
-        if arr[firstIndex] == arr[lastIndex] {
-            firstIndex += 1
-            lastIndex -= 1
-        } else {
-            if removed == true {
-                return false
-            } else {
-                return canBePalindrome(arr, firstIndex + 1, lastIndex, true) || canBePalindrome(arr, firstIndex, lastIndex - 1, true)
-            }
-        }
-    }
-    return true
-}
-
-
-print(isPalindrome(word))
 
 
 
+
+
+
+
+
+// Count and say
+
+
+
+//func countAndSay(_ array: [Int]) -> [Int] {
+//    var arr = array
+//    var count = 1
+//    var item = arr[0]
+//    arr.removeFirst()
+//    var result: Array<Int> = Array()
+//
+//    for i in arr {
+////        print(arr)
+//        if i == item {
+//            count += 1
+//        } else {
+//            result.append(count)
+//            result.append(item)
+//            count = 1
+//            item = i
+////            print("result", result)
+//        }
+//    }
+//    result.append(count)
+//    result.append(item)
+//    return result
+//}
+//
+//
+//func callCountAnsSay (times num: Int) -> [Int] {
+//    var arr = [1]
+//    if num <= 0 {
+//        return []
+//    }
+//    if num == 1 {
+//        return arr
+//    }
+//
+//    for _ in 0..<num {
+//        arr = countAndSay(arr)
+//        print(arr)
+//    }
+//    return arr
+//}
+//
+//print("total", callCountAnsSay(times: 4))
