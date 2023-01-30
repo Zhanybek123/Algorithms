@@ -703,3 +703,59 @@ import UIKit
 //}
 //
 //print("total", callCountAnsSay(times: 4))
+
+
+//
+//
+//
+//
+//let haystack = "treello"
+//let needle = "ll"
+//
+//let haystack2 = "books"
+//let needle2 = "ak"
+//
+//let haystack3 = "Mello"
+//let needle3 = "o"
+//
+//func findNeedle(_ word: String, _ needle: String) -> Int {
+//    let wordArray = Array(word)
+//    let needleArray = Array(needle)
+//    let wordLength = wordArray.count
+//    let needleLength = needleArray.count
+//
+//    let looplength = wordLength - needleLength
+////    print(looplength)
+//
+//    if wordLength < needleLength { return -1}
+//    if wordLength <= 0 { return -1}
+//
+//    for i in 0...looplength {
+//        if wordArray[i] == needleArray[0] {
+//            for j in 0..<needleLength {
+//                if j + 1 == needleLength {
+//                    return i
+//                }
+//                if wordArray[i+j] != needleArray[j] {
+//                    break
+//                }
+//            }
+//        }
+//    }
+//
+//
+//    return -1
+//}
+//
+//print(findNeedle(haystack3, needle3))
+
+
+
+let haystack = "treello"
+let needle = "ll"
+
+let haystack2 = "books"
+let needle2 = "ak"
+
+let haystack3 = "Mello"
+let needle3 = "o"
