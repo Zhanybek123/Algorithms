@@ -751,11 +751,41 @@ import UIKit
 
 
 
-let haystack = "treello"
-let needle = "ll"
-
-let haystack2 = "books"
-let needle2 = "ak"
-
-let haystack3 = "Mello"
-let needle3 = "o"
+//let haystack = "treello"
+//let needle = "ll"
+//
+//let haystack2 = "bookse"
+//let needle2 = "ak"
+//
+//let haystack3 = "Mello"
+//let needle3 = "o"
+//
+//func findNeedle(_ word: String, _ needle: String) -> Int {
+//    var wordArray = Array(word)
+//    var needleArray = Array(needle)
+//    var wordLengt = word.count
+//    var needleLength = needle.count
+//
+//    if wordLengt < needleLength {return -1}
+//    if wordLengt <= 0 || needleLength <= 0 {return -1}
+//
+//    let totalLength = wordLengt - needleLength
+//
+//    for i in 0...totalLength {
+//        if wordArray[i] == needleArray[0] {
+//            for j in 0..<needleLength {
+//                if wordArray[i + j] != needleArray[j] {
+//                    break
+//                }
+//                if j + 1 == needleLength {
+//                    return i
+//                }
+//            }
+//        }
+//    }
+//
+//    return -1
+//}
+//
+//
+//print(findNeedle(haystack3, needle3))
