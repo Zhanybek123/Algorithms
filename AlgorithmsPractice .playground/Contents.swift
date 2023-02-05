@@ -560,11 +560,11 @@ import UIKit
 
 
 
-/////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
 
 // Construction of Stack data structure
-
+//
 //struct Stack {
 //    private var items: [String] = []
 //
@@ -581,7 +581,7 @@ import UIKit
 //        items.insert(element, at: 0)
 //    }
 //}
-
+//
 //extension Stack: CustomStringConvertible {
 //    var description: String {
 //        let topDivider = "---Stack---\n"
@@ -592,7 +592,7 @@ import UIKit
 //        return topDivider + stackElements + bottomDivider
 //    }
 //}
-
+//
 //var nameStack = Stack()
 //
 //nameStack.push("Caleb")
@@ -600,7 +600,7 @@ import UIKit
 //nameStack.push("Tina")
 //
 //print(nameStack)
-
+//
 //var nameStack2 = Stack()
 //nameStack2.push(8)
 //nameStack2.push(7)
@@ -608,7 +608,55 @@ import UIKit
 //
 //print(nameStack2)
 
-/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+//
+//struct Stack2 {
+//    private var items: Dictionary<string, Bool> = [:]
+//
+//    func peek() -> String {
+//        guard let topElement = items.first else { fatalError("This stack is empty.") }
+//        return topElement
+//    }
+//
+//    mutating func pop() -> String {
+//        return items.removeFirst()
+//    }
+//
+//    mutating func push(_ element: String) {
+//        items.insert(element, at: 0)
+//    }
+//}
+//
+//extension Stacks: CustomStringConvertible {
+//    var description: String {
+//        let topDivider = "---Stack---\n"
+//        let bottomDivider = "\n-----------\n"
+//
+//        let stackElements = items.joined(separator: "\n")
+//
+//        return topDivider + stackElements + bottomDivider
+//    }
+//}
+//
+//var nameStack = Stack()
+//
+//nameStack.push("Caleb")
+//nameStack.push("Charles")
+//nameStack.push("Tina")
+//
+//print(nameStack)
+//
+//var nameStack2 = Stack()
+//nameStack2.push(8)
+//nameStack2.push(7)
+//nameStack2.push(6)
+//
+//print(nameStack2)
+///////////////////////////////////////////////////////////////////////////
 
 
 
@@ -789,3 +837,70 @@ import UIKit
 //
 //
 //print(findNeedle(haystack3, needle3))
+
+
+
+// Linked List structure
+
+    // Node
+
+class Node {
+    var data: Int
+    var next: Node?
+    
+    init(data: Int) {
+        self.data = data
+    }
+}
+
+class LinkedList {
+    var head: Node?
+    
+    mutating func insert(data: Int) {
+        let newNode = Node(data: data)
+        newNode.next = head
+        head = newNode
+    }
+    
+    mutating func append(data: Int) {
+        if head == nil {
+            return insert(data: data)
+        }
+        
+        var currentNode = head
+        while currentNode?.next != nil {
+            currentNode = currentNode?.next
+        }
+        
+        let newNode = Node(data: data)
+        currentNode?.next = newNode
+    }
+}
+
+ var list = LinkedList()
+
+list.insert(data: 1)
+list.insert(data: 2)
+list.insert(data: 3)
+list.insert(data: 4)
+list.insert(data: 5)
+
+
+print(list)
+
+
+
+
+//
+
+
+//      [] -> nil
+//     head
+//
+//  [data] -> nil
+//   head
+// [] -> [] -> [] -> nil
+// head
+//
+//
+//
