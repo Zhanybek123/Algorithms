@@ -853,16 +853,25 @@ class Node {
     }
 }
 
+//extension LinkedList: CustomStringConvertible {
+//    public var description: String {
+//        guard let head =  head else {
+//           return "List is empty"
+//        }
+//        return String(describing: head)
+//    }
+//}
+
 class LinkedList {
     var head: Node?
     
-    mutating func insert(data: Int) {
+    func insert(data: Int) {
         let newNode = Node(data: data)
         newNode.next = head
         head = newNode
     }
     
-    mutating func append(data: Int) {
+    func append(data: Int) {
         if head == nil {
             return insert(data: data)
         }
@@ -875,9 +884,47 @@ class LinkedList {
         let newNode = Node(data: data)
         currentNode?.next = newNode
     }
+    
+    func find(key: Int) -> Node? {
+        var curr = head
+        
+        while curr != nil && curr?.data != key {
+            curr = curr?.next
+        }
+        return curr
+    }
+    
+    func delete (key: Int) -> Node? {
+        if head == nil { return head }
+        var current = head
+        var previous: Node?
+        
+        while current != nil && current!.data != key {
+            previous = current
+            current = current?.next
+        }
+        
+        if previous == nil && current != nil {
+            head = current!.next
+        } else if current == nil {
+                return nil
+            } else {
+            previous!.next = current!.next
+        }
+        
+        return current
+    }
+    
+    func printList() {
+        var curr = head
+        while curr != nil {
+            print(curr!.data)
+            curr = curr!.next
+        }
+    }
 }
 
- var list = LinkedList()
+var list = LinkedList()
 
 list.insert(data: 1)
 list.insert(data: 2)
@@ -885,22 +932,10 @@ list.insert(data: 3)
 list.insert(data: 4)
 list.insert(data: 5)
 
+//list.printList()
 
-print(list)
+var find = list.find(key: 3)
+//print(find?.data ?? "-1")
 
-
-
-
-//
-
-
-//      [] -> nil
-//     head
-//
-//  [data] -> nil
-//   head
-// [] -> [] -> [] -> nil
-// head
-//
-//
-//
+var delete = list.delete(key: 3)
+list.printList()
