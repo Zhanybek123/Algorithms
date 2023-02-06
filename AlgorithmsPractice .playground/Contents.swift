@@ -926,16 +926,28 @@ class LinkedList {
 
 var list = LinkedList()
 
-list.insert(data: 1)
-list.insert(data: 2)
-list.insert(data: 3)
-list.insert(data: 4)
-list.insert(data: 5)
+list.append(data: 1)
+list.append(data: 2)
+list.append(data: 3)
+list.append(data: 4)
 
-//list.printList()
+list.printList()
+print("------------")
 
-var find = list.find(key: 3)
-//print(find?.data ?? "-1")
+func reverseList() {
+    var current = list.head
+    var next: Node?
+    var prev: Node?
+    if current?.data == nil { return }
+    
+    while current != nil {
+        next = current!.next
+        current?.next = prev
+        prev = current
+        current = next
+    }
+    list.head = prev
+}
 
-var delete = list.delete(key: 3)
+reverseList()
 list.printList()
