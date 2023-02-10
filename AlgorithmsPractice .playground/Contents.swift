@@ -842,7 +842,7 @@ import UIKit
 
 // Linked List structure
 
-    // Node
+// Node
 
 class Node {
     var data: Int
@@ -861,93 +861,153 @@ class Node {
 //        return String(describing: head)
 //    }
 //}
+//
+//class LinkedList {
+//    var head: Node?
+//
+//    func insert(data: Int) {
+//        let newNode = Node(data: data)
+//        newNode.next = head
+//        head = newNode
+//    }
+//
+//    func append(data: Int) {
+//        if head == nil {
+//            return insert(data: data)
+//        }
+//
+//        var currentNode = head
+//        while currentNode?.next != nil {
+//            currentNode = currentNode?.next
+//        }
+//
+//        let newNode = Node(data: data)
+//        currentNode?.next = newNode
+//    }
+//
+//    func find(key: Int) -> Node? {
+//        var curr = head
+//
+//        while curr != nil && curr?.data != key {
+//            curr = curr?.next
+//        }
+//        return curr
+//    }
+//
+//    func delete (key: Int) -> Node? {
+//        if head == nil { return head }
+//        var current = head
+//        var previous: Node?
+//
+//        while current != nil && current!.data != key {
+//            previous = current
+//            current = current?.next
+//        }
+//
+//        if previous == nil && current != nil {
+//            head = current!.next
+//        } else if current == nil {
+//            return nil
+//        } else {
+//            previous!.next = current!.next
+//        }
+//
+//        return current
+//    }
+//
+//    func printList() {
+//        var curr = head
+//        while curr != nil {
+//            print(curr!.data)
+//            curr = curr!.next
+//        }
+//    }
+//}
+//
+//var list2 = LinkedList()
+//
+//list2.append(data: 1)
+//list2.append(data: 2)
+//
+//var list = LinkedList()
+//
+//list.append(data: 1)
+//list.append(data: 2)
+//list.append(data: 3)
+//list.append(data: 4)
+//
+//list.printList()
 
-class LinkedList {
-    var head: Node?
+
+//      Reverse Linked list
+
+//func reverseList() {
+//    var current = list.head
+//    var next: Node?
+//    var prev: Node?
+//    if current?.data == nil { return }
+//
+//    while current != nil {
+//        next = current!.next
+//        current?.next = prev
+//        prev = current
+//        current = next
+//    }
+//    list.head = prev
+//}
+//
+//reverseList()
+//print("-----------")
+//list.printList()
+
+
+//  Splice linked lists
+
+
+func mergeTwoLists (_  list1: Node?, _ list2: Node?) -> Node? {
+    var list1 = list1; var list2 = list2
     
-    func insert(data: Int) {
-        let newNode = Node(data: data)
-        newNode.next = head
-        head = newNode
+    var resultList: Node? = Node(data: -1)
+    var head = resultList
+    
+    while list1 != nil && list2 != nil {
+        if list1!.data < list2!.data {
+            resultList!.next = list1
+            print("also inner", resultList?.data)
+            list1 = list1?.next
+        } else {
+            resultList!.next = list2
+            print("innerCount", resultList?.data)
+            list2 = list2?.next
+        }
+        resultList = resultList?.next
+        print("result", resultList?.data)
     }
     
-    func append(data: Int) {
-        if head == nil {
-            return insert(data: data)
-        }
-        
-        var currentNode = head
-        while currentNode?.next != nil {
-            currentNode = currentNode?.next
-        }
-        
-        let newNode = Node(data: data)
-        currentNode?.next = newNode
+    if list1 != nil {
+        resultList!.next = list1
+    } else {
+        resultList!.next = list2
     }
     
-    func find(key: Int) -> Node? {
-        var curr = head
-        
-        while curr != nil && curr?.data != key {
-            curr = curr?.next
-        }
-        return curr
-    }
-    
-    func delete (key: Int) -> Node? {
-        if head == nil { return head }
-        var current = head
-        var previous: Node?
-        
-        while current != nil && current!.data != key {
-            previous = current
-            current = current?.next
-        }
-        
-        if previous == nil && current != nil {
-            head = current!.next
-        } else if current == nil {
-                return nil
-            } else {
-            previous!.next = current!.next
-        }
-        
-        return current
-    }
-    
-    func printList() {
-        var curr = head
-        while curr != nil {
-            print(curr!.data)
-            curr = curr!.next
-        }
-    }
+    head = head!.next
+    return head
 }
 
-var list = LinkedList()
 
-list.append(data: 1)
-list.append(data: 2)
-list.append(data: 3)
-list.append(data: 4)
 
-list.printList()
-print("------------")
+var linkedList = Node(data: 1)
+linkedList.next = Node(data: 3)
 
-func reverseList() {
-    var current = list.head
-    var next: Node?
-    var prev: Node?
-    if current?.data == nil { return }
-    
-    while current != nil {
-        next = current!.next
-        current?.next = prev
-        prev = current
-        current = next
-    }
-    list.head = prev
+var linkedList2 = Node(data: 1)
+linkedList2.next = Node(data: 2)
+linkedList.next!.next = Node(data: 3)
+linkedList.next!.next!.next = Node(data: 4)
+
+
+var mergedList = mergeTwoLists(linkedList, linkedList2)
+
+while mergedList != nil {
+    print(mergedList?.data)
+    mergedList = mergedList?.next
 }
-
-reverseList()
-list.printList()
