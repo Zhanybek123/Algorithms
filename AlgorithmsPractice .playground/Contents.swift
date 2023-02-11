@@ -862,38 +862,63 @@ class Node {
 //    }
 //}
 //
-//class LinkedList {
-//    var head: Node?
-//
-//    func insert(data: Int) {
-//        let newNode = Node(data: data)
-//        newNode.next = head
-//        head = newNode
-//    }
-//
-//    func append(data: Int) {
-//        if head == nil {
-//            return insert(data: data)
-//        }
-//
-//        var currentNode = head
-//        while currentNode?.next != nil {
-//            currentNode = currentNode?.next
-//        }
-//
-//        let newNode = Node(data: data)
-//        currentNode?.next = newNode
-//    }
-//
-//    func find(key: Int) -> Node? {
-//        var curr = head
-//
-//        while curr != nil && curr?.data != key {
-//            curr = curr?.next
-//        }
-//        return curr
-//    }
-//
+class LinkedList {
+    var head: Node?
+
+    func insert(data: Int) {
+        let newNode = Node(data: data)
+        newNode.next = head
+        head = newNode
+    }
+
+    func append(data: Int) {
+        if head == nil {
+            return insert(data: data)
+        }
+
+        var currentNode = head
+        while currentNode?.next != nil {
+            currentNode = currentNode?.next
+        }
+
+        let newNode = Node(data: data)
+        currentNode?.next = newNode
+    }
+
+    func find(key: Int) -> Node? {
+        var curr = head
+
+        while curr != nil && curr?.data != key {
+            curr = curr?.next
+        }
+        return curr
+    }
+
+    
+    // deletion practice below
+    
+    func delete(key: Int) -> Node? {
+        var current = head
+        var previous: Node?
+        
+        while current != nil && current?.data != key {
+            previous = current
+            current = current?.next
+        }
+        
+        if current != nil && previous == nil {
+            head = current?.next
+        } else if current == nil {
+            return nil
+        } else {
+            previous?.next = current?.next
+        }
+        return current
+    }
+    
+    
+    
+    
 //    func delete (key: Int) -> Node? {
 //        if head == nil { return head }
 //        var current = head
@@ -914,30 +939,33 @@ class Node {
 //
 //        return current
 //    }
-//
-//    func printList() {
-//        var curr = head
-//        while curr != nil {
-//            print(curr!.data)
-//            curr = curr!.next
-//        }
-//    }
-//}
+
+    func printList() {
+        var curr = head
+        while curr != nil {
+            print(curr!.data)
+            curr = curr!.next
+        }
+    }
+}
 //
 //var list2 = LinkedList()
 //
 //list2.append(data: 1)
 //list2.append(data: 2)
 //
-//var list = LinkedList()
-//
-//list.append(data: 1)
-//list.append(data: 2)
-//list.append(data: 3)
-//list.append(data: 4)
-//
-//list.printList()
+var list = LinkedList()
 
+list.append(data: 1)
+list.append(data: 2)
+list.append(data: 3)
+list.append(data: 4)
+
+list.printList()
+
+//list.delete(key: 6)
+//print("After deletion")
+//list.printList()
 
 //      Reverse Linked list
 
@@ -961,53 +989,78 @@ class Node {
 //list.printList()
 
 
+
+//      Reverse Linked list Practice
+
+func reverseLinkedList() {
+    var current = list.head
+    var previous: Node?
+    var next: Node?
+    
+    while current != nil {
+        next = current?.next
+        current?.next = previous
+        previous = current
+        current = next
+    }
+    return list.head = previous
+}
+
+reverseLinkedList()
+print("----------")
+list.printList()
+
+
+
+
+
+
 //  Splice linked lists
 
 
-func mergeTwoLists (_  list1: Node?, _ list2: Node?) -> Node? {
-    var list1 = list1; var list2 = list2
-    
-    var resultList: Node? = Node(data: -1)
-    var head = resultList
-    
-    while list1 != nil && list2 != nil {
-        if list1!.data < list2!.data {
-            resultList!.next = list1
-            print("also inner", resultList?.data)
-            list1 = list1?.next
-        } else {
-            resultList!.next = list2
-            print("innerCount", resultList?.data)
-            list2 = list2?.next
-        }
-        resultList = resultList?.next
-        print("result", resultList?.data)
-    }
-    
-    if list1 != nil {
-        resultList!.next = list1
-    } else {
-        resultList!.next = list2
-    }
-    
-    head = head!.next
-    return head
-}
-
-
-
-var linkedList = Node(data: 1)
-linkedList.next = Node(data: 3)
-
-var linkedList2 = Node(data: 1)
-linkedList2.next = Node(data: 2)
-linkedList.next!.next = Node(data: 3)
-linkedList.next!.next!.next = Node(data: 4)
-
-
-var mergedList = mergeTwoLists(linkedList, linkedList2)
-
-while mergedList != nil {
-    print(mergedList?.data)
-    mergedList = mergedList?.next
-}
+//func mergeTwoLists (_  list1: Node?, _ list2: Node?) -> Node? {
+//    var list1 = list1; var list2 = list2
+//
+//    var resultList: Node? = Node(data: -1)
+//    var head = resultList
+//
+//    while list1 != nil && list2 != nil {
+//        if list1!.data < list2!.data {
+//            resultList!.next = list1
+//            print("also inner", resultList?.data)
+//            list1 = list1?.next
+//        } else {
+//            resultList!.next = list2
+//            print("innerCount", resultList?.data)
+//            list2 = list2?.next
+//        }
+//        resultList = resultList?.next
+//        print("result", resultList?.data)
+//    }
+//
+//    if list1 != nil {
+//        resultList!.next = list1
+//    } else {
+//        resultList!.next = list2
+//    }
+//
+//    head = head!.next
+//    return head
+//}
+//
+//
+//
+//var linkedList = Node(data: 1)
+//linkedList.next = Node(data: 3)
+//
+//var linkedList2 = Node(data: 1)
+//linkedList2.next = Node(data: 2)
+//linkedList.next!.next = Node(data: 3)
+//linkedList.next!.next!.next = Node(data: 4)
+//
+//
+//var mergedList = mergeTwoLists(linkedList, linkedList2)
+//while mergedList != nil {
+//    print(mergedList?.data)
+//    mergedList = mergedList?.next
+//}
