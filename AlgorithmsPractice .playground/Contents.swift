@@ -862,62 +862,62 @@ class Node {
 //    }
 //}
 //
-class LinkedList {
-    var head: Node?
-
-    func insert(data: Int) {
-        let newNode = Node(data: data)
-        newNode.next = head
-        head = newNode
-    }
-
-    func append(data: Int) {
-        if head == nil {
-            return insert(data: data)
-        }
-
-        var currentNode = head
-        while currentNode?.next != nil {
-            currentNode = currentNode?.next
-        }
-
-        let newNode = Node(data: data)
-        currentNode?.next = newNode
-    }
-
-    func find(key: Int) -> Node? {
-        var curr = head
-
-        while curr != nil && curr?.data != key {
-            curr = curr?.next
-        }
-        return curr
-    }
-
-    
-    // deletion practice below
-    
-    func delete(key: Int) -> Node? {
-        var current = head
-        var previous: Node?
-        
-        while current != nil && current?.data != key {
-            previous = current
-            current = current?.next
-        }
-        
-        if current != nil && previous == nil {
-            head = current?.next
-        } else if current == nil {
-            return nil
-        } else {
-            previous?.next = current?.next
-        }
-        return current
-    }
-    
-    
-    
+//class LinkedList {
+//    var head: Node?
+//
+//    func insert(data: Int) {
+//        let newNode = Node(data: data)
+//        newNode.next = head
+//        head = newNode
+//    }
+//
+//    func append(data: Int) {
+//        if head == nil {
+//            return insert(data: data)
+//        }
+//
+//        var currentNode = head
+//        while currentNode?.next != nil {
+//            currentNode = currentNode?.next
+//        }
+//
+//        let newNode = Node(data: data)
+//        currentNode?.next = newNode
+//    }
+//
+//    func find(key: Int) -> Node? {
+//        var curr = head
+//
+//        while curr != nil && curr?.data != key {
+//            curr = curr?.next
+//        }
+//        return curr
+//    }
+//
+//
+//    // deletion practice below
+//
+//    func delete(key: Int) -> Node? {
+//        var current = head
+//        var previous: Node?
+//
+//        while current != nil && current?.data != key {
+//            previous = current
+//            current = current?.next
+//        }
+//
+//        if current != nil && previous == nil {
+//            head = current?.next
+//        } else if current == nil {
+//            return nil
+//        } else {
+//            previous?.next = current?.next
+//        }
+//        return current
+//    }
+//
+//
+//
     
 //    func delete (key: Int) -> Node? {
 //        if head == nil { return head }
@@ -939,29 +939,29 @@ class LinkedList {
 //
 //        return current
 //    }
-
-    func printList() {
-        var curr = head
-        while curr != nil {
-            print(curr!.data)
-            curr = curr!.next
-        }
-    }
-}
+//
+//    func printList() {
+//        var curr = head
+//        while curr != nil {
+//            print(curr!.data)
+//            curr = curr!.next
+//        }
+//    }
+//}
 //
 //var list2 = LinkedList()
 //
 //list2.append(data: 1)
 //list2.append(data: 2)
 //
-var list = LinkedList()
-
-list.append(data: 1)
-list.append(data: 2)
-list.append(data: 3)
-list.append(data: 4)
-
-list.printList()
+//var list = LinkedList()
+//
+//list.append(data: 1)
+//list.append(data: 2)
+//list.append(data: 3)
+//list.append(data: 4)
+//
+//list.printList()
 
 //list.delete(key: 6)
 //print("After deletion")
@@ -992,23 +992,23 @@ list.printList()
 
 //      Reverse Linked list Practice
 
-func reverseLinkedList() {
-    var current = list.head
-    var previous: Node?
-    var next: Node?
-    
-    while current != nil {
-        next = current?.next
-        current?.next = previous
-        previous = current
-        current = next
-    }
-    return list.head = previous
-}
-
-reverseLinkedList()
-print("----------")
-list.printList()
+//func reverseLinkedList() {
+//    var current = list.head
+//    var previous: Node?
+//    var next: Node?
+//
+//    while current != nil {
+//        next = current?.next
+//        current?.next = previous
+//        previous = current
+//        current = next
+//    }
+//    return list.head = previous
+//}
+//
+//reverseLinkedList()
+//print("----------")
+//list.printList()
 
 
 
@@ -1064,3 +1064,46 @@ list.printList()
 //    print(mergedList?.data)
 //    mergedList = mergedList?.next
 //}
+
+
+
+// Given a linked list, detect if there is a loop/cycle in the list
+
+//Example:
+//input = 1->2->3->4->3
+//Output = true
+//
+//Input = 1->2->3->4
+//Output = false
+
+func detectLoop(_ list: Node?) -> Bool {
+    if list == nil { return false}
+    
+    var slow = list
+    var fast = list
+    
+    while slow?.next != nil && fast?.next != nil && fast?.next?.next != nil {
+        slow = slow?.next
+        fast = fast?.next?.next
+        
+        if slow?.data == fast?.data {
+            return true
+        }
+    }
+    
+    
+    return false
+}
+
+var list = Node(data: 1)
+list.next = Node(data: 2)
+let three = Node(data: 3)
+list.next?.next = three
+list.next?.next?.next = Node(data: 4)
+list.next?.next?.next?.next = Node(data: 5)
+list.next?.next?.next?.next?.next = three
+
+let detect = detectLoop(list)
+
+print(detect)
+
