@@ -1076,24 +1076,63 @@ class Node {
 //Input = 1->2->3->4
 //Output = false
 
-func detectLoop(_ list: Node?) -> Bool {
-    if list == nil { return false}
-    
+//func detectLoop(_ list: Node?) -> Bool {
+//    if list == nil { return false}
+//
+//    var slow = list
+//    var fast = list
+//
+//    while slow?.next != nil && fast?.next != nil && fast?.next?.next != nil {
+//        slow = slow?.next
+//        fast = fast?.next?.next
+//
+//        if slow?.data == fast?.data {
+//            return true
+//        }
+//    }
+//
+//
+//    return false
+//}
+//
+//var list = Node(data: 1)
+//list.next = Node(data: 2)
+//let three = Node(data: 3)
+//list.next?.next = three
+//list.next?.next?.next = Node(data: 4)
+//list.next?.next?.next?.next = Node(data: 5)
+//list.next?.next?.next?.next?.next = three
+//
+//let detect = detectLoop(list)
+//
+//print(detect)
+
+
+func detectAndCountCycle(_ list: Node?) -> Bool {
+    if list == nil { return false }
+
     var slow = list
     var fast = list
-    
-    while slow?.next != nil && fast?.next != nil && fast?.next?.next != nil {
-        slow = slow?.next
-        fast = fast?.next?.next
-        
-        if slow?.data == fast?.data {
+    var count = 0
+
+    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
+        slow = slow!.next
+        fast = fast!.next!.next
+
+        if slow!.data == fast!.data {
+            repeat {
+                count += 1
+                fast = fast!.next
+            }
+            while slow!.data != fast!.data
+
+            print(count)
             return true
         }
     }
-    
-    
     return false
 }
+
 
 var list = Node(data: 1)
 list.next = Node(data: 2)
@@ -1103,7 +1142,30 @@ list.next?.next?.next = Node(data: 4)
 list.next?.next?.next?.next = Node(data: 5)
 list.next?.next?.next?.next?.next = three
 
-let detect = detectLoop(list)
+let detect = detectAndCountCycle(list)
 
 print(detect)
 
+
+//func detectAndCountCycle(_ list: Node?) -> Bool {
+//    if list == nil { return false }
+//
+//    var slow = list
+//    var fast = list
+//    var count = 0
+//
+//    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
+//        slow = slow!.next
+//        fast = fast!.next!.next
+//
+//        if slow!.data == fast!.data {
+//            while slow!.data != fast!.data {
+//                count += 1
+//                fast = fast!.next
+//            }
+//            print(count)
+//            return true
+//        }
+//    }
+//    return false
+//}
