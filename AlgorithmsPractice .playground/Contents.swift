@@ -1108,43 +1108,43 @@ class Node {
 //print(detect)
 
 
-func detectAndCountCycle(_ list: Node?) -> Bool {
-    if list == nil { return false }
-
-    var slow = list
-    var fast = list
-    var count = 0
-
-    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
-        slow = slow!.next
-        fast = fast!.next!.next
-
-        if slow!.data == fast!.data {
-            repeat {
-                count += 1
-                fast = fast!.next
-            }
-            while slow!.data != fast!.data
-
-            print(count)
-            return true
-        }
-    }
-    return false
-}
-
-
-var list = Node(data: 1)
-list.next = Node(data: 2)
-let three = Node(data: 3)
-list.next?.next = three
-list.next?.next?.next = Node(data: 4)
-list.next?.next?.next?.next = Node(data: 5)
-list.next?.next?.next?.next?.next = three
-
-let detect = detectAndCountCycle(list)
-
-print(detect)
+//func detectAndCountCycle(_ list: Node?) -> Bool {
+//    if list == nil { return false }
+//
+//    var slow = list
+//    var fast = list
+//    var count = 0
+//
+//    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
+//        slow = slow!.next
+//        fast = fast!.next!.next
+//
+//        if slow!.data == fast!.data {
+//            repeat {
+//                count += 1
+//                fast = fast!.next
+//            }
+//            while slow!.data != fast!.data
+//
+//            print(count)
+//            return true
+//        }
+//    }
+//    return false
+//}
+//
+//
+//var list = Node(data: 1)
+//list.next = Node(data: 2)
+//let three = Node(data: 3)
+//list.next?.next = three
+//list.next?.next?.next = Node(data: 4)
+//list.next?.next?.next?.next = Node(data: 5)
+//list.next?.next?.next?.next?.next = three
+//
+//let detect = detectAndCountCycle(list)
+//
+//print(detect)
 
 
 //func detectAndCountCycle(_ list: Node?) -> Bool {
@@ -1162,6 +1162,7 @@ print(detect)
 //            while slow!.data != fast!.data {
 //                count += 1
 //                fast = fast!.next
+//                print("something")
 //            }
 //            print(count)
 //            return true
@@ -1169,3 +1170,65 @@ print(detect)
 //    }
 //    return false
 //}
+
+
+// Given a linked list, detect if there is a loop/cycle in thr list, also detect as where the cycle started
+
+
+func detectLoopAndCycleStart(_ list: Node?) -> Bool {
+    if list == nil { return false }
+    
+    var slow = list
+    var fast = list
+    
+    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
+        slow = slow!.next
+        fast = fast!.next!.next
+        
+        if slow!.data == fast!.data {
+            var count = 0
+            
+            repeat {
+                count += 1
+                slow = slow?.next
+            }
+            while slow!.data != fast!.data
+                    
+                    print(count)
+                    
+                    var first = list
+                    var second = list
+                    
+                    while count > 0 {
+                first = first!.next
+                count -= 1
+            }
+            
+            while first!.data != second!.data {
+                first = first!.next
+                second = second!.next
+            }
+            print(first!.data)
+            return true
+        }
+    }
+    
+    return false
+}
+
+
+var list = Node(data: 1)
+list.next = Node(data: 2)
+list.next?.next = Node(data: 3)
+let four = Node(data: 4)
+list.next?.next?.next = four
+list.next?.next?.next?.next = Node(data: 5)
+list.next?.next?.next?.next?.next = Node(data: 6)
+list.next?.next?.next?.next?.next?.next = four
+
+let detect = detectLoopAndCycleStart(list)
+
+print(detect)
+
+//         |
+//1  2  3  4  5
