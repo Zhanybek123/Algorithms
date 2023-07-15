@@ -751,12 +751,12 @@ import UIKit
 //}
 //
 //print("total", callCountAnsSay(times: 4))
-
-
 //
 //
-//
-//
+////
+////
+////
+////
 //let haystack = "treello"
 //let needle = "ll"
 //
@@ -765,7 +765,7 @@ import UIKit
 //
 //let haystack3 = "Mello"
 //let needle3 = "o"
-//
+////
 //func findNeedle(_ word: String, _ needle: String) -> Int {
 //    let wordArray = Array(word)
 //    let needleArray = Array(needle)
@@ -773,7 +773,7 @@ import UIKit
 //    let needleLength = needleArray.count
 //
 //    let looplength = wordLength - needleLength
-////    print(looplength)
+//    //    print(looplength)
 //
 //    if wordLength < needleLength { return -1}
 //    if wordLength <= 0 { return -1}
@@ -1174,61 +1174,279 @@ class Node {
 
 // Given a linked list, detect if there is a loop/cycle in thr list, also detect as where the cycle started
 
+//
+//func detectLoopAndCycleStart(_ list: Node?) -> Bool {
+//    if list == nil { return false }
+//
+//    var slow = list
+//    var fast = list
+//
+//    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
+//        slow = slow!.next
+//        fast = fast!.next!.next
+//
+//        if slow!.data == fast!.data {
+//            var count = 0
+//
+//            repeat {
+//                count += 1
+//                slow = slow?.next
+//            }
+//            while slow!.data != fast!.data
+//
+//                    print(count)
+//
+//                    var first = list
+//                    var second = list
+//
+//                    while count > 0 {
+//                first = first!.next
+//                count -= 1
+//            }
+//
+//            while first!.data != second!.data {
+//                first = first!.next
+//                second = second!.next
+//            }
+//            print(first!.data)
+//            return true
+//        }
+//    }
+//
+//    return false
+//}
+//
+//
+//var list = Node(data: 1)
+//list.next = Node(data: 2)
+//list.next?.next = Node(data: 3)
+//let four = Node(data: 4)
+//list.next?.next?.next = four
+//list.next?.next?.next?.next = Node(data: 5)
+//list.next?.next?.next?.next?.next = Node(data: 6)
+//list.next?.next?.next?.next?.next?.next = four
+//
+//let detect = detectLoopAndCycleStart(list)
+//
+//print(detect)
+//
+//         |
+//1  2  3  4  5
 
-func detectLoopAndCycleStart(_ list: Node?) -> Bool {
-    if list == nil { return false }
-    
-    var slow = list
-    var fast = list
-    
-    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
-        slow = slow!.next
-        fast = fast!.next!.next
-        
-        if slow!.data == fast!.data {
-            var count = 0
-            
-            repeat {
-                count += 1
-                slow = slow?.next
-            }
-            while slow!.data != fast!.data
-                    
-                    print(count)
-                    
-                    var first = list
-                    var second = list
-                    
-                    while count > 0 {
-                first = first!.next
-                count -= 1
-            }
-            
-            while first!.data != second!.data {
-                first = first!.next
-                second = second!.next
-            }
-            print(first!.data)
-            return true
+
+
+
+
+
+
+
+// Given a linked list with cycle in it, detect where the cycle starts without counting length of the loop
+
+
+//func detectLoopAndCycleStart(_ list: Node?) -> Bool {
+//    if list == nil { return false }
+//
+//    var slow = list
+//    var fast = list
+//
+//    while slow!.next != nil && fast!.next != nil && fast!.next!.next != nil {
+//        slow = slow!.next
+//        fast = fast!.next!.next
+//
+//        if slow!.data == fast!.data {
+//            var count = 0
+//
+//            repeat {
+//                slow = slow?.next
+//                count += 1
+//            } while slow!.data != fast!.data
+//
+//            print(count)
+//
+//            var first = list
+//            var second = list
+//
+//            while count > 0 {
+//                first = first!.next
+//                count -= 1
+//            }
+//
+//            while first!.data != second!.data {
+//                fast = first!.next
+//                second = second!.next
+//            }
+//            print(second!.data)
+//            return true
+//        }
+//
+//    }
+//    return false
+//}
+//
+//
+//var list = Node(data: 1)
+//list.next = Node(data: 2)
+//list.next?.next = Node(data: 3)
+//let four = Node(data: 4)
+//list.next?.next?.next = four
+//list.next?.next?.next?.next = Node(data: 5)
+//list.next?.next?.next?.next?.next = Node(data: 6)
+//list.next?.next?.next?.next?.next?.next = four
+//
+//let detect = detectLoopAndCycleStart(list)
+//
+//print(detect)
+
+
+//
+//class Solution {
+//    func mergeTwoLists(_ list1: Node?, _ list2: Node?) -> Node? {
+//        var list1 = list1; var list2 = list2
+//        var result: Node? = Node(data: 5)
+//        var head = result
+//
+//        while list1!.data != nil && list2!.data != nil {
+//            if list2!.data < list2!.data {
+//                result!.next = list1
+//                list1 = list1!.next
+//            } else {
+//                result!.next = list2
+//                list2 = list2!.next
+//            }
+//            result = result?.next!
+//        }
+//
+//        if list1 != nil {
+//            result!.next = list1
+//        } else {
+//            result!.next = list2
+//        }
+//
+//        head = head!.next
+//        return head
+//    }
+//}
+//
+
+
+
+
+
+// Given a linked list with cycle in it, detect where the cycle starts without counting length of the loop
+
+//
+//func detectCycleStart(_ list: Node?) -> Node? {
+//    if list == nil { return nil }
+//
+//    var fast = list
+//    var slow = list
+//
+//    while slow!.next != nil && fast!.next!.next != nil {
+//        slow = slow!.next
+//        fast = fast!.next!.next
+//
+//        if slow!.data == fast!.data {
+//
+//            slow = list
+//
+//            while slow!.data != fast!.data {
+//                slow = slow!.next
+//                fast = fast!.next
+//            }
+//            return slow
+//        }
+//    }
+//    return nil
+//}
+//
+//
+//var list = Node(data: 1)
+//list.next = Node(data: 2)
+//list.next?.next = Node(data: 3)
+////let four = Node(data: 4)
+//list.next?.next?.next = Node(data: 4)
+//let five = Node(data: 5)
+//list.next?.next?.next?.next = five
+//list.next?.next?.next?.next?.next = Node(data: 6)
+//list.next?.next?.next?.next?.next!.next = Node(data: 7)
+//list.next?.next?.next?.next?.next!.next!.next = five
+////list.next?.next?.next?.next?.next?.next = four
+//
+//let detect = detectCycleStart(list)
+//
+//print(detect!.data)
+
+
+
+//func duplicateChar(string: String) {
+//    var lowercasedString = string.lowercased()
+//    var dict = [Character: Int]()
+//
+//    for char in lowercasedString {
+//        dict[char, default: 0] += 1
+//    }
+//
+//    for (char, count) in dict {
+//        if count > 1 {
+//            print("\(char) in \(string), \(count) times")
+//        }
+//    }
+//}
+//
+//var word = "Sister Mister"
+//
+//duplicateChar(string: word)
+
+
+//func isAnagram(str1: String, str2: String) -> Bool {
+//
+//    var dic1 = [Character: Int]()
+//    var dic2 = [Character: Int]()
+//
+//    for char in str1 {
+//        dic1[char, default: 0] += 1
+//    }
+//
+//    for char in str2 {
+//        dic2[char, default: 0] += 1
+//    }
+//
+//    return dic1 == dic2
+//
+//}
+//var word1 = "agaa"
+//var word2 = "gaaa"
+//
+//let anagram = isAnagram(str1: word1, str2: word2)
+
+
+func permute<C: Collection>(items: C) -> [[C.Iterator.Element]] {
+    var scratch = Array(items) // This is a scratch space for Heap's algorithm
+    var result: [[C.Iterator.Element]] = [] // This will accumulate our result
+
+    // Heap's algorithm
+    func heap(_ n: Int) {
+        if n == 1 {
+            result.append(scratch)
+            return
         }
+
+        for i in 0..<n-1 {
+            heap(n-1)
+            let j = (n%2 == 1) ? 0 : i
+            scratch.swapAt(j, n-1)
+        }
+        heap(n-1)
     }
-    
-    return false
+
+    // Let's get started
+    heap(scratch.count)
+
+    // And return the result we built up
+    return result
 }
 
 
-var list = Node(data: 1)
-list.next = Node(data: 2)
-list.next?.next = Node(data: 3)
-let four = Node(data: 4)
-list.next?.next?.next = four
-list.next?.next?.next?.next = Node(data: 5)
-list.next?.next?.next?.next?.next = Node(data: 6)
-list.next?.next?.next?.next?.next?.next = four
-
-let detect = detectLoopAndCycleStart(list)
-
-print(detect)
-
-//         |
-//1  2  3  4  5
+let string = "abc"
+permute(items: string)
+print(string)
