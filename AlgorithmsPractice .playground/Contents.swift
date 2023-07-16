@@ -918,7 +918,7 @@ class Node {
 //
 //
 //
-    
+
 //    func delete (key: Int) -> Node? {
 //        if head == nil { return head }
 //        var current = head
@@ -1535,32 +1535,60 @@ class Node {
 //print(permutations)
 
 
-func permuteString(_ str: String) -> [String] {
-    if str.isEmpty {
-        return []
-    }
+//func permuteString(_ str: String) -> [String] {
+//    if str.isEmpty {
+//        return []
+//    }
+//
+//    var permutations = [String]()
+//    permuteHelper(Array(str), 0, &permutations)
+//    return permutations
+//}
+//
+//func permuteHelper(_ str: [Character], _ index: Int, _ permutations: inout [String]) {
+//    if index == str.count - 1 {
+//        let permutation = String(str)
+//        permutations.append(permutation)
+//        print("add \(permutations)")
+//    } else {
+//        for i in index..<str.count {
+//            print("\(index) index, \(i) number")
+//            var newStr = str
+//            newStr.swapAt(index, i)
+//            print("new string - \(newStr)")
+//            permuteHelper(newStr, index + 1, &permutations)
+//        }
+//    }
+//}
+//
+//// Example usage
+//let inputString = "abc"
+//let permutations = permuteString(inputString)
+//print(permutations)
 
-    var permutations = [String]()
-    permuteHelper(Array(str), 0, &permutations)
-    return permutations
+
+func permutate(string: String) -> Int {
+    guard !string.isEmpty else { return 0 }
+    let stringArray = Array(string)
+    var results = [String]()
+    permutateHelper(arrChar: stringArray, startIndex: 0, result: &results)
+    var resultCount = results.count
+    return resultCount
 }
 
-func permuteHelper(_ str: [Character], _ index: Int, _ permutations: inout [String]) {
-    if index == str.count - 1 {
-        let permutation = String(str)
-        permutations.append(permutation)
-        print("add \(permutations)")
+func permutateHelper(arrChar: [Character], startIndex: Int, result: inout [String]) {
+    if startIndex == arrChar.count - 1 {
+        let stringChar = String(arrChar)
+        result.append(stringChar)
     } else {
-        for i in index..<str.count {
-            print("\(i) circle, \(index) index")
-            var newStr = str
-            newStr.swapAt(index, i)
-            permuteHelper(newStr, index + 1, &permutations)
+        for i in startIndex..<arrChar.count {
+            var newString = arrChar
+            newString.swapAt(i, startIndex)
+            permutateHelper(arrChar: newString, startIndex: startIndex + 1, result: &result)
         }
     }
 }
 
-// Example usage
-let inputString = "abc"
-let permutations = permuteString(inputString)
-print(permutations)
+let randomString = "abc"
+permutate(string: randomString)
+print(permutate(string: randomString))
