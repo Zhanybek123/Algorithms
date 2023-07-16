@@ -1420,33 +1420,147 @@ class Node {
 //let anagram = isAnagram(str1: word1, str2: word2)
 
 
-func permute<C: Collection>(items: C) -> [[C.Iterator.Element]] {
-    var scratch = Array(items) // This is a scratch space for Heap's algorithm
-    var result: [[C.Iterator.Element]] = [] // This will accumulate our result
+//func permute<C: Collection>(items: C) -> [[C.Iterator.Element]] {
+//    var scratch = Array(items) // This is a scratch space for Heap's algorithm
+//    var result: [[C.Iterator.Element]] = [] // This will accumulate our result
+//
+//    // Heap's algorithm
+//    func heap(_ n: Int) {
+//        if n == 1 {
+//            result.append(scratch)
+//            return
+//        }
+//
+//        for i in 0..<n-1 {
+//            heap(n-1)
+//            let j = (n%2 == 1) ? 0 : i
+//            scratch.swapAt(j, n-1)
+//        }
+//        heap(n-1)
+//    }
+//
+//    // Let's get started
+//    heap(scratch.count)
+//
+//    // And return the result we built up
+//    return result
+//}
+//
+//
+//let string = "abc"
+//permute(items: string)
+//print(string)
 
-    // Heap's algorithm
-    func heap(_ n: Int) {
-        if n == 1 {
-            result.append(scratch)
-            return
-        }
 
-        for i in 0..<n-1 {
-            heap(n-1)
-            let j = (n%2 == 1) ? 0 : i
-            scratch.swapAt(j, n-1)
-        }
-        heap(n-1)
+//func permuteString(_ str: String) -> [String] {
+//    if str.isEmpty {
+//        return []
+//    }
+//
+//    var permutations = [String]()
+//    permuteHelper(Array(str), 0, &permutations)
+//    return permutations
+//}
+//
+//func permuteHelper(_ str: [Character], _ index: Int, _ permutations: inout [String]) {
+//    if index == str.count - 1 {
+//        let permutation = String(str)
+//        permutations.append(permutation)
+//        print("add \(permutations)")
+//    } else {
+//        for i in index..<str.count {
+//            print("\(i) circle, \(index) index")
+//            var newStr = str
+//            newStr.swapAt(index, i)
+//            permuteHelper(newStr, index + 1, &permutations)
+//        }
+//    }
+//}
+//
+//// Example usage
+//let inputString = "abc"
+//let permutations = permuteString(inputString)
+//print(permutations)
+
+
+//func permutation(string: String) -> [String] {
+//    let stringArray = Array(string)
+//    var result = [String]()
+//    func permutate(index: Int, string: [Character]) {
+//        if index == stringArray.count {
+//            result.append(String(string))
+//        } else {
+//            for i in index..<string.count {
+//                var newValue = string
+//                newValue.swapAt(i, index)
+//                permutate(index: index + 1, string: newValue)
+//                newValue.swapAt(i, index)
+//            }
+//        }
+//    }
+//    permutate(index: 0, string: stringArray)
+//    return result
+//}
+//
+//let input = "abc"
+//permutation(string: input)
+//print(permutation(string: input))
+
+
+//func permuteString(_ str: String) -> [String] {
+//    var permutations = [String]()
+//
+//    func permute(_ str: [Character], _ startIndex: Int) {
+//        if startIndex == str.count {
+//            permutations.append(String(str))
+//        } else {
+//            var newStr = str
+//            for i in startIndex..<str.count {
+//                newStr.swapAt(startIndex, i)
+//                permute(newStr, startIndex + 1)
+//                newStr.swapAt(startIndex, i)
+//            }
+//        }
+//    }
+//
+//    let charArray = Array(str)
+//    permute(charArray, 0)
+//
+//    return permutations
+//}
+//
+//// Example usage
+//let inputString = "abc"
+//let permutations = permuteString(inputString)
+//print(permutations)
+
+
+func permuteString(_ str: String) -> [String] {
+    if str.isEmpty {
+        return []
     }
 
-    // Let's get started
-    heap(scratch.count)
-
-    // And return the result we built up
-    return result
+    var permutations = [String]()
+    permuteHelper(Array(str), 0, &permutations)
+    return permutations
 }
 
+func permuteHelper(_ str: [Character], _ index: Int, _ permutations: inout [String]) {
+    if index == str.count - 1 {
+        let permutation = String(str)
+        permutations.append(permutation)
+        print("add \(permutations)")
+    } else {
+        for i in index..<str.count {
+            print("\(i) circle, \(index) index")
+            var newStr = str
+            newStr.swapAt(index, i)
+            permuteHelper(newStr, index + 1, &permutations)
+        }
+    }
+}
 
-let string = "abc"
-permute(items: string)
-print(string)
+// Example usage
+let inputString = "abc"
+let permutations = permuteString(inputString)
+print(permutations)
