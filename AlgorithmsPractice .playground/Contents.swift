@@ -1567,28 +1567,132 @@ class Node {
 //print(permutations)
 
 
-func permutate(string: String) -> Int {
-    guard !string.isEmpty else { return 0 }
-    let stringArray = Array(string)
-    var results = [String]()
-    permutateHelper(arrChar: stringArray, startIndex: 0, result: &results)
-    var resultCount = results.count
-    return resultCount
+//func permutate(string: String) -> Int {
+//    guard !string.isEmpty else { return 0 }
+//    let stringArray = Array(string)
+//    var results = [String]()
+//    permutateHelper(arrChar: stringArray, startIndex: 0, result: &results)
+//    var resultCount = results.count
+//    return resultCount
+//}
+//
+//func permutateHelper(arrChar: [Character], startIndex: Int, result: inout [String]) {
+//    if startIndex == arrChar.count - 1 {
+//        let stringChar = String(arrChar)
+//        result.append(stringChar)
+//    } else {
+//        for i in startIndex..<arrChar.count {
+//            var newString = arrChar
+//            newString.swapAt(i, startIndex)
+//            permutateHelper(arrChar: newString, startIndex: startIndex + 1, result: &result)
+//        }
+//    }
+//}
+
+//let randomString = "abc"
+//permutate(string: randomString)
+//print(permutate(string: randomString))
+//
+//
+//func permutate(string: String) -> [String] {
+//    guard !string.isEmpty else { return [] }
+//    var stringArray = Array(string)
+//    var results = [String]()
+//    permutateHelper(string: stringArray, startIndex: 0, results: &results)
+//    return results
+//}
+//
+//
+//func permutateHelper(string: [Character], startIndex: Int, results: inout [String]) {
+//    if startIndex == string.count - 1 {
+//        let result = String(string)
+//        results.append(result)
+//    } else {
+//        for i in startIndex..<string.count {
+//            var newString = string
+//            newString.swapAt(i, startIndex)
+//            permutateHelper(string: newString, startIndex: startIndex + 1, results: &results)
+//        }
+//    }
+//}
+
+
+// Reverse a string in place
+
+//func reverseString(string: inout String) {
+//    guard !string.isEmpty else { return }
+//
+//    var stringArr = Array(string)
+//    var left = 0
+//    var right = string.count - 1
+//
+//    while left < right {
+//        var temp = stringArr[left]
+//        stringArr[left] = stringArr[right]
+//        stringArr[right] = temp
+//
+//        left += 1
+//        right -= 1
+//    }
+//
+//    string = String(stringArr)
+//}
+//
+//var string = "love"
+//reverseString(string: &string)
+//print(string)
+
+//
+
+//func hasDuplicate(string: String) -> [String] {
+//    guard !string.isEmpty else {return []}
+//    var dict = [Character: Int]()
+//    var results = [String]()
+//    for i in string {
+//        dict[i, default: 0] += 1
+//    }
+//    for (key , value) in dict {
+//        if value > 1 {
+//            results.append(String(key))
+//        }
+//    }
+//    return results
+//}
+//
+//
+//let myString = "sassy"
+//print(hasDuplicate(string: myString))
+
+
+// Reverse string with recursion
+
+//func reverseRec(string: String) -> String {
+//    guard !string.isEmpty else { return "" }
+//    var stringArr = Array(string)
+//    var startIndex = 0
+//    var lastIndex = stringArr.count - 1
+//    reverseHelper(startIndex: startIndex, lastIndex: lastIndex, result: &stringArr)
+//
+//    return String(stringArr)
+//}
+//
+//func reverseHelper(startIndex: Int, lastIndex: Int, result: inout [Character]) {
+//    if startIndex >= lastIndex {
+//        return
+//    } else {
+//        result.swapAt(startIndex, lastIndex)
+//        reverseHelper(startIndex: startIndex + 1, lastIndex: lastIndex - 1, result: &result)
+//    }
+//}
+//
+//var myString = "canada"
+//print(reverseRec(string: myString))
+
+func onlyDigits(string: String) -> Bool {
+    let decimal = CharacterSet.decimalDigits
+    let charcterSet = CharacterSet(charactersIn: string)
+    
+    return decimal.isSuperset(of: charcterSet)
 }
 
-func permutateHelper(arrChar: [Character], startIndex: Int, result: inout [String]) {
-    if startIndex == arrChar.count - 1 {
-        let stringChar = String(arrChar)
-        result.append(stringChar)
-    } else {
-        for i in startIndex..<arrChar.count {
-            var newString = arrChar
-            newString.swapAt(i, startIndex)
-            permutateHelper(arrChar: newString, startIndex: startIndex + 1, result: &result)
-        }
-    }
-}
-
-let randomString = "abc"
-permutate(string: randomString)
-print(permutate(string: randomString))
+print(onlyDigits(string: "12345a"))
