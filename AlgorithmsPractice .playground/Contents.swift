@@ -1666,33 +1666,155 @@ class Node {
 
 // Reverse string with recursion
 
-//func reverseRec(string: String) -> String {
-//    guard !string.isEmpty else { return "" }
-//    var stringArr = Array(string)
-//    var startIndex = 0
-//    var lastIndex = stringArr.count - 1
-//    reverseHelper(startIndex: startIndex, lastIndex: lastIndex, result: &stringArr)
-//
-//    return String(stringArr)
-//}
-//
-//func reverseHelper(startIndex: Int, lastIndex: Int, result: inout [Character]) {
-//    if startIndex >= lastIndex {
-//        return
-//    } else {
-//        result.swapAt(startIndex, lastIndex)
-//        reverseHelper(startIndex: startIndex + 1, lastIndex: lastIndex - 1, result: &result)
-//    }
-//}
-//
-//var myString = "canada"
-//print(reverseRec(string: myString))
+//ds
 
-func onlyDigits(string: String) -> Bool {
-    let decimal = CharacterSet.decimalDigits
-    let charcterSet = CharacterSet(charactersIn: string)
-    
-    return decimal.isSuperset(of: charcterSet)
+
+// check if string contains only digits
+
+//func onlyDigits(string: String) -> Bool {
+//    let decimal = CharacterSet.decimalDigits
+//    let charcterSet = CharacterSet(charactersIn: string)
+//
+//    return decimal.isSuperset(of: charcterSet)
+//}
+//
+//print(onlyDigits(string: "12345a"))
+
+
+// Find Palyndrome String
+
+//func isPalindrome(string: String) -> Bool {
+//    var stringArr = Array(string)
+//    var first = 0
+//    var last = stringArr.count - 1
+//
+//    while first < last {
+//        if stringArr[first] == stringArr[last] {
+//            first += 1
+//            last -= 1
+//            continue
+//        } else {
+//            return false
+//        }
+//    }
+//    return true
+//}
+//
+//
+//let myString = "kazak"
+//
+//print(isPalindrome(string: myString))
+
+
+//func isPalindrome(int: Int) -> Bool {
+//    var stringInt = String(int)
+//    var stringArr = Array(stringInt)
+//    var left = 0
+//    var right = stringArr.count - 1
+//
+//    while left < right {
+//        if stringArr[left] == stringArr[right] {
+//            left += 1
+//            right -= 1
+//        } else { return false}
+//    }
+//
+//    return true
+//}
+//
+//let myInt = 3834
+//print(isPalindrome(int: myInt))
+
+//func isPalindrome(int: Int) -> Bool {
+//    if int == 0 {
+//        return false
+//    }
+//
+//    var number = int
+//    var result = 0
+//
+//    while number != 0 {
+//        var remainder = number % 10
+//        result = result * 10 + remainder
+//        number /= 10
+//    }
+//    return result == int
+//}
+//
+//let myNumber = 353
+//print(isPalindrome(int: myNumber))
+
+
+// Find duplicate characters in a given array
+
+//func duplicateCharacters(string: String) -> [String] {
+//    guard !string.isEmpty else { return [] }
+//    var stringArr = Array(string)
+//    var dict = [Character: Int]()
+//    var result = [String]()
+//
+//    for i in 0..<stringArr.count - 1 {
+//        dict[stringArr[i], default: 0] += 1
+//    }
+//
+//    for (key, value) in dict {
+//        if value > 1 {
+//            result.append(String(key))
+//        }
+//    }
+//
+//    return result
+//}
+//
+//let myString = "barbara"
+//print(duplicateCharacters(string: myString))
+
+//
+
+func countVowelsAndConsonants(string: String) -> [String: Int] {
+    guard !string.isEmpty else { return [:] }
+    let vowels: Array<Character> = ["a", "e", "o", "i", "u", "y"]
+    var result = [String: Int]()
+
+    for char in string.lowercased() {
+        if vowels.contains(char) {
+            result["vowels", default: 0] += 1
+        } else {
+            result["consonants", default: 0] += 1
+        }
+    }
+    return result
 }
 
-print(onlyDigits(string: "12345a"))
+let myString = "Somethingy"
+print(countVowelsAndConsonants(string:myString))
+
+
+
+
+
+
+
+
+//func countVowelsAndConsonants(string: String) -> [String: Int] {
+//    guard !string.isEmpty else { return [:] }
+//
+//    let vowels: Set<Character> = ["a", "e", "o", "i", "u"]
+//    let consonants: Set<Character> = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+//
+//    var result = [String: Int]()
+//
+//    for char in string.lowercased() {
+//        if vowels.contains(char) {
+//            result["vowels", default: 0] += 1
+//        } else if consonants.contains(char) {
+//            result["consonants", default: 0] += 1
+//        }
+//    }
+//
+//    return result
+//}
+//
+//// Example usage
+//let inputString = "Hello, World!"
+//let counts = countVowelsAndConsonants(string: inputString)
