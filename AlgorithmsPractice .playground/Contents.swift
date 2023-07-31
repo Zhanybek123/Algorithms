@@ -1769,29 +1769,28 @@ class Node {
 //let myString = "barbara"
 //print(duplicateCharacters(string: myString))
 
+
+
+
+// Count Vowels And Consonants
+
+//func countVowelsAndConsonants(string: String) -> [String: Int] {
+//    guard !string.isEmpty else { return [:] }
+//    let vowels: Array<Character> = ["a", "e", "o", "i", "u", "y"]
+//    var result = [String: Int]()
 //
-
-func countVowelsAndConsonants(string: String) -> [String: Int] {
-    guard !string.isEmpty else { return [:] }
-    let vowels: Array<Character> = ["a", "e", "o", "i", "u", "y"]
-    var result = [String: Int]()
-
-    for char in string.lowercased() {
-        if vowels.contains(char) {
-            result["vowels", default: 0] += 1
-        } else {
-            result["consonants", default: 0] += 1
-        }
-    }
-    return result
-}
-
-let myString = "Somethingy"
-print(countVowelsAndConsonants(string:myString))
-
-
-
-
+//    for char in string.lowercased() {
+//        if vowels.contains(char) {
+//            result["vowels", default: 0] += 1
+//        } else {
+//            result["consonants", default: 0] += 1
+//        }
+//    }
+//    return result
+//}
+//
+//let myString = "Somethingy"
+//print(countVowelsAndConsonants(string:myString))
 
 
 
@@ -1818,3 +1817,35 @@ print(countVowelsAndConsonants(string:myString))
 //// Example usage
 //let inputString = "Hello, World!"
 //let counts = countVowelsAndConsonants(string: inputString)
+
+
+
+ Find longest prefix
+
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        guard !strs.isEmpty else { return ""}
+        if strs.count == 1 { return strs[0]
+        }
+
+        let first = strs[0]
+        var result = ""
+
+        for i in 0..<first.count - 1 {
+            // first character
+            let char = first[first.index(first.startIndex, offsetBy: i)]
+            for j in 1..<strs.count {
+                let string = strs[j]
+                let char2 = string[string.index(string.startIndex, offsetBy: i)]
+
+                if char != char2 && first.count != string.count {
+                    return result
+                }
+            }
+            result.append(char)
+        }
+        return result
+    }
+
+    let myStringArr = ["Dowg", "Dow", "Down"]
+    print(longestCommonPrefix(myStringArr))
+
