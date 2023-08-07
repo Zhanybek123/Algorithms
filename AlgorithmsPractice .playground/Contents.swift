@@ -1820,7 +1820,7 @@ class Node {
 
 
 
- Find longest prefix
+// Find longest prefix
 
     func longestCommonPrefix(_ strs: [String]) -> String {
         guard !strs.isEmpty else { return ""}
@@ -1848,4 +1848,6 @@ class Node {
 
     let myStringArr = ["Dowg", "Dow", "Down"]
     print(longestCommonPrefix(myStringArr))
+
+
 
