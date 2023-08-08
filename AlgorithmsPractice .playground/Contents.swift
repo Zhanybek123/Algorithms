@@ -1822,48 +1822,48 @@ class Node {
 
 // Find longest prefix
 
-//    func longestCommonPrefix(_ strs: [String]) -> String {
-//        guard !strs.isEmpty else { return ""}
-//        if strs.count == 1 { return strs[0]
-//        }
-//
-//        let first = strs[0]
-//        var result = ""
-//
-//        for i in 0..<first.count - 1 {
-//            // first character
-//            let char = first[first.index(first.startIndex, offsetBy: i)]
-//            for j in 1..<strs.count {
-//                let string = strs[j]
-//                let char2 = string[string.index(string.startIndex, offsetBy: i)]
-//
-//                if char != char2 && first.count != string.count {
-//                    return result
-//                }
-//            }
-//            result.append(char)
-//        }
-//        return result
-//    }
-//
-//    let myStringArr = ["Dowg", "Dow", "Down"]
-//    print(longestCommonPrefix(myStringArr))
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        guard !strs.isEmpty else { return ""}
+        if strs.count == 1 { return strs[0]
+        }
+
+        let first = strs[0]
+        var result = ""
+
+        for i in 0..<first.count - 1 {
+            // first character
+            let char = first[first.index(first.startIndex, offsetBy: i)]
+            for j in 1..<strs.count {
+                let string = strs[j]
+                let char2 = string[string.index(string.startIndex, offsetBy: i)]
+
+                if char != char2 && first.count != string.count {
+                    return result
+                }
+            }
+            result.append(char)
+        }
+        return result
+    }
+
+    let myStringArr = ["Dowg", "Dow", "Down"]
+    print(longestCommonPrefix(myStringArr))
 //
 
-var exampleArray = [0, 4, 5, 8, 0]
-
-func moveZeroes(_ nums: inout [Int]) {
-       guard !nums.isEmpty else { return }
-       
-       var count = 0
-
-       for i in 0..<nums.count - 1 {
-           if nums[i] != 0 {
-               nums.swapAt(i, count)
-               count += 1
-           }
-       }
-   }
-moveZeroes(&exampleArray)
-print(exampleArray)
+//var exampleArray = [0, 4, 5, 8, 0]
+//
+//func moveZeroes(_ nums: inout [Int]) {
+//       guard !nums.isEmpty else { return }
+//
+//       var count = 0
+//
+//       for i in 0..<nums.count - 1 {
+//           if nums[i] != 0 {
+//               nums.swapAt(i, count)
+//               count += 1
+//           }
+//       }
+//   }
+//moveZeroes(&exampleArray)
+//print(exampleArray)
 
