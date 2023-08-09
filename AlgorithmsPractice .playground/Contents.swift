@@ -844,18 +844,18 @@ import UIKit
 
 // Node
 
-class Node {
-    var data: Int
-    var next: Node?
-    
-    init(data: Int) {
-        self.data = data
-    }
-}
-
+//class Node {
+//    var data: Int
+//    var next: Node?
+//
+//    init(data: Int) {
+//        self.data = data
+//    }
+//}
+//
 //extension LinkedList: CustomStringConvertible {
 //    public var description: String {
-//        guard let head =  head else {
+//        guard let head = head else {
 //           return "List is empty"
 //        }
 //        return String(describing: head)
@@ -915,9 +915,9 @@ class Node {
 //        }
 //        return current
 //    }
-//
-//
-//
+
+
+
 
 //    func delete (key: Int) -> Node? {
 //        if head == nil { return head }
@@ -939,7 +939,7 @@ class Node {
 //
 //        return current
 //    }
-//
+
 //    func printList() {
 //        var curr = head
 //        while curr != nil {
@@ -962,17 +962,18 @@ class Node {
 //list.append(data: 4)
 //
 //list.printList()
-
+//
 //list.delete(key: 6)
 //print("After deletion")
 //list.printList()
-
-//      Reverse Linked list
-
+//
+////      Reverse Linked list
+//
 //func reverseList() {
 //    var current = list.head
 //    var next: Node?
 //    var prev: Node?
+//
 //    if current?.data == nil { return }
 //
 //    while current != nil {
@@ -987,7 +988,7 @@ class Node {
 //reverseList()
 //print("-----------")
 //list.printList()
-
+//
 
 
 //      Reverse Linked list Practice
@@ -1822,32 +1823,32 @@ class Node {
 
 // Find longest prefix
 
-    func longestCommonPrefix(_ strs: [String]) -> String {
-        guard !strs.isEmpty else { return ""}
-        if strs.count == 1 { return strs[0]
-        }
-
-        let first = strs[0]
-        var result = ""
-
-        for i in 0..<first.count - 1 {
-            // first character
-            let char = first[first.index(first.startIndex, offsetBy: i)]
-            for j in 1..<strs.count {
-                let string = strs[j]
-                let char2 = string[string.index(string.startIndex, offsetBy: i)]
-
-                if char != char2 && first.count != string.count {
-                    return result
-                }
-            }
-            result.append(char)
-        }
-        return result
-    }
-
-    let myStringArr = ["Dowg", "Dow", "Down"]
-    print(longestCommonPrefix(myStringArr))
+//    func longestCommonPrefix(_ strs: [String]) -> String {
+//        guard !strs.isEmpty else { return ""}
+//        if strs.count == 1 { return strs[0]
+//        }
+//
+//        let first = strs[0]
+//        var result = ""
+//
+//        for i in 0..<first.count - 1 {
+//            // first character
+//            let char = first[first.index(first.startIndex, offsetBy: i)]
+//            for j in 1..<strs.count {
+//                let string = strs[j]
+//                let char2 = string[string.index(string.startIndex, offsetBy: i)]
+//
+//                if char != char2 && first.count != string.count {
+//                    return result
+//                }
+//            }
+//            result.append(char)
+//        }
+//        return result
+//    }
+//
+//    let myStringArr = ["Dowg", "Dow", "Down"]
+//    print(longestCommonPrefix(myStringArr))
 //
 
 //var exampleArray = [0, 4, 5, 8, 0]
@@ -1867,3 +1868,43 @@ class Node {
 //moveZeroes(&exampleArray)
 //print(exampleArray)
 
+
+// Reverse linked list practice
+
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    
+    public init() {
+        self.val = 0; self.next = nil
+    }
+    public init(_ val: Int) {
+        self.val = val; self.next = nil
+        
+    }
+    public init(_ val: Int, _ next: ListNode?) {
+        self.val = val; self.next = next
+        
+    }
+}
+
+
+class Solution {
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        guard head != nil else { return ListNode() }
+        
+        var current = head
+        var next: ListNode?
+        var prev: ListNode?
+        
+        while current != nil {
+            next = current?.next
+            current?.next = prev
+            prev = current
+            current = next
+        }
+        return prev
+    }
+}
+
+let solution = Solution()
