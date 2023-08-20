@@ -269,6 +269,26 @@ import UIKit
 //print(duplicatesDist(nums3, k3))
 
 
+// Two strings are anagram
+
+class Solution {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        guard !s.isEmpty && !t.isEmpty else { return false }
+
+        var dict1 = [Character: Int]()
+        var dict2 = [Character: Int]()
+
+        for char in s {
+            dict1[char, default: 0] += 1
+        }
+
+        for char in t {
+            dict2[char, default: 0] += 1
+        }
+        return dict1 == dict2
+    }
+}
+
 
 
 
@@ -1908,3 +1928,5 @@ class Solution {
 }
 
 let solution = Solution()
+
+    
