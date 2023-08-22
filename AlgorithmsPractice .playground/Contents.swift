@@ -83,9 +83,55 @@ import UIKit
 // conclusion:
 // in order to get majority element in the array, I have to increment counter each time if it's equals to the majorityItem, and decremant counter if it's not. when counter
 
+// Group anagrams
 
-
-
+//class Solution {
+//    func groupAnagrams(_ strs: [String]) -> [[String]] {
+//        guard !strs.isEmpty else { return [[""]]}
+//
+//        var dict = [String: [String]]()
+//        for string in strs {
+//            let sortedString = String(string.sorted())
+//
+//            if var arrayOfValues = dict[sortedString] {
+//                arrayOfValues.append(string)
+//                dict[sortedString] = arrayOfValues
+//            } else {
+//            dict[sortedString] = [string]
+//            }
+//        }
+//
+//        return Array(dict.values)
+//    }
+//}
+//  class Solution {
+//    func groupAnagrams(_ strs: [String]) -> [[String]] {
+//        guard !strs.isEmpty else { return [[""]]}
+//
+//        var dict = [String: [String]]()
+//
+//        for string in strs {
+//            var charCount = [Int](repeating: 0, count: 26)
+//
+//            for char in string {
+//                let indexOfChar = Int(char.asciiValue! - Character("a").asciiValue!)
+//                charCount[indexOfChar] += 1
+//            }
+////          have to add hyphen here. empty string can give an error.   |
+//            let key = charCount.map { String($0) }.joined(separator: "-")
+//
+//            if var arrayOfValues = dict[key] {
+//                arrayOfValues.append(string)
+//                dict[key] = arrayOfValues
+//            } else {
+//            dict[key] = [string]
+//            }
+//        }
+//
+//        return Array(dict.values)
+//    }
+//}
+//
 
 
 
@@ -271,24 +317,24 @@ import UIKit
 
 // Two strings are anagram
 
-class Solution {
-    func isAnagram(_ s: String, _ t: String) -> Bool {
-        guard !s.isEmpty && !t.isEmpty else { return false }
-
-        var dict1 = [Character: Int]()
-        var dict2 = [Character: Int]()
-
-        for char in s {
-            dict1[char, default: 0] += 1
-        }
-
-        for char in t {
-            dict2[char, default: 0] += 1
-        }
-        return dict1 == dict2
-    }
-}
-
+//class Solution {
+//    func isAnagram(_ s: String, _ t: String) -> Bool {
+//        guard !s.isEmpty && !t.isEmpty else { return false }
+//
+//        var dict1 = [Character: Int]()
+//        var dict2 = [Character: Int]()
+//
+//        for char in s {
+//            dict1[char, default: 0] += 1
+//        }
+//
+//        for char in t {
+//            dict2[char, default: 0] += 1
+//        }
+//        return dict1 == dict2
+//    }
+//}
+//
 
 
 
@@ -1891,42 +1937,42 @@ class Solution {
 
 // Reverse linked list practice
 
-public class ListNode {
-    public var val: Int
-    public var next: ListNode?
-    
-    public init() {
-        self.val = 0; self.next = nil
-    }
-    public init(_ val: Int) {
-        self.val = val; self.next = nil
-        
-    }
-    public init(_ val: Int, _ next: ListNode?) {
-        self.val = val; self.next = next
-        
-    }
-}
-
-
-class Solution {
-    func reverseList(_ head: ListNode?) -> ListNode? {
-        guard head != nil else { return ListNode() }
-        
-        var current = head
-        var next: ListNode?
-        var prev: ListNode?
-        
-        while current != nil {
-            next = current?.next
-            current?.next = prev
-            prev = current
-            current = next
-        }
-        return prev
-    }
-}
-
-let solution = Solution()
+//public class ListNode {
+//    public var val: Int
+//    public var next: ListNode?
+//
+//    public init() {
+//        self.val = 0; self.next = nil
+//    }
+//    public init(_ val: Int) {
+//        self.val = val; self.next = nil
+//
+//    }
+//    public init(_ val: Int, _ next: ListNode?) {
+//        self.val = val; self.next = next
+//
+//    }
+//}
+//
+//
+//class Solution {
+//    func reverseList(_ head: ListNode?) -> ListNode? {
+//        guard head != nil else { return ListNode() }
+//
+//        var current = head
+//        var next: ListNode?
+//        var prev: ListNode?
+//
+//        while current != nil {
+//            next = current?.next
+//            current?.next = prev
+//            prev = current
+//            current = next
+//        }
+//        return prev
+//    }
+//}
+//
+//let solution = Solution()
 
     
