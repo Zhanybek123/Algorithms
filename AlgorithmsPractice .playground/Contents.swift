@@ -2003,3 +2003,34 @@ import UIKit
 //        return result
 //    }
 //}
+
+
+
+//Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+//
+//
+//class Solution {
+//    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+//        guard !nums.isEmpty else { return [] }
+//
+//        var dict = [Int: Int]()
+//        var result = [Int]()
+//        var count = k
+//
+//        for number in nums {
+//            dict[number, default: 0] += 1
+//        }
+//
+//        var sortedDict = dict.sorted(by: {$0.value > $1.value})
+//
+//        for (key, value) in sortedDict {
+//            if count == 0 {
+//                return result
+//            }
+//            result.append(key)
+//            count -= 1
+//        }
+//
+//        return result
+//    }
+//}
