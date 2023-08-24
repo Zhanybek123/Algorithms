@@ -2034,3 +2034,36 @@ import UIKit
 //        return result
 //    }
 //}
+
+
+// Bucket sort approach
+
+//class Solution {
+//    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+//        guard !nums.isEmpty else { return [] }
+//
+//        var dict = [Int: Int]()
+//        var result = [Int]()
+//
+//        for number in nums {
+//            dict[number, default: 0] += 1
+//        }
+//
+//        var bucket = Array(repeating: [Int](), count: nums.count + 1)
+//
+//        for (key, value) in dict {
+//            bucket[value].append(key)
+//        }
+//
+//        for i in stride(from: bucket.count - 1, through: 0, by: -1) {
+//            result.append(contentsOf: bucket[i])
+//            if result.count == k {
+//                break
+//            }
+//        }
+//
+//        return result
+//    }
+//}
+
+
