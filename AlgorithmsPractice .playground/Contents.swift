@@ -2067,3 +2067,50 @@ import UIKit
 //}
 
 
+
+
+
+//  Valid Palindrome. 1. brute force. 2. two pointers 
+
+
+//1. class Solution {
+//    func isPalindrome(_ s: String) -> Bool {
+//        let resultString = s.lowercased().filter { $0.isNumber || $0.isLetter }
+//
+//        return resultString == String(resultString.reversed())
+//    }
+//}
+//   2. class Solution {
+//
+//    func isPalindrome(_ s: String) -> Bool {
+//        let array = Array(s.lowercased())
+//        var firstPointer = 0
+//        var secondPointer = array.count - 1
+//
+//        func isAlphanumeric(char: Character) -> Bool {
+//            return char.isNumber || char.isLetter
+//        }
+//
+//        while firstPointer < secondPointer {
+//
+//            if isAlphanumeric(char: array[firstPointer]) == false {
+//                firstPointer += 1
+//                continue
+//            }
+//
+//            if isAlphanumeric(char: array[secondPointer]) == false {
+//                secondPointer -= 1
+//                continue
+//            }
+//
+//            if array[firstPointer] == array[secondPointer] {
+//                firstPointer += 1
+//                secondPointer -= 1
+//            } else {
+//                return false
+//            }
+//        }
+//
+//        return true
+//    }
+//}
