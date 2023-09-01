@@ -2114,3 +2114,51 @@ import UIKit
 //        return true
 //    }
 //}
+
+
+//Three Sum
+//
+//class Solution {
+//    func threeSum(_ nums: [Int]) -> [[Int]] {
+//        guard !nums.isEmpty else { return [[]] }
+//
+//        let orderedArr = nums.sorted()
+//        var result = [[Int]]()
+//
+//        for i in 0..<orderedArr.count {
+//            if i > 0 && orderedArr[i] == orderedArr[i - 1] {
+//                continue
+//            }
+//
+//            var left = i + 1
+//            var right = orderedArr.count - 1
+//
+//            while left < right {
+//
+//                let sum = orderedArr[i] + orderedArr[left] + orderedArr[right]
+//
+//                if sum < 0 {
+//                    left += 1
+//                } else if sum > 0 {
+//                    right -= 1
+//                } else {
+//                    result.append([orderedArr[i], orderedArr[left], orderedArr[right]])
+//
+//                    while orderedArr[left] == orderedArr[left + 1] && left < right {
+//                        left + 1
+//                    }
+//
+//                    while orderedArr[right] == orderedArr[right - 1] && left < right {
+//                        left + 1
+//                    }
+//
+//                    left += 1
+//                    right -= 1
+//
+//                }
+//            }
+//        }
+//
+//        return result
+//    }
+//}
