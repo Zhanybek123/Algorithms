@@ -2219,3 +2219,52 @@ import UIKit
 //        return result
 //    }
 //}
+
+
+
+//Best Time to Buy and Sell Stock
+//Brute force solution
+//
+//
+//
+//1. class Solution {
+//    func maxProfit(_ prices: [Int]) -> Int {
+//       guard !prices.isEmpty else { return 0 }
+//        var result = 0
+//
+//        for i in 0..<prices.count {
+//            for j in i..<prices.count {
+//                let sum = prices[j] - prices[i]
+//                result = max(result, sum)
+//                print("max", result, sum)
+//            }
+//        }
+//
+//        return result
+//    }
+//}
+  
+//        Two pointers solution
+//
+// 2. class Solution {
+//    func maxProfit(_ prices: [Int]) -> Int {
+//       guard !prices.isEmpty else { return 0 }
+//        var result = 0
+//        var left = 0
+//        var right = 1
+//
+//        while right <= prices.count - 1 {
+//            let sum = prices[right] - prices[left]
+//
+//            if prices[left] > prices[right] {
+//                left = right
+//                right += 1
+//            } else {
+//                right += 1
+//            }
+//            result = max(result, sum)
+//        }
+//        return result
+//    }
+//}
+cd 
