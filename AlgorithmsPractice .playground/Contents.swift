@@ -2267,4 +2267,55 @@ import UIKit
 //        return result
 //    }
 //}
-cd 
+
+//Kadane's algorithm solution
+
+//class Solution {
+//    func maxProfit(_ prices: [Int]) -> Int {
+//        guard !prices.isEmpty else { return 0 }
+//        var minPrice = Int.max
+//        var ans = 0
+//
+//        for price in prices {
+//            minPrice = min(minPrice, price)
+//            print("minPrice", minPrice)
+//            ans = max(ans, price - minPrice)
+//            print("ans", ans)
+//        }
+//
+//        return ans
+//    }
+//}
+
+
+
+//Longest Substring Without Repeating Characters. Sliding window solution
+//
+//
+//
+//
+//class Solution {
+//    func lengthOfLongestSubstring(_ s: String) -> Int {
+//        guard !s.isEmpty else { return 0 }
+//        let array = Array(s)
+//        var collection = Set<Character>()
+//        var result = 0
+//        var left = 0
+//        var right = 0
+//
+//        while right < array.count {
+//            let char1 = array[left]
+//            let char2 = array[right]
+//
+//            if !collection.contains(char2) {
+//                collection.insert(char2)
+//                right += 1
+//                result = max(result, right - left)
+//            } else {
+//                collection.remove(char1)
+//                left += 1
+//            }
+//        }
+//        return result
+//    }
+//}
