@@ -2243,7 +2243,7 @@ import UIKit
 //        return result
 //    }
 //}
-  
+
 //        Two pointers solution
 //
 // 2. class Solution {
@@ -2319,3 +2319,70 @@ import UIKit
 //        return result
 //    }
 //}
+
+// Binary tree
+
+
+class TreeNode {
+    var value: Int
+    var leftChild: TreeNode?
+    var rightChild: TreeNode?
+    
+    init(value: Int, leftChild: TreeNode? = nil, rightChild: TreeNode? = nil) {
+        self.value = value
+        self.leftChild = leftChild
+        self.rightChild = rightChild
+    }
+}
+
+
+
+let rootTree = TreeNode(value: 4)
+rootTree.leftChild = TreeNode(value: 7)
+rootTree.leftChild?.leftChild = TreeNode(value: 6)
+rootTree.leftChild?.rightChild = TreeNode(value: 8)
+
+rootTree.rightChild = TreeNode(value: 10)
+rootTree.rightChild?.leftChild = TreeNode(value: 9)
+rootTree.rightChild?.rightChild = TreeNode(value: 12)
+
+class TreeReverse {
+    
+    var valueArr = [Int]()
+    
+    static func reverseTree(_ node: TreeNode?) -> TreeNode? {
+        guard node != nil else { return nil }
+        
+        let temp = node?.leftChild
+        node?.leftChild = node?.rightChild
+        node?.rightChild = temp
+        
+        reverseTree(node?.leftChild)
+        reverseTree(node?.rightChild)
+        
+        return node
+    }
+    
+    func countValues(_ node: TreeNode?) -> TreeNode? {
+        guard node != nil else { return nil }
+        
+        valueArr.append(node!.value)
+        
+        countValues(node?.rightChild)
+        countValues(node?.leftChild)
+        
+        return node
+    }
+    
+}
+
+let result = TreeReverse.reverseTree(rootTree)
+print(result!.value)
+print(result!.leftChild!.value)
+print(result!.rightChild!.value)
+print(result!.leftChild!.leftChild!.value)
+print(result!.leftChild!.rightChild!.value)
+print(result!.rightChild!.leftChild!.value)
+print(result!.rightChild!.rightChild!.value)
+
+
