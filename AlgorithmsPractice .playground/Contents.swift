@@ -1,7 +1,7 @@
 import UIKit
-
+/*
 // find count of executive 1's in the array
-
+//
 //let array = [1, 2, 3, 1, 2, 1, 1, 1, 1]
 //
 //func returnMaxNum (_ array: [Int]) -> Int {
@@ -20,11 +20,11 @@ import UIKit
 //}
 //
 //print(returnMaxNum(array))
-
-
+//
+//
 // complexity 1 + 1 + n + n + n +1 = O(n)
-
-
+//
+//
 //let array = [1,1,0,1,1,1,2,2,1,1,1,1,1,1]
 //
 //func  findConsecutives(_ arr: [Int]) -> Int {
@@ -44,15 +44,15 @@ import UIKit
 //    return overallCount
 //}
 //print(findConsecutives(array))
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // Find majority elements in the given array
 //
 //let array = [2, 2, 3, 2, 3, 2, 3, 3, 2]
@@ -79,12 +79,12 @@ import UIKit
 //findMajorutyElement(array)
 //
 //print(findMajorutyElement(array))
-
+//
 // conclusion:
 // in order to get majority element in the array, I have to increment counter each time if it's equals to the majorityItem, and decremant counter if it's not. when counter
-
+//
 // Group anagrams
-
+//
 //class Solution {
 //    func groupAnagrams(_ strs: [String]) -> [[String]] {
 //        guard !strs.isEmpty else { return [[""]]}
@@ -132,14 +132,14 @@ import UIKit
 //    }
 //}
 //
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
 // find count of executive 1's in the array
-
+//
 //let arr = [1, 2, 3, 1, 2, 1, 1, 1, 1]
 //
 //func findExecutiveOnes (_ arr:[Int]) -> Int {
@@ -156,19 +156,19 @@ import UIKit
 //    }
 //    return overallCount
 //}
-
+//
 //print(findExecutiveOnes(arr))
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // Find majority element in the given array
-
+//
 //let array = [ 3, 2, 2, 2, 3, 3, 2, 2, 2, 3, 3, 3, 3 ]
 ////            1  1  2  3  2  1  1  2
 //
@@ -191,15 +191,15 @@ import UIKit
 //}
 //
 //print(findMajorityElement(array))
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
 // Given an array if size n, find all elements that appear more than [n/3] times
-
+//
 //let array1 = [3,2,3]
 //let array2 = [1,1,1,3,3,2,2,2]
 //
@@ -224,16 +224,16 @@ import UIKit
 //}
 //
 //print(findElements(array2))
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
 // Given two arrays, write a function to compute their intersection
-
+//
 //let arr = [1,2,2,1]
 //let arr2 = [2,2]
 //
@@ -252,15 +252,15 @@ import UIKit
 //}
 //
 //print(computeIntersection(arr, arr2))
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
 // Given an array of integers, find if the array contains any duplicates
-
+//
 //let arr = [1,2,3,1]
 //let arr2 = [1,2,3,4]
 //let arr3 = [1,1,1,3,3,4,3,2,4,2]
@@ -278,13 +278,13 @@ import UIKit
 //}
 //
 //print(findDuplicates(arr3))
-
-
-
-
-
+//
+//
+//
+//
+//
 // Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the absolute difference between i and j is at most k
-
+//
 //let nums1 = [1,2,3,1]; let k1 = 3 // output: true
 //let nums2 = [1,0,1,1]; let k2 = 1 // output: true
 //let nums3 = [1,2,3,1,2,3]; let k3 = 2 // output: false
@@ -313,10 +313,10 @@ import UIKit
 //}
 //
 //print(duplicatesDist(nums3, k3))
-
-
+//
+//
 // Two strings are anagram
-
+//
 //class Solution {
 //    func isAnagram(_ s: String, _ t: String) -> Bool {
 //        guard !s.isEmpty && !t.isEmpty else { return false }
@@ -335,18 +335,18 @@ import UIKit
 //    }
 //}
 //
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
 // Given a sorted array "array", remove the duplicates in-place such that each element appreat only once and return the new length.
 // Do not allocate extra space fot another array, you must do this by modifying the input array in-place with 0(1) extra memory
-
+//
 //var array = [1,1,2,2,2,3,3,3,3,4,4,4,4,5,6]
-
+//
 //func removeDuplicates() -> Int {
 //    guard !array.isEmpty else {return 0}
 //
@@ -372,17 +372,17 @@ import UIKit
 //}
 //
 //print(array)
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
 // Given a sorted array "array", remove the duplicates in-place such that duplicates appear at most twice and return the new length.
-
-
-
+//
+//
+//
 //var array = [0,0,1,1,1,1,2,3,3]
 //
 //func removeDuplicates(_ arr: inout [Int]) -> Int {
@@ -403,8 +403,8 @@ import UIKit
 //
 //
 //print(removeDuplicates(&array))
-
-
+//
+//
 //func removeDuplicate(_ arr: inout [Int]) -> Int {
 //    guard !arr.isEmpty else {return 0}
 //
@@ -424,9 +424,9 @@ import UIKit
 ////removeDuplicate(&array)
 //
 //print(removeDuplicate(&array))
-
-
-
+//
+//
+//
 //func removeDuplicates(_ arr: inout [Int]) -> Int {
 //    if arr.count  <= 2 {return arr.count}
 //
@@ -442,12 +442,12 @@ import UIKit
 //}
 //
 //print(removeDuplicates(&array))
-
-
-
+//
+//
+//
 //  Given an array "array", write a function to move all 0's to the end of it while maintaining the relative order if the non-zero elements
-
-
+//
+//
 //var array = [0,1,0,3,12]
 //
 //func moveZeros (_ arr: inout [Int]) -> [Int] {
@@ -471,8 +471,8 @@ import UIKit
 //}
 //
 //print(moveZeros(&array))
-
-
+//
+//
 //var array = [3,2,2,3]; let val = 3
 //var array2 = [0,1,2,2,3,3,0,4,2]; let val2 = 2
 //
@@ -494,17 +494,17 @@ import UIKit
 //}
 //
 //print(removeElement(&array2, val2))
-
-
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //let number = [2,3,3,5,15]
 //
 //func fizzBuzz(_ number: Int) {
@@ -526,18 +526,18 @@ import UIKit
 //        }
 //    }
 //}
-
+//
 //print(fizzBuzz(number))
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
 // whrite a func to check if string is palindrome or not
-
+//
 //let polindrome = "bob"
 //let polindrome2 = "A man, a plan, a canal: Panama"
 //
@@ -574,20 +574,20 @@ import UIKit
 //func isAlphaNum (_ char: Character) -> Bool {
 //    return char.isNumber || char.isLetter
 //}
-
+//
 //print(isPolindrome(polindrome2))
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, retrurn -1
-
-
+//
+//
 //let example = "devtechie"   //  return should be 0
 //let example2 = "interctiven"
 //
@@ -620,15 +620,15 @@ import UIKit
 //}
 //
 //print(firstUniqueCharacter(example2))
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
 ///////////////////////////////////////////////////////////////////////////
-
-
+//
+//
 // Construction of Stack data structure
 //
 //struct Stack {
@@ -673,12 +673,12 @@ import UIKit
 //nameStack2.push(6)
 //
 //print(nameStack2)
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
 //
 //struct Stack2 {
 //    private var items: Dictionary<string, Bool> = [:]
@@ -723,16 +723,16 @@ import UIKit
 //
 //print(nameStack2)
 ///////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
 // Given a non-empty string word, you may delete at most one character. Judge whether you can make it a palindtome
-
+//
 //var word = "abcbavb"
 //
 //func isPalindrome(_ string: String) -> Bool {
@@ -762,19 +762,19 @@ import UIKit
 //
 //
 //print(isPalindrome(word))
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // Count and say
-
-
-
+//
+//
+//
 //func countAndSay(_ array: [Int]) -> [Int] {
 //    var arr = array
 //    var count = 1
@@ -862,9 +862,9 @@ import UIKit
 //}
 //
 //print(findNeedle(haystack3, needle3))
-
-
-
+//
+//
+//
 //let haystack = "treello"
 //let needle = "ll"
 //
@@ -903,13 +903,13 @@ import UIKit
 //
 //
 //print(findNeedle(haystack3, needle3))
-
-
-
+//
+//
+//
 // Linked List structure
-
+//
 // Node
-
+//
 //class Node {
 //    var data: Int
 //    var next: Node?
@@ -981,10 +981,10 @@ import UIKit
 //        }
 //        return current
 //    }
-
-
-
-
+//
+//
+//
+//
 //    func delete (key: Int) -> Node? {
 //        if head == nil { return head }
 //        var current = head
@@ -1005,7 +1005,7 @@ import UIKit
 //
 //        return current
 //    }
-
+//
 //    func printList() {
 //        var curr = head
 //        while curr != nil {
@@ -1055,10 +1055,10 @@ import UIKit
 //print("-----------")
 //list.printList()
 //
-
-
+//
+//
 //      Reverse Linked list Practice
-
+//
 //func reverseLinkedList() {
 //    var current = list.head
 //    var previous: Node?
@@ -1076,15 +1076,15 @@ import UIKit
 //reverseLinkedList()
 //print("----------")
 //list.printList()
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
 //  Splice linked lists
-
-
+//
+//
 //func mergeTwoLists (_  list1: Node?, _ list2: Node?) -> Node? {
 //    var list1 = list1; var list2 = list2
 //
@@ -1131,18 +1131,18 @@ import UIKit
 //    print(mergedList?.data)
 //    mergedList = mergedList?.next
 //}
-
-
-
+//
+//
+//
 // Given a linked list, detect if there is a loop/cycle in the list
-
+//
 //Example:
 //input = 1->2->3->4->3
 //Output = true
 //
 //Input = 1->2->3->4
 //Output = false
-
+//
 //func detectLoop(_ list: Node?) -> Bool {
 //    if list == nil { return false}
 //
@@ -1173,8 +1173,8 @@ import UIKit
 //let detect = detectLoop(list)
 //
 //print(detect)
-
-
+//
+//
 //func detectAndCountCycle(_ list: Node?) -> Bool {
 //    if list == nil { return false }
 //
@@ -1212,8 +1212,8 @@ import UIKit
 //let detect = detectAndCountCycle(list)
 //
 //print(detect)
-
-
+//
+//
 //func detectAndCountCycle(_ list: Node?) -> Bool {
 //    if list == nil { return false }
 //
@@ -1237,10 +1237,10 @@ import UIKit
 //    }
 //    return false
 //}
-
-
+//
+//
 // Given a linked list, detect if there is a loop/cycle in thr list, also detect as where the cycle started
-
+//
 //
 //func detectLoopAndCycleStart(_ list: Node?) -> Bool {
 //    if list == nil { return false }
@@ -1299,17 +1299,17 @@ import UIKit
 //
 //         |
 //1  2  3  4  5
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
 // Given a linked list with cycle in it, detect where the cycle starts without counting length of the loop
-
-
+//
+//
 //func detectLoopAndCycleStart(_ list: Node?) -> Bool {
 //    if list == nil { return false }
 //
@@ -1363,8 +1363,8 @@ import UIKit
 //let detect = detectLoopAndCycleStart(list)
 //
 //print(detect)
-
-
+//
+//
 //
 //class Solution {
 //    func mergeTwoLists(_ list1: Node?, _ list2: Node?) -> Node? {
@@ -1394,13 +1394,13 @@ import UIKit
 //    }
 //}
 //
-
-
-
-
-
+//
+//
+//
+//
+//
 // Given a linked list with cycle in it, detect where the cycle starts without counting length of the loop
-
+//
 //
 //func detectCycleStart(_ list: Node?) -> Node? {
 //    if list == nil { return nil }
@@ -1442,9 +1442,9 @@ import UIKit
 //let detect = detectCycleStart(list)
 //
 //print(detect!.data)
-
-
-
+//
+//
+//
 //func duplicateChar(string: String) {
 //    var lowercasedString = string.lowercased()
 //    var dict = [Character: Int]()
@@ -1463,8 +1463,8 @@ import UIKit
 //var word = "Sister Mister"
 //
 //duplicateChar(string: word)
-
-
+//
+//
 //func isAnagram(str1: String, str2: String) -> Bool {
 //
 //    var dic1 = [Character: Int]()
@@ -1485,8 +1485,8 @@ import UIKit
 //var word2 = "gaaa"
 //
 //let anagram = isAnagram(str1: word1, str2: word2)
-
-
+//
+//
 //func permute<C: Collection>(items: C) -> [[C.Iterator.Element]] {
 //    var scratch = Array(items) // This is a scratch space for Heap's algorithm
 //    var result: [[C.Iterator.Element]] = [] // This will accumulate our result
@@ -1517,8 +1517,8 @@ import UIKit
 //let string = "abc"
 //permute(items: string)
 //print(string)
-
-
+//
+//
 //func permuteString(_ str: String) -> [String] {
 //    if str.isEmpty {
 //        return []
@@ -1548,8 +1548,8 @@ import UIKit
 //let inputString = "abc"
 //let permutations = permuteString(inputString)
 //print(permutations)
-
-
+//
+//
 //func permutation(string: String) -> [String] {
 //    let stringArray = Array(string)
 //    var result = [String]()
@@ -1572,8 +1572,8 @@ import UIKit
 //let input = "abc"
 //permutation(string: input)
 //print(permutation(string: input))
-
-
+//
+//
 //func permuteString(_ str: String) -> [String] {
 //    var permutations = [String]()
 //
@@ -1600,8 +1600,8 @@ import UIKit
 //let inputString = "abc"
 //let permutations = permuteString(inputString)
 //print(permutations)
-
-
+//
+//
 //func permuteString(_ str: String) -> [String] {
 //    if str.isEmpty {
 //        return []
@@ -1632,8 +1632,8 @@ import UIKit
 //let inputString = "abc"
 //let permutations = permuteString(inputString)
 //print(permutations)
-
-
+//
+//
 //func permutate(string: String) -> Int {
 //    guard !string.isEmpty else { return 0 }
 //    let stringArray = Array(string)
@@ -1655,7 +1655,7 @@ import UIKit
 //        }
 //    }
 //}
-
+//
 //let randomString = "abc"
 //permutate(string: randomString)
 //print(permutate(string: randomString))
@@ -1682,10 +1682,10 @@ import UIKit
 //        }
 //    }
 //}
-
-
+//
+//
 // Reverse a string in place
-
+//
 //func reverseString(string: inout String) {
 //    guard !string.isEmpty else { return }
 //
@@ -1708,9 +1708,9 @@ import UIKit
 //var string = "love"
 //reverseString(string: &string)
 //print(string)
-
 //
-
+//
+//
 //func hasDuplicate(string: String) -> [String] {
 //    guard !string.isEmpty else {return []}
 //    var dict = [Character: Int]()
@@ -1729,15 +1729,15 @@ import UIKit
 //
 //let myString = "sassy"
 //print(hasDuplicate(string: myString))
-
-
+//
+//
 // Reverse string with recursion
-
+//
 //ds
-
-
+//
+//
 // check if string contains only digits
-
+//
 //func onlyDigits(string: String) -> Bool {
 //    let decimal = CharacterSet.decimalDigits
 //    let charcterSet = CharacterSet(charactersIn: string)
@@ -1746,10 +1746,10 @@ import UIKit
 //}
 //
 //print(onlyDigits(string: "12345a"))
-
-
+//
+//
 // Find Palyndrome String
-
+//
 //func isPalindrome(string: String) -> Bool {
 //    var stringArr = Array(string)
 //    var first = 0
@@ -1771,8 +1771,8 @@ import UIKit
 //let myString = "kazak"
 //
 //print(isPalindrome(string: myString))
-
-
+//
+//
 //func isPalindrome(int: Int) -> Bool {
 //    var stringInt = String(int)
 //    var stringArr = Array(stringInt)
@@ -1791,7 +1791,7 @@ import UIKit
 //
 //let myInt = 3834
 //print(isPalindrome(int: myInt))
-
+//
 //func isPalindrome(int: Int) -> Bool {
 //    if int == 0 {
 //        return false
@@ -1810,10 +1810,10 @@ import UIKit
 //
 //let myNumber = 353
 //print(isPalindrome(int: myNumber))
-
-
+//
+//
 // Find duplicate characters in a given array
-
+//
 //func duplicateCharacters(string: String) -> [String] {
 //    guard !string.isEmpty else { return [] }
 //    var stringArr = Array(string)
@@ -1835,12 +1835,12 @@ import UIKit
 //
 //let myString = "barbara"
 //print(duplicateCharacters(string: myString))
-
-
-
-
+//
+//
+//
+//
 // Count Vowels And Consonants
-
+//
 //func countVowelsAndConsonants(string: String) -> [String: Int] {
 //    guard !string.isEmpty else { return [:] }
 //    let vowels: Array<Character> = ["a", "e", "o", "i", "u", "y"]
@@ -1858,10 +1858,10 @@ import UIKit
 //
 //let myString = "Somethingy"
 //print(countVowelsAndConsonants(string:myString))
-
-
-
-
+//
+//
+//
+//
 //func countVowelsAndConsonants(string: String) -> [String: Int] {
 //    guard !string.isEmpty else { return [:] }
 //
@@ -1884,11 +1884,11 @@ import UIKit
 //// Example usage
 //let inputString = "Hello, World!"
 //let counts = countVowelsAndConsonants(string: inputString)
-
-
-
+//
+//
+//
 // Find longest prefix
-
+//
 //    func longestCommonPrefix(_ strs: [String]) -> String {
 //        guard !strs.isEmpty else { return ""}
 //        if strs.count == 1 { return strs[0]
@@ -1916,7 +1916,7 @@ import UIKit
 //    let myStringArr = ["Dowg", "Dow", "Down"]
 //    print(longestCommonPrefix(myStringArr))
 //
-
+//
 //var exampleArray = [0, 4, 5, 8, 0]
 //
 //func moveZeroes(_ nums: inout [Int]) {
@@ -1933,10 +1933,10 @@ import UIKit
 //   }
 //moveZeroes(&exampleArray)
 //print(exampleArray)
-
-
+//
+//
 // Reverse linked list practice
-
+//
 //public class ListNode {
 //    public var val: Int
 //    public var next: ListNode?
@@ -1974,10 +1974,10 @@ import UIKit
 //}
 //
 //let solution = Solution()
-
-    
+//
+//
 //Top K Frequent Elements
-
+//
 //class Solution {
 //    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
 //        guard !nums.isEmpty else { return [] }
@@ -2003,9 +2003,9 @@ import UIKit
 //        return result
 //    }
 //}
-
-
-
+//
+//
+//
 //Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 //
 //
@@ -2034,10 +2034,10 @@ import UIKit
 //        return result
 //    }
 //}
-
-
+//
+//
 // Bucket sort approach
-
+//
 //class Solution {
 //    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
 //        guard !nums.isEmpty else { return [] }
@@ -2065,14 +2065,14 @@ import UIKit
 //        return result
 //    }
 //}
-
-
-
-
-
-//  Valid Palindrome. 1. brute force. 2. two pointers 
-
-
+//
+//
+//
+//
+//
+//  Valid Palindrome. 1. brute force. 2. two pointers
+//
+//
 //1. class Solution {
 //    func isPalindrome(_ s: String) -> Bool {
 //        let resultString = s.lowercased().filter { $0.isNumber || $0.isLetter }
@@ -2114,8 +2114,8 @@ import UIKit
 //        return true
 //    }
 //}
-
-
+//
+//
 //Three Sum
 //
 //class Solution {
@@ -2162,7 +2162,7 @@ import UIKit
 //        return result
 //    }
 //}
-
+//
 //Container With Most Water
 //You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 //
@@ -2193,10 +2193,10 @@ import UIKit
 //        return result
 //    }
 //}
-
-
+//
+//
 // liniar solution.
-
+//
 //class Solution {
 //    func maxArea(_ height: [Int]) -> Int {
 //        guard !height.isEmpty else { return 0 }
@@ -2219,9 +2219,9 @@ import UIKit
 //        return result
 //    }
 //}
-
-
-
+//
+//
+//
 //Best Time to Buy and Sell Stock
 //Brute force solution
 //
@@ -2243,7 +2243,7 @@ import UIKit
 //        return result
 //    }
 //}
-
+//
 //        Two pointers solution
 //
 // 2. class Solution {
@@ -2267,9 +2267,9 @@ import UIKit
 //        return result
 //    }
 //}
-
+//
 //Kadane's algorithm solution
-
+//
 //class Solution {
 //    func maxProfit(_ prices: [Int]) -> Int {
 //        guard !prices.isEmpty else { return 0 }
@@ -2286,9 +2286,9 @@ import UIKit
 //        return ans
 //    }
 //}
-
-
-
+//
+//
+//
 //Longest Substring Without Repeating Characters. Sliding window solution
 //
 //
@@ -2319,9 +2319,11 @@ import UIKit
 //        return result
 //    }
 //}
-
+//
 // Binary tree
+//
 
+*/
 
 class TreeNode {
     var value: Int
@@ -2361,6 +2363,18 @@ class TreeReverse {
         reverseTree(node?.rightChild)
         
         return node
+    }
+    
+    static func reverseTreeSecond(_ node: TreeNode?) -> TreeNode? {
+        guard let rootNode = node else { return nil }
+        
+        let leftChildNode = reverseTree(rootNode.leftChild)
+        let rightChildNode = reverseTree(rootNode.rightChild)
+        
+        rootNode.rightChild = leftChildNode
+        rootNode.leftChild = rightChildNode
+        
+        return rootNode
     }
     
     func countValues(_ node: TreeNode?) -> TreeNode? {
