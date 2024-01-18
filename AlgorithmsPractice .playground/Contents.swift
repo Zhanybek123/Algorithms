@@ -1,5 +1,5 @@
 import UIKit
-/*
+
 // find count of executive 1's in the array
 //
 //let array = [1, 2, 3, 1, 2, 1, 1, 1, 1]
@@ -1889,34 +1889,34 @@ import UIKit
 //
 // Find longest prefix
 //
-//    func longestCommonPrefix(_ strs: [String]) -> String {
-//        guard !strs.isEmpty else { return ""}
-//        if strs.count == 1 { return strs[0]
-//        }
-//
-//        let first = strs[0]
-//        var result = ""
-//
-//        for i in 0..<first.count - 1 {
-//            // first character
-//            let char = first[first.index(first.startIndex, offsetBy: i)]
-//            for j in 1..<strs.count {
-//                let string = strs[j]
-//                let char2 = string[string.index(string.startIndex, offsetBy: i)]
-//
-//                if char != char2 && first.count != string.count {
-//                    return result
-//                }
-//            }
-//            result.append(char)
-//        }
-//        return result
-//    }
-//
-//    let myStringArr = ["Dowg", "Dow", "Down"]
-//    print(longestCommonPrefix(myStringArr))
-//
-//
+    func longestCommonPrefix(_ strs: [String]) -> String {
+        guard !strs.isEmpty else { return ""}
+        if strs.count == 1 { return strs[0]
+        }
+
+        let first = strs[0]
+        var result = ""
+
+        for i in 0..<first.count - 1 {
+//             first character
+            let char = first[first.index(first.startIndex, offsetBy: i)]
+            for j in 1..<strs.count {
+                let string = strs[j]
+                let char2 = string[string.index(string.startIndex, offsetBy: i)]
+
+                if char != char2 && first.count != string.count {
+                    return result
+                }
+            }
+            result.append(char)
+        }
+        return result
+    }
+
+    let myStringArr = ["Dowg", "Dow", "Down"]
+    print(longestCommonPrefix(myStringArr))
+
+
 //var exampleArray = [0, 4, 5, 8, 0]
 //
 //func moveZeroes(_ nums: inout [Int]) {
@@ -2323,80 +2323,174 @@ import UIKit
 // Binary tree
 //
 
-*/
 
-class TreeNode {
-    var value: Int
-    var leftChild: TreeNode?
-    var rightChild: TreeNode?
+
+//class TreeNode {
+//    var value: Int
+//    var leftChild: TreeNode?
+//    var rightChild: TreeNode?
+//
+//    init(value: Int, leftChild: TreeNode? = nil, rightChild: TreeNode? = nil) {
+//        self.value = value
+//        self.leftChild = leftChild
+//        self.rightChild = rightChild
+//    }
+//}
+//
+//
+//
+//let rootTree = TreeNode(value: 4)
+//rootTree.leftChild = TreeNode(value: 7)
+//rootTree.leftChild?.leftChild = TreeNode(value: 6)
+//rootTree.leftChild?.rightChild = TreeNode(value: 8)
+//
+//rootTree.rightChild = TreeNode(value: 10)
+//rootTree.rightChild?.leftChild = TreeNode(value: 9)
+//rootTree.rightChild?.rightChild = TreeNode(value: 12)
+//
+//class TreeReverse {
+//
+//    var valueArr = [Int]()
     
-    init(value: Int, leftChild: TreeNode? = nil, rightChild: TreeNode? = nil) {
-        self.value = value
-        self.leftChild = leftChild
-        self.rightChild = rightChild
-    }
-}
-
-
-
-let rootTree = TreeNode(value: 4)
-rootTree.leftChild = TreeNode(value: 7)
-rootTree.leftChild?.leftChild = TreeNode(value: 6)
-rootTree.leftChild?.rightChild = TreeNode(value: 8)
-
-rootTree.rightChild = TreeNode(value: 10)
-rootTree.rightChild?.leftChild = TreeNode(value: 9)
-rootTree.rightChild?.rightChild = TreeNode(value: 12)
-
-class TreeReverse {
+//    static func reverseTree(_ node: TreeNode?) -> TreeNode? {
+//        guard node != nil else { return nil }
+//
+//        let temp = node?.leftChild
+//        node?.leftChild = node?.rightChild
+//        node?.rightChild = temp
+//
+//        reverseTree(node?.leftChild)
+//        reverseTree(node?.rightChild)
+//
+//        return node
+//    }
+//
+//    static func reverseTreeSecond(_ node: TreeNode?) -> TreeNode? {
+//        guard let rootNode = node else { return nil }
+//
+//        let leftChildNode = reverseTreeSecond(rootNode.leftChild)
+//        let rightChildNode = reverseTreeSecond(rootNode.rightChild)
+//
+//        rootNode.rightChild = leftChildNode
+//        rootNode.leftChild = rightChildNode
+//
+//        return rootNode
+//    }
+//
+//    static func reverseSecond(_ node: TreeNode?) -> TreeNode? {
+//        guard let rootNode = node else { return nil }
+//
+//        let leftChildNode = reverseThird(rootNode.leftChild)
+//        let rightChildNode = reverseThird(rootNode.rightChild)
+//
+//        rootNode.rightChild = leftChildNode
+//        rootNode.leftChild = rightChildNode
+//
+//        return rootNode
+//
+//    }
+//
+//    static func reverseThird(_ node: TreeNode?) -> TreeNode? {
+//        guard let rootNode = node else { return nil }
+//
+//        let leftChildNode = reverseForth(rootNode.leftChild)
+//        let rightChildNode = reverseForth(rootNode.rightChild)
+//
+//        rootNode.rightChild = leftChildNode
+//        rootNode.leftChild = rightChildNode
+//
+//        return rootNode
+//
+//    }
+//
+//    static func reverseForth(_ node: TreeNode?) -> TreeNode? {
+//        guard let rootNode = node else { return nil }
+//
+//        let leftChildNode = reverseFifth(rootNode.leftChild)
+//        let rightChildNode = reverseFifth(rootNode.rightChild)
+//
+//        rootNode.rightChild = leftChildNode
+//        rootNode.leftChild = rightChildNode
+//
+//        return rootNode
+//
+//    }
+//
+//    static func reverseFifth(_ node: TreeNode?) -> TreeNode? {
+//        guard let rootNode = node else { print("nil"); return nil }
+//
+//        let leftChildNode = reverseForth(rootNode.leftChild)
+//        let rightChildNode = reverseForth(rootNode.rightChild)
+//
+//        rootNode.rightChild = leftChildNode
+//        rootNode.leftChild = rightChildNode
+//
+//        return rootNode
+//    }
     
-    var valueArr = [Int]()
+//    func countValues(_ node: TreeNode?) -> TreeNode? {
+//        guard node != nil else { return nil }
+//
+//        valueArr.append(node!.value)
+//
+//        countValues(node?.rightChild)
+//        countValues(node?.leftChild)
+//
+//        return node
+//    }
     
-    static func reverseTree(_ node: TreeNode?) -> TreeNode? {
-        guard node != nil else { return nil }
-        
-        let temp = node?.leftChild
-        node?.leftChild = node?.rightChild
-        node?.rightChild = temp
-        
-        reverseTree(node?.leftChild)
-        reverseTree(node?.rightChild)
-        
-        return node
-    }
-    
-    static func reverseTreeSecond(_ node: TreeNode?) -> TreeNode? {
-        guard let rootNode = node else { return nil }
-        
-        let leftChildNode = reverseTree(rootNode.leftChild)
-        let rightChildNode = reverseTree(rootNode.rightChild)
-        
-        rootNode.rightChild = leftChildNode
-        rootNode.leftChild = rightChildNode
-        
-        return rootNode
-    }
-    
-    func countValues(_ node: TreeNode?) -> TreeNode? {
-        guard node != nil else { return nil }
-        
-        valueArr.append(node!.value)
-        
-        countValues(node?.rightChild)
-        countValues(node?.leftChild)
-        
-        return node
-    }
-    
-}
+//}
 
-let result = TreeReverse.reverseTree(rootTree)
-print(result!.value)
-print(result!.leftChild!.value)
-print(result!.rightChild!.value)
-print(result!.leftChild!.leftChild!.value)
-print(result!.leftChild!.rightChild!.value)
-print(result!.rightChild!.leftChild!.value)
-print(result!.rightChild!.rightChild!.value)
+//let result = TreeReverse.reverseTreeSecond(rootTree)
+//print(result!.value)
+//print(result!.leftChild!.value)
+//print(result!.rightChild!.value)
+//print(result!.leftChild!.leftChild!.value)
+//print(result!.leftChild!.rightChild!.value)
+//print(result!.rightChild!.leftChild!.value)
+//print(result!.rightChild!.rightChild!.value)
+
+// Bubble sort
+
+
+
+//struct Bobble {
+//    mutating func bubbleSort(array: inout [Int]) {
+//        for i in 0..<array.count {
+//            for j in 0..<array.count - i - 1 {
+//                if array[j] > array[j + 1] {
+//                    let temp = array[j]
+//                    array[j] = array[j + 1]
+//                    array[j + 1] = temp
+//                }
+//            }
+//        }
+//    }
+//}
+//
+//var numArr = [2, 5, 6, 8, 4, 3, 7, 0, 1]
+//var sorter = Bobble()
+//sorter.bubbleSort(array: &numArr) // Pass the array by reference using `&`
+//print(numArr) // The sorted array
+
+
+// MARK: - Contains Duplicate
+/*
+ class Solution {
+ func containsDuplicate(_ nums: [Int]) -> Bool {
+ var dict: Dictionary<Int, Int> = [:]
+ 
+ for num in nums {
+ if let count = dict[num] {
+ if count > 0 {
+ return true
+ }
+ }
+ dict[num, default: 0] += 1
+ }
+ return false
+ }
+ }
+  */
 
 
