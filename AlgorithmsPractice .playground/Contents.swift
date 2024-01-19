@@ -2493,4 +2493,28 @@ import UIKit
  }
   */
 
+// MARK: - Valid Anagram
+/*
+class Solution {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        if s.count != t.count {
+            return false
+        }
+        var dict: Dictionary<Character, Int> = [:]
+
+        for char in s {
+            dict[char, default: 0] += 1
+        }
+
+        for char2 in t {
+            if let count = dict[char2], count >= 1 {
+                dict[char2]! -= 1
+                } else {
+                return false
+                }
+            }
+            return true
+        }
+    }
+*/
 
