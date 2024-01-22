@@ -2518,3 +2518,22 @@ class Solution {
     }
 */
 
+// MARK: -Two Sum
+/*
+ class Solution {
+ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+ var dict: Dictionary<Int, Int> = [:]
+ 
+ for (index, num) in nums.enumerated() {
+ let complement = target - num
+ if let complementIndex = dict[complement] {
+ return [index, complementIndex]
+ }
+ dict[num] = index
+ }
+ return[0]
+ }
+ }
+ */
+
+
