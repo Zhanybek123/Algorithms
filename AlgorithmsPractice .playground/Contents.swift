@@ -2537,3 +2537,23 @@ class Solution {
  */
 
 
+// MARK: -Group Anagrams
+
+//class Solution {
+//    func groupAnagrams(_ strs: [String]) -> [[String]] {
+//        var dict: Dictionary<String, [String]> = [:]
+//
+//        for string in strs {
+//            let orderedString = String(string.sorted())
+//
+//            if var group = dict[orderedString] {
+//                group.append(string)
+//                dict[orderedString] = group
+//            } else {
+//                dict[orderedString] = [string]
+//            }
+//        }
+//        return Array(dict.values)
+//    }
+//}
+
