@@ -2557,3 +2557,63 @@ class Solution {
 //    }
 //}
 
+
+// MARK: -Group Anagram prime number solution
+
+//class Solution {
+//    func groupAnagrams(_ strs: [String]) -> [[String]] {
+//        let primes: [Character: Int] = [
+//            "a": 2, "b": 3, "c": 5, "d": 7, "e": 11, "f": 13, "g": 17, "h": 19, "i": 23,
+//            "j": 29, "k": 31, "l": 37,
+//            "m": 41, "n": 43, "o": 47, "p": 53, "q": 59, "r": 61, "s": 67, "t": 71,
+//            "u": 73, "v": 79, "w": 83, "x": 89,
+//            "y": 97, "z": 101
+//        ]
+//
+//        var dict: Dictionary<Int, [String]> = [:]
+//
+//        for str in strs {
+//            var hash = 1
+//
+//            for char in str {
+//                if let prime = primes[char] {
+//                    hash *= prime
+//                }
+//            }
+//
+//            if var exist = dict[hash] {
+//                exist.append(str)
+//                dict[hash] = exist
+//            } else {
+//                dict[hash] = [str]
+//            }
+//        }
+//        return Array(dict.values)
+//    }
+//}
+//
+// MARK: -Group Anagram ascii value solution
+
+//class Solution {
+//    func groupAnagrams(_ strs: [String]) -> [[String]] {
+//        var dict: Dictionary<[Int], [String]> = [:]
+//
+//        for str in strs {
+//            var count: [Int] = Array(repeating: 0, count: 26)
+//          
+//            for char in str {
+//              let index = Int(char.asciiValue! - Character("a").asciiValue!)
+//              count[index] += 1
+//          }
+//        
+//        if var group = dict[count] {
+//            group.append(str)
+//            dict[count] = group
+//        } else {
+//            dict[count] = [str]
+//        }
+//      }
+//      return Array(dict.values)
+//    }
+//}
+
