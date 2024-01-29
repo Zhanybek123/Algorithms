@@ -2617,3 +2617,32 @@ class Solution {
 //    }
 //}
 
+// MARK: - Top K Frequent Elements
+
+/*
+ class Solution {
+ func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+ guard !nums.isEmpty else { return[] }
+ 
+ var dict: Dictionary<Int, Int> = [:]
+ var result: [Int] = []
+ 
+ for num in nums {
+ dict[num, default: 0] += 1
+ }
+ 
+ var bucket = Array(repeating: [Int](), count:  nums.count + 1)
+ 
+ for (key, value) in dict {
+ bucket[value].append(key)
+ }
+ 
+ for i in stride(from: bucket.count - 1, through: 0, by: -1) {
+ result.append(contentsOf: bucket[i])
+ if result.count == k {break}
+ }
+ 
+ return result
+ }
+ }
+ */
