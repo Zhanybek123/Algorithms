@@ -2646,3 +2646,59 @@ class Solution {
  }
  }
  */
+// MARK: - Product of Array Except Self
+// MARK: - With prefix and postfix
+
+//func productExceptSelf(_ nums: [Int]) -> [Int] {
+//    let n = nums.count
+//    var prefix = Array(repeating: 1, count: n)
+//    var postfix = Array(repeating: 1, count: n)
+//    var answer = Array(repeating: 1, count: n)
+//    
+//    // Calculate prefix products
+//    var leftProduct = 1
+//    for i in 0..<n {
+//        prefix[i] = leftProduct
+//        leftProduct *= nums[i]
+//    }
+//    
+//    // Calculate postfix products
+//    var rightProduct = 1
+//    for i in (0..<n).reversed() {
+//        postfix[i] = rightProduct
+//        rightProduct *= nums[i]
+//    }
+//    
+//    // Calculate answer
+//    for i in 0..<n {
+//        answer[i] = prefix[i] * postfix[i]
+//    }
+//    
+//    return answer
+//}
+//
+//// Example usage:
+//let nums = [1, 2, 3, 4]
+//let result = productExceptSelf(nums)
+//print(result) // Output: [24, 12, 8, 6]
+
+// MARK: - Without prefix and postfix
+//
+//class Solution {
+//    func productExceptSelf(_ nums: [Int]) -> [Int] {
+//    var result = Array(repeating: 1, count: nums.count)
+//    
+//    var temp1 = 1
+//    for i in 0..<nums.count {
+//        result[i] *= temp1
+//        temp1 *= nums[i]
+//    }
+//    
+//    var temp2 = 1
+//    for i in stride(from: nums.count - 1, through: 0, by: -1) {
+//        result[i] *= temp2
+//        temp2 *= nums[i]
+//    }
+//    return result
+//    }
+//}
