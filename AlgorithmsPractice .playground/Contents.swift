@@ -2702,3 +2702,60 @@ class Solution {
 //    return result
 //    }
 //}
+
+// MARK: -Longest Consecutive Sequence
+
+//class Solution {
+//    func longestConsecutive(_ nums: [Int]) -> Int {
+//        guard !nums.isEmpty else { return 0 }
+//        var numSet: Set<Int> = Set(nums)
+//        var longest = 0
+//
+//        for num in nums {
+//            if !numSet.contains(num - 1) {
+//                var length = 0
+//
+//                while numSet.contains(num + length) {
+//                    length += 1
+//                    longest = max(longest, length)
+//                }
+//            }
+//        }
+//        return longest
+//    }
+//}
+
+
+// MARK: - Three sum problem
+/*
+class Solution {
+    func threeSum(_ nums: [Int]) -> [[Int]] {
+        var result = [[Int]]()
+        var sortedNums = nums.sorted()
+
+        for i in 0..<sortedNums.count {
+            if i > 0 && sortedNums[i] == sortedNums[i - 1] {
+                continue
+            }
+            var right = sortedNums.count - 1
+            var left = i + 1
+            while left < right {
+                var found = sortedNums[i] + sortedNums[left] + sortedNums[right]
+                if found > 0 {
+                    right -= 1
+                } else if found < 0 {
+                    left += 1
+                } else {
+                    result.append([sortedNums[i], sortedNums[left], sortedNums[right]])
+                    left += 1
+                    while sortedNums[left] == sortedNums[left - 1] && left < right {
+                        left += 1
+                    }
+                }
+            }
+        }
+
+    return result
+    }
+}
+*/
