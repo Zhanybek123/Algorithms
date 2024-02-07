@@ -2759,3 +2759,30 @@ class Solution {
     }
 }
 */
+
+
+// MARK: - 167. Two Sum II - Input Array Is Sorted
+
+/*
+class Solution {
+    func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
+        var left = 0
+        var right = numbers.count - 1
+
+        while left < right {
+            var found = numbers[left] + numbers[right]
+            if found > target {
+                right -= 1
+            } else if found < target {
+                left += 1
+            }
+            if found == target {
+                return [left + 1, right + 1]
+            }
+        }
+        return [left + 1, right + 1]
+    }
+}
+*/
+
+
