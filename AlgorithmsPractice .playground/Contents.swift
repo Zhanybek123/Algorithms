@@ -2785,4 +2785,24 @@ class Solution {
 }
 */
 
+// MARK: -121. Best Time to Buy and Sell Stock
 
+//class Solution {
+//    func maxProfit(_ prices: [Int]) -> Int {
+//        
+//        var left = 0
+//        var right = 1
+//        var result = 0
+//
+//        while right < prices.count {
+//           result = max(prices[right] - prices[left], result)
+//
+//           if prices[left] > prices[right] {
+//               left = right
+//           }
+//           right += 1
+//        }
+//
+//        return result
+//    }
+//}
