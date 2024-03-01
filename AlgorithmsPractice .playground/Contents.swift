@@ -2806,3 +2806,36 @@ class Solution {
 //        return result
 //    }
 //}
+
+
+// MARK: -Longest Substring Without Repeating Characters
+//
+//class Solution {
+//    func lengthOfLongestSubstring(_ s: String) -> Int {
+//        guard !s.isEmpty else { return 0 }
+//
+//        if s.count == 1 {
+//            return 1
+//        }
+//
+//        var str = Array(s)
+//        var left = 0
+//        var right = 0
+//        var result: Set<Character> = []
+//        var maxNum = 0
+//
+//        while right != str.count {
+//
+//            if !result.contains(str[right]) {
+//                result.insert(str[right])
+//                maxNum = max(maxNum, result.count)
+//                right += 1
+//            } else {
+//                result.remove(str[left])
+//                left += 1
+//            }
+//        }
+//
+//        return maxNum
+//    }
+//}
