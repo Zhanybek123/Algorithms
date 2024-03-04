@@ -2839,3 +2839,36 @@ class Solution {
 //        return maxNum
 //    }
 //}
+
+
+
+// MARK: - Longest Repeating Character Replacement
+
+//class Solution {
+//    func characterReplacement(_ s: String, _ k: Int) -> Int {
+//        var count: [Character: Int] = [:]
+//        var l = 0
+//        var maxFrequency = 0
+//        let chars = Array(s)
+//        var maxLength = 0
+//        
+//        for r in 0..<chars.count {
+//            count[chars[r], default: 0] += 1
+//            maxFrequency = max(maxFrequency, count[chars[r]]!)
+//            
+//            if (r - l + 1) - maxFrequency > k {
+//                count[chars[l]]! -= 1
+//                l += 1
+//            }
+//            
+//            maxLength = max(maxLength, r - l + 1)
+//        }
+//        
+//        return maxLength
+//    }
+//}
+//
+//// Example usage:
+//let solution = Solution()
+//print(solution.characterReplacement("ABAB", 2)) // Output: 4
+//print(solution.characterReplacement("AABABBA", 1)) // Output: 4
