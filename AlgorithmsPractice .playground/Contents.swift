@@ -2872,3 +2872,34 @@ class Solution {
 //let solution = Solution()
 //print(solution.characterReplacement("ABAB", 2)) // Output: 4
 //print(solution.characterReplacement("AABABBA", 1)) // Output: 4
+
+
+// MARK: -Practice
+
+//class Solution {
+//    func characterReplacement(_ s: String, _ k: Int) -> Int {
+//       guard !s.isEmpty else { return 0 }
+//
+//       let arr = Array(s)
+//       var countDict: Dictionary<Character, Int> = [:]
+//       var maxCount = 0
+//       var result = 0
+//       var left = 0
+//
+//       for right in 0..<arr.count {
+//           countDict[arr[right], default: 0] += 1
+//            maxCount = max(maxCount, countDict[arr[right]]!)
+//
+//            if (right - left + 1) - maxCount > k {
+//                countDict[arr[left]]! -= 1
+//                left += 1
+//            }
+//
+//            result = max(result, right - left + 1)
+//
+//       }
+//
+//        return result
+//    }
+//}
+
