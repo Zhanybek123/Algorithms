@@ -2856,7 +2856,7 @@ class Solution {
 //            count[chars[r], default: 0] += 1
 //            maxFrequency = max(maxFrequency, count[chars[r]]!)
 //            
-//            if (r - l + 1) - maxFrequency > k {
+//            if (r - l + 1) - maxFrequency > k { //(r - l + 1) LEGTH OF THE SLIDING WINDOW!
 //                count[chars[l]]! -= 1
 //                l += 1
 //            }
