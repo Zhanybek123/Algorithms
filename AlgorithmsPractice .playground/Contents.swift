@@ -2903,3 +2903,52 @@ class Solution {
 //    }
 //}
 
+
+// MARK: -Minimum Window Substring (HARD!)
+
+//class Solution {
+//    func minWindow(_ s: String, _ t: String) -> String {
+//        guard !s.isEmpty else { return "" }
+//
+//        var window: Dictionary<Character, Int> = [:]
+//        var countS: Dictionary<Character, Int> = [:]
+//
+//        for char in t {
+//            countS[char, default: 0] += 1
+//        }
+//
+//        var left = 0
+//        let sArray = Array(s)
+//        var res = (-1, -1)
+//        var resLen = Int.max
+//        var have = 0
+//        var need = countS.count
+//
+//        for right in 0..<sArray.count {
+//            let char = sArray[right]
+//            window[char, default: 0] += 1
+//            
+//            if let targetCount = countS[char], targetCount == window[char]{
+//                have += 1
+//            }
+//
+//            while have == need {
+//                if (right - left + 1) < resLen {
+//                    res = (left, right)
+//                    resLen = (right - left + 1)
+//                }
+//                window[sArray[left]]! -= 1
+//
+//                if let targetCount = countS[sArray[left]], targetCount > window[sArray[left]]! {
+//                    have -= 1
+//                }
+//                left += 1
+//            }
+//        }
+//    let (l, r) = res
+//    return resLen != Int.max ? String(sArray[l...r]) : ""
+//    }
+//}
+//
+//                // ADOBECODEBANC.   ABC
+//                
