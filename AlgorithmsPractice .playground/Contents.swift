@@ -1889,32 +1889,32 @@ import UIKit
 //
 // Find longest prefix
 //
-    func longestCommonPrefix(_ strs: [String]) -> String {
-        guard !strs.isEmpty else { return ""}
-        if strs.count == 1 { return strs[0]
-        }
-
-        let first = strs[0]
-        var result = ""
-
-        for i in 0..<first.count - 1 {
-//             first character
-            let char = first[first.index(first.startIndex, offsetBy: i)]
-            for j in 1..<strs.count {
-                let string = strs[j]
-                let char2 = string[string.index(string.startIndex, offsetBy: i)]
-
-                if char != char2 && first.count != string.count {
-                    return result
-                }
-            }
-            result.append(char)
-        }
-        return result
-    }
-
-    let myStringArr = ["Dowg", "Dow", "Down"]
-    print(longestCommonPrefix(myStringArr))
+//    func longestCommonPrefix(_ strs: [String]) -> String {
+//        guard !strs.isEmpty else { return ""}
+//        if strs.count == 1 { return strs[0]
+//        }
+//
+//        let first = strs[0]
+//        var result = ""
+//
+//        for i in 0..<first.count - 1 {
+////             first character
+//            let char = first[first.index(first.startIndex, offsetBy: i)]
+//            for j in 1..<strs.count {
+//                let string = strs[j]
+//                let char2 = string[string.index(string.startIndex, offsetBy: i)]
+//
+//                if char != char2 && first.count != string.count {
+//                    return result
+//                }
+//            }
+//            result.append(char)
+//        }
+//        return result
+//    }
+//
+//    let myStringArr = ["Dowg", "Dow", "Down"]
+//    print(longestCommonPrefix(myStringArr))
 
 
 //var exampleArray = [0, 4, 5, 8, 0]
@@ -2952,3 +2952,27 @@ class Solution {
 //
 //                // ADOBECODEBANC.   ABC
 //                
+
+class Codec {
+    func incoded(strs: [String]) -> String {
+        var result = ""
+        for str in strs {
+            result = result + "\(strs.count)#" + str
+        }
+        return result
+    }
+    
+    func decoded(str: String) -> [String] {
+        var result:[String] = []
+        var index = 0
+        
+        while index < str.count {
+            
+        }
+        
+        return result
+    }
+    
+}
+
+// "5#stand6#Sit8#lkjdsf9#lkjfs6#kjfahdsf"
