@@ -2953,26 +2953,79 @@ class Solution {
 //                // ADOBECODEBANC.   ABC
 //                
 
-class Codec {
-    func incoded(strs: [String]) -> String {
-        var result = ""
-        for str in strs {
-            result = result + "\(strs.count)#" + str
-        }
-        return result
-    }
-    
-    func decoded(str: String) -> [String] {
-        var result:[String] = []
-        var index = 0
-        
-        while index < str.count {
-            
-        }
-        
-        return result
-    }
-    
-}
+//class Codec {
+//    func incoded(strs: [String]) -> String {
+//        var result = ""
+//        for str in strs {
+//            result = result + "\(strs.count)#" + str
+//        }
+//        return result
+//    }
+//    
+//    func decoded(str: String) -> [String] {
+//        var result:[String] = []
+//        var index = 0
+//        
+//        while index < str.count {
+//            
+//        }
+//        
+//        return result
+//    }
+//    
+//}
 
 // "5#stand6#Sit8#lkjdsf9#lkjfs6#kjfahdsf"
+
+
+
+// MARK: -Merge sort practice. Sort array of Int in assending order.
+//
+//class Solution {
+//    func sortArray(_ nums: [Int]) -> [Int] {
+//        guard nums.count > 1 else { return nums }
+//
+//        let mid = nums.count / 2
+//        let left = sortArray(Array(nums[0..<mid]))
+//        let right = sortArray(Array(nums[mid..<nums.count]))
+//
+//        return merge(left, right)
+//    }
+//
+//    private func merge(_ left: [Int], _ right: [Int]) -> [Int] {
+//        var merged: [Int] = []
+//        var i = 0, j = 0
+//
+//        while i < left.count && j < right.count {
+//            if left[i] < right[j] {
+//                merged.append(left[i])
+//                i += 1
+//            } else {
+//                merged.append(right[j])
+//                j += 1
+//            }
+//        }
+//
+//        while i < left.count {
+//            merged.append(left[i])
+//            i += 1
+//        }
+//
+//        while j < right.count {
+//            merged.append(right[j])
+//            j += 1
+//        }
+//
+//        return merged
+//    }
+//}
+//
+//// Test cases
+//let solution = Solution()
+//let input1 = [3, 2, 1, 4, 5]
+//let output1 = solution.sortArray(input1)
+//print("Sorted array: \(output1)")
+//
+//let input2 = [2, 3, 1]
+//let output2 = solution.sortArray(input2)
+//print("Sorted array: \(output2)")
