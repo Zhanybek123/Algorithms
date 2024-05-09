@@ -2953,30 +2953,51 @@ class Solution {
 //                // ADOBECODEBANC.   ABC
 //                
 
-//class Codec {
-//    func incoded(strs: [String]) -> String {
-//        var result = ""
-//        for str in strs {
-//            result = result + "\(strs.count)#" + str
-//        }
-//        return result
-//    }
-//    
-//    func decoded(str: String) -> [String] {
-//        var result:[String] = []
-//        var index = 0
-//        
-//        while index < str.count {
-//            
-//        }
-//        
-//        return result
-//    }
-//    
-//}
+// MARK: -Encode and Decode
+
+class Codec {
+    func encoded(_ strs: [String]) -> String {
+        var result = ""
+        for str in strs {
+            result = result + "\(str.count)#" + str
+        }
+        return result
+    }
+    
+    func decoded(str: String) -> [String] {
+        var result:[String] = []
+        var i = 0
+        let strArray = Array(str)
+        
+        while i < str.count {
+            var j = i
+            while strArray[j] != "#" {
+                j += 1
+            }
+            let length = Int(String(strArray[i..<j]))!
+            let start = j + 1
+            let end = j + length
+            let word = strArray[start..<end]
+            result.append(String(word))
+            i = end + 1
+        }
+        
+        return result
+    }
+    
+}
+
+let solution = Codec()
+let encoded = solution.encoded(["abc", "defg"])
+print(encoded)
+
+print(solution.decoded(str: "3#abc4#defg"))
 
 // "5#stand6#Sit8#lkjdsf9#lkjfs6#kjfahdsf"
 
+                
+                
+                
 
 
 // MARK: -Merge sort practice. Sort array of Int in assending order.
