@@ -3054,17 +3054,48 @@ class Solution {
 
 // MARK: -Valid Parentheses
 
+//class Solution {
+//    func isValid(_ s: String) -> Bool {
+//    var stack: [Character] = []
+//    let mapping: [Character: Character] = [")": "(", "}": "{", "]": "["]
+//
+//    for char in s {
+//        if let openBracket = mapping[char], let last = stack.last, openBracket != last {
+////            "("
+//            return false
+//        } else {
+//            stack.append(char)
+//        }
+//    }
+//
+//    return true
+//    }
+//}
+//    
+//
+//let s = "()[]{}"
+//
+////
+///
+
+
+// MARK: -Valid Parentheses Practice
+
 class Solution {
     func isValid(_ s: String) -> Bool {
-    var stack: [Character] = []
-    let mapping: [Character: Character] = [")": "(", "}": "{", "]": "["]
+        var stack: [Character] = []
+        let mapping: [Character: Character] = [")": "(", "}": "{", "]": "["]
+        
+        for char in s {
+            //  "(" ")"
+            if let openBracket = mapping[char] {
+                if stack.isEmpty || openBracket != stack.last {return false}
 
-    for char in s {
-        if char == mapping.values(char) {
-            
+                stack.removeLast()
+            } else {
+                stack.append(char)
+            }
         }
-    }
-
-    return stack.isEmpty
+        return stack.isEmpty
     }
 }
