@@ -3081,21 +3081,43 @@ class Solution {
 
 // MARK: -Valid Parentheses Practice
 
-class Solution {
-    func isValid(_ s: String) -> Bool {
-        var stack: [Character] = []
-        let mapping: [Character: Character] = [")": "(", "}": "{", "]": "["]
-        
-        for char in s {
-            //  "(" ")"
-            if let openBracket = mapping[char] {
-                if stack.isEmpty || openBracket != stack.last {return false}
+//class Solution {
+//    func isValid(_ s: String) -> Bool {
+//        var stack: [Character] = []
+//        let mapping: [Character: Character] = [")": "(", "}": "{", "]": "["]
+//        
+//        for char in s {
+//            //  "(" ")"
+//            if let openBracket = mapping[char] {
+//                if stack.isEmpty || openBracket != stack.last {return false}
+//
+//                stack.removeLast()
+//            } else {
+//                stack.append(char)
+//            }
+//        }
+//        return stack.isEmpty
+//    }
+//}
 
-                stack.removeLast()
+
+// MARK: -Binary search practice
+
+class Solution {
+    func findMin(_ nums: [Int]) -> Int {
+        var left = 0
+        var right = nums.count - 1
+
+        while left < right {
+            let mid = (right + left) / 2
+
+            if nums[mid] > nums[right] {
+                left += 1
             } else {
-                stack.append(char)
+                right -= 1
             }
         }
-        return stack.isEmpty
+
+        return nums[left]
     }
 }
