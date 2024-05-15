@@ -3103,21 +3103,59 @@ class Solution {
 
 // MARK: -Binary search practice
 
+//class Solution {
+//    func findMin(_ nums: [Int]) -> Int {
+//        var left = 0
+//        var right = nums.count - 1
+//
+//        while left < right {
+//            let mid = (right + left) / 2
+//
+//            if nums[mid] > nums[right] {
+//                left += 1
+//            } else {
+//                right -= 1
+//            }
+//        }
+//
+//        return nums[left]
+//    }
+//}
+
+// MARK: -Binary search practice
+
 class Solution {
-    func findMin(_ nums: [Int]) -> Int {
+    func search(_ nums: [Int], _ target: Int) -> Int {
+        guard nums.count > 1 else {
+            return nums.isEmpty || nums[0] != target ? -1 : 0
+        }
+
         var left = 0
         var right = nums.count - 1
 
-        while left < right {
-            let mid = (right + left) / 2
+        while left <= right {
+            let mid = left + (right - left) / 2
+            if nums[mid] == target {
+                return mid
+            }
 
-            if nums[mid] > nums[right] {
-                left += 1
-            } else {
-                right -= 1
+            // Determine if the left half is sorted
+            if nums[left] <= nums[mid] {
+                // Check if target is in the left half
+                if nums[left] <= target && target < nums[mid] {
+                    right = mid - 1
+                } else {
+                    left = mid + 1
+                }
+            } else { // Otherwise, the right half must be sorted
+                // Check if target is in the right half
+                if nums[mid] < target && target <= nums[right] {
+                    left = mid + 1
+                } else {
+                    right = mid - 1
+                }
             }
         }
-
-        return nums[left]
+        return -1
     }
 }
