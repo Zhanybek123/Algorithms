@@ -3124,32 +3124,64 @@ class Solution {
 
 // MARK: -Binary search practice
 
+//class Solution {
+//    func search(_ nums: [Int], _ target: Int) -> Int {
+//        guard nums.count > 1 else {
+//            return nums.isEmpty || nums[0] != target ? -1 : 0
+//        }
+//
+//        var left = 0
+//        var right = nums.count - 1
+//
+//        while left <= right {
+//            let mid = left + (right - left) / 2
+//            if nums[mid] == target {
+//                return mid
+//            }
+//
+//            // Determine if the left half is sorted
+//            if nums[left] <= nums[mid] {
+//                // Check if target is in the left half
+//                if nums[left] <= target && target < nums[mid] {
+//                    right = mid - 1
+//                } else {
+//                    left = mid + 1
+//                }
+//            } else { // Otherwise, the right half must be sorted
+//                // Check if target is in the right half
+//                if nums[mid] < target && target <= nums[right] {
+//                    left = mid + 1
+//                } else {
+//                    right = mid - 1
+//                }
+//            }
+//        }
+//        return -1
+//    }
+//}
+
+// MARK: -Binary search practice
+
 class Solution {
     func search(_ nums: [Int], _ target: Int) -> Int {
-        guard nums.count > 1 else {
-            return nums.isEmpty || nums[0] != target ? -1 : 0
-        }
 
         var left = 0
         var right = nums.count - 1
 
         while left <= right {
-            let mid = left + (right - left) / 2
+            var mid = left + (right - left) / 2
             if nums[mid] == target {
                 return mid
             }
-
-            // Determine if the left half is sorted
+            print("left: \(left), mid: \(mid), right: \(right),nums[left]: \(nums[left]), nums[mid]: \(nums[mid]), nums[right]: \(nums[right])")
             if nums[left] <= nums[mid] {
-                // Check if target is in the left half
-                if nums[left] <= target && target < nums[mid] {
+                if nums[left] <= target, nums[mid] > target {
                     right = mid - 1
                 } else {
                     left = mid + 1
                 }
-            } else { // Otherwise, the right half must be sorted
-                // Check if target is in the right half
-                if nums[mid] < target && target <= nums[right] {
+            } else {
+                if nums[mid] < target, nums[right] >= target {
                     left = mid + 1
                 } else {
                     right = mid - 1
