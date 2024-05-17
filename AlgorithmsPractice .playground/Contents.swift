@@ -3195,19 +3195,32 @@ class Solution {
 
 // MARK: -Reverce Linked list practice. Practice
 
-class Solution {
-    func reverseList(_ head: ListNode?) -> ListNode? {
-        var headList = head
-        var prev: ListNode? = nil
-        var next: ListNode? = nil
+//class Solution {
+//    func reverseList(_ head: ListNode?) -> ListNode? {
+//        var headList = head
+//        var prev: ListNode? = nil
+//        var next: ListNode? = nil
+//
+//        while headList != nil {
+//            // var current = ListNode?
+//            next = headList?.next
+//            headList?.next = prev
+//            prev = headList
+//            headList = next
+//        }
+//        return prev
+//    }
+//}
 
-        while headList != nil {
-            // var current = ListNode?
-            next = headList?.next
-            headList?.next = prev
-            prev = headList
-            headList = next
-        }
-        return prev
-    }
-}
+// MARK: -Reverse Linked list Recursion
+//class Solution {
+//    func reverseList(_ head: ListNode?) -> ListNode? {
+//        guard head != nil && head?.next != nil else {return head}
+//        
+//        let newHead = reverseList(head?.next)
+//        head?.next?.next = head
+//        head?.next = nil
+//
+//        return newHead
+//    }
+//}
