@@ -919,14 +919,14 @@ import UIKit
 //    }
 //}
 //
-//extension LinkedList: CustomStringConvertible {
-//    public var description: String {
-//        guard let head = head else {
-//           return "List is empty"
-//        }
-//        return String(describing: head)
-//    }
-//}
+extension LinkedList: CustomStringConvertible {
+    public var description: String {
+        guard let head = head else {
+           return "List is empty"
+        }
+        return String(describing: head)
+    }
+}
 //
 //class LinkedList {
 //    var head: Node?
@@ -3162,32 +3162,52 @@ class Solution {
 
 // MARK: -Binary search practice
 
+//class Solution {
+//    func search(_ nums: [Int], _ target: Int) -> Int {
+//
+//        var left = 0
+//        var right = nums.count - 1
+//
+//        while left <= right {
+//            var mid = left + (right - left) / 2
+//            if nums[mid] == target {
+//                return mid
+//            }
+//            print("left: \(left), mid: \(mid), right: \(right),nums[left]: \(nums[left]), nums[mid]: \(nums[mid]), nums[right]: \(nums[right])")
+//            if nums[left] <= nums[mid] {
+//                if nums[left] <= target, nums[mid] > target {
+//                    right = mid - 1
+//                } else {
+//                    left = mid + 1
+//                }
+//            } else {
+//                if nums[mid] < target, nums[right] >= target {
+//                    left = mid + 1
+//                } else {
+//                    right = mid - 1
+//                }
+//            }
+//        }
+//        return -1
+//    }
+//}
+
+
+// MARK: -Reverce Linked list practice. Practice
+
 class Solution {
-    func search(_ nums: [Int], _ target: Int) -> Int {
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var headList = head
+        var prev: ListNode? = nil
+        var next: ListNode? = nil
 
-        var left = 0
-        var right = nums.count - 1
-
-        while left <= right {
-            var mid = left + (right - left) / 2
-            if nums[mid] == target {
-                return mid
-            }
-            print("left: \(left), mid: \(mid), right: \(right),nums[left]: \(nums[left]), nums[mid]: \(nums[mid]), nums[right]: \(nums[right])")
-            if nums[left] <= nums[mid] {
-                if nums[left] <= target, nums[mid] > target {
-                    right = mid - 1
-                } else {
-                    left = mid + 1
-                }
-            } else {
-                if nums[mid] < target, nums[right] >= target {
-                    left = mid + 1
-                } else {
-                    right = mid - 1
-                }
-            }
+        while headList != nil {
+            // var current = ListNode?
+            next = headList?.next
+            headList?.next = prev
+            prev = headList
+            headList = next
         }
-        return -1
+        return prev
     }
 }
