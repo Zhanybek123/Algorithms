@@ -3224,3 +3224,44 @@ class Solution {
 //        return newHead
 //    }
 //}
+
+// MARK: -Merge two linked lists into one
+
+//class Solution {
+//       func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
+//           let head = ListNode(0)
+//           var result = head
+//           var firstL = list1
+//           var secondL = list2
+//
+//           while firstL != nil && secondL != nil {
+//               if let firstVal = firstL?.val, let secondVal = secondL?.val {
+//                   if firstVal < secondVal {
+//                       result.next = firstL
+//                       firstL = firstL?.next
+//                   } else {
+//                       result.next = secondL
+//                       secondL = secondL?.next
+//                   }
+//                   result = result.next!
+//                   print(result.val)
+//               }
+//           }
+//
+//           if firstL != nil {
+//               result.next = firstL
+//           } else if secondL != nil {
+//               result.next = secondL
+//           }
+//           return head.next
+//       }
+//   }
+//   /*
+//       1 -> 2 -> 4
+//       1 -> 3 -> 4
+//
+//       1 -> 2 -> 4
+//       1 -> 3 -> 4 -> 5 -> 6
+//
+//   */
+
