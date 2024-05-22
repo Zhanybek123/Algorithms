@@ -3265,6 +3265,43 @@ class Solution {
 //
 //   */
 
+// MARK: -Reorder List 
+
+
+//class Solution {
+//    func reorderList(_ head: ListNode?) {
+//        var slow = head
+//        var fast = head
+//
+//        while fast?.next != nil && slow?.next != nil {
+//            slow = slow?.next
+//            fast = fast?.next?.next
+//        }
+//
+//        var curr = slow
+//        var prev: ListNode? = nil
+//        var temp: ListNode? = nil
+//        while curr != nil {
+//            temp = curr?.next
+//            curr?.next = prev
+//            prev = curr
+//            curr = temp
+//        }
+//
+//        var first = head
+//        var second = prev
+//        while second?.next != nil {
+//            var tempFirst = first?.next
+//            var tempSecond = second?.next
+//            
+//            first?.next = second
+//            first = tempFirst
+//
+//            second?.next = first
+//            second = tempSecond
+//        }
+//    }
+//}
 
 // MARK: -Remove Nth Node From End of List (My solution)
 
