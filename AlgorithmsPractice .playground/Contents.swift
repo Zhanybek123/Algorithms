@@ -3265,3 +3265,34 @@ class Solution {
 //
 //   */
 
+
+// MARK: -Remove Nth Node From End of List (My solution)
+
+//class Solution {
+//    func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
+//        if head == nil {
+//            return nil
+//        }
+//        var list = head
+//        var count = 0
+//
+//        while list != nil {
+//            print(list?.val)
+//            count += 1
+//            list = list?.next
+//        }
+//        print("count", count)
+//        if n == count {
+//            return head?.next
+//        }
+//
+//        var headStart = head
+//        for _ in 0..<(count - n - 1) {
+//            print(("count - n - 1", count - n - 1))
+//            headStart = headStart?.next
+//        }
+//        headStart?.next = headStart?.next?.next
+//        return head
+//
+//    }
+//}
