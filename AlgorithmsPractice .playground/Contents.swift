@@ -3265,7 +3265,7 @@ class Solution {
 //
 //   */
 
-// MARK: -Reorder List 
+// MARK: -Reorder List
 
 
 //class Solution {
@@ -3331,5 +3331,32 @@ class Solution {
 //        headStart?.next = headStart?.next?.next
 //        return head
 //
+//    }
+//}
+
+// MARK: -Remove Nth Node From End of List (Practice)
+
+//class Solution {
+//    func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
+//        guard head?.next != nil else { return nil }
+//
+//        let dummy = ListNode(0, head)
+//        var leftList: ListNode? = dummy
+//        var rightList = head
+//        var count = 0
+//
+//        while count < n {
+//            rightList = rightList?.next
+//            count += 1
+//        }
+//
+//        while rightList != nil {
+//            leftList = leftList?.next
+//            rightList = rightList?.next
+//        }
+//
+//        leftList?.next = leftList?.next?.next
+//
+//        return dummy.next
 //    }
 //}
