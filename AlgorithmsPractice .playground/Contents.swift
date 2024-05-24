@@ -3360,3 +3360,21 @@ class Solution {
 //        return dummy.next
 //    }
 //}
+
+// Linked List Cycle
+
+//class Solution {
+//    func hasCycle(_ head: ListNode?) -> Bool {
+//        var left = head
+//        var right = head
+//
+//        while right != nil, right?.next != nil {
+//            left = left?.next
+//            right = right?.next?.next
+//            if left === right {
+//                return true
+//            }
+//        }
+//        return false
+//    }
+//}
