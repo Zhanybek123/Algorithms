@@ -3378,3 +3378,89 @@ class Solution {
 //        return false
 //    }
 //}
+
+
+// Merge k Sorted Lists (Introduction)
+
+//class Solution {
+//    func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
+//        guard !lists.isEmpty else {
+//            return nil
+//        }
+//
+//        var lists = lists
+//
+//        while lists.count > 1 {
+//            var mergedLists: [ListNode?] = []
+//
+//            for i in stride(from: 0, to: lists.count, by: 2) {
+//                let l1 = lists[i]
+//                let l2 = (i + 1) < lists.count ? lists[i + 1] : nil
+//                mergedLists.append(mergeList(l1, l2))
+//            }
+//            lists = mergedLists
+//        }
+//
+//        return lists[0]
+//    }
+//
+//    private func mergeList(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+//        let dummy = ListNode()
+//        var tail = dummy
+//        var l1 = l1
+//        var l2 = l2
+//
+//        while l1 != nil && l2 != nil {
+//            if let val1 = l1?.val, let val2 = l2?.val {
+//                if val1 < val2 {
+//                    tail.next = l1
+//                    l1 = l1?.next
+//                } else {
+//                    tail.next = l2
+//                    l2 = l2?.next
+//                }
+//            }
+//            tail = tail.next!
+//        }
+//
+//        if l1 != nil {
+//            tail.next = l1
+//        }
+//
+//        if l2 != nil {
+//            tail.next = l2
+//        }
+//
+//        return dummy.next
+//    }
+//}
+//
+//// Helper function to create a linked list from an array
+//func createLinkedList(_ elements: [Int]) -> ListNode? {
+//    guard !elements.isEmpty else { return nil }
+//    let head = ListNode(elements[0])
+//    var current = head
+//    for value in elements.dropFirst() {
+//        current.next = ListNode(value)
+//        current = current.next!
+//    }
+//    return head
+//}
+//
+//// Example usage
+//let list1 = createLinkedList([1, 4, 5])
+//let list2 = createLinkedList([1, 3, 4])
+//let list3 = createLinkedList([2, 6])
+//let lists = [list1, list2, list3]
+//
+//let solution = Solution()
+//if let mergedList = solution.mergeKLists(lists) {
+//    var current: ListNode? = mergedList
+//    while current != nil {
+//        print(current!.val, terminator: " ")
+//        current = current!.next
+//    }
+//    // Output: 1 1 2 3 4 4 5 6
+//} else {
+//    print("The merged list is empty.")
+//}
