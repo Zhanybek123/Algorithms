@@ -3464,3 +3464,49 @@ class Solution {
 //} else {
 //    print("The merged list is empty.")
 //}
+
+// Merge k Sorted Lists (Practice)
+
+//class Solution {
+//    func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
+//        var lists = lists
+//
+//        while lists.count > 1 {
+//            var tempArray: [ListNode?] = []
+//            for i in stride(from: 0, to: lists.count, by: 2) {
+//                let lh = lists[i]
+//                let rh = (i + 1) < lists.count ? lists[i + 1] : nil
+//                tempArray.append(mergeList(lh, rh))
+//            }
+//            lists = tempArray
+//        }
+//        return lists.first ?? nil
+//    }
+//
+//    private func mergeList(_ lh: ListNode?, _ rh: ListNode?) -> ListNode? {
+//        let dummy = ListNode(0)
+//        var tail = dummy
+//        var lh = lh
+//        var rh = rh
+//
+//        while lh != nil, rh != nil {
+//            if let val1 = lh?.val, let val2 = rh?.val {
+//                if val1 < val2 {
+//                    tail.next = lh
+//                    lh = lh?.next
+//                } else {
+//                    tail.next = rh
+//                    rh = rh?.next
+//                }
+//            }
+//            tail = tail.next!
+//        }
+//
+//        if lh != nil {
+//            tail.next = lh
+//        } else if rh != nil {
+//            tail.next = rh
+//        }
+//        return dummy.next
+//    }
+//}
