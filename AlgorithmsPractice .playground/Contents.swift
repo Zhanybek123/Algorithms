@@ -3510,3 +3510,25 @@ class Solution {
 //        return dummy.next
 //    }
 //}
+
+
+// Invert Binary Tree
+
+//class Solution {
+//    func invertTree(_ root: TreeNode?) -> TreeNode? {
+//        guard root != nil else {
+//            print("What")
+//            return nil
+//        }
+//        
+//        var temp: TreeNode? = TreeNode()
+//        temp = root?.right
+//        root?.right = root?.left
+//        root?.left = temp
+//        print(root)
+//        invertTree(root?.left)
+//        invertTree(root?.right)
+//
+//        return root
+//    }
+//}
