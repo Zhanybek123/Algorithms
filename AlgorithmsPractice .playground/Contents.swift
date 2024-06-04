@@ -3571,3 +3571,25 @@ class Solution {
 //        
 //    }
 //}
+
+
+// MARK: -Invert tree (Practice)
+
+//class Solution {
+//    func invertTree(_ root: TreeNode?) -> TreeNode? {
+//        return invert(root)
+//    }
+//
+//    func invert(_ root: TreeNode?) -> TreeNode? {
+//        guard root != nil else { return nil }
+//
+//        var temp: TreeNode? = TreeNode(0)
+//        temp = root?.left
+//        root?.left = root?.right
+//        root?.right = temp
+//        invert(root?.left)
+//        invert(root?.right)
+//
+//        return root
+//    }
+//}
