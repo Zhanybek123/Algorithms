@@ -3593,3 +3593,18 @@ class Solution {
 //        return root
 //    }
 //}
+
+
+//MARK: -Maximum Depth of Binary Tree
+
+//class Solution {
+//    func maxDepth(_ root: TreeNode?) -> Int {
+//        guard root != nil else {return 0}
+//
+//        let left = maxDepth(root?.left)
+//        let right = maxDepth(root?.right)
+//
+//        return max(left, right) + 1
+//    }
+//}
+
