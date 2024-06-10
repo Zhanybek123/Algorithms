@@ -3648,3 +3648,21 @@ class Solution {
 //        return isSameTree(root1?.left, root2?.left) && isSameTree(root1?.right, root2?.right)
 //    }
 //}
+
+// MARK: -Lowest Common Ancestor (LCA) of a Binary Search Tree (BST)
+
+//
+//class Solution {
+//    func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+//        var root = root
+//        while root != nil {
+//            guard let currentNode = root else {return nil}
+//            guard  let pVal = p?.val, let qVal = q?.val else {return nil}
+//            if qVal < currentNode.val && pVal < currentNode.val {
+//                root = currentNode.left
+//            } else if qVal > currentNode.val && pVal > currentNode.val {
+//                } else {return root}
+//        }
+//        return nil
+//    }
+//}
