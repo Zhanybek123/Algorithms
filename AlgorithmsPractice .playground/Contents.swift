@@ -3666,3 +3666,37 @@ class Solution {
 //        return nil
 //    }
 //}
+
+
+
+// MARK: -Binary Tree Level Order Traversal
+
+//class Solution {
+//    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+//        var result = [[Int]]()
+//        guard let root = root else { return result }
+//        
+//        var queue = [root]
+//        
+//        while !queue.isEmpty {
+//            var level = [Int]()
+//            let size = queue.count
+//            
+//            for _ in 0..<size {
+//                let node = queue.removeFirst()
+//                level.append(node.val)
+//                
+//                if let left = node.left {
+//                    queue.append(left)
+//                }
+//                if let right = node.right {
+//                    queue.append(right)
+//                }
+//            }
+//            
+//            result.append(level)
+//        }
+//        
+//        return result
+//    }
+//}
