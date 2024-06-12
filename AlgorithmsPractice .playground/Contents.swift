@@ -3700,3 +3700,34 @@ class Solution {
 //        return result
 //    }
 //}
+
+
+// MARK: -Binary Tree Level Order Traversal (Pracrice using Breadth First Search)
+
+//
+//class Solution {
+//    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+//        guard let root = root else { return [] }
+//        var result = [[Int]]()
+//
+//        var queue = [root]
+//
+//        while !queue.isEmpty {
+//            var level: [Int] = []
+//
+//            for _ in 0..<queue.count {
+//                let node = queue.removeFirst()
+//                level.append(node.val)
+//
+//                if let left = node.left {
+//                    queue.append(left)
+//                }
+//                if let right = node.right {
+//                    queue.append(right)
+//                }
+//            }
+//            result.append(level)
+//        }
+//        return result
+//    }
+//}
