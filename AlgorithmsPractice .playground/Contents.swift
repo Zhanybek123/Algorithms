@@ -3731,3 +3731,30 @@ class Solution {
 //        return result
 //    }
 //}
+
+
+// Validate Binary Search Tree
+
+//
+//class Solution {
+//    func isValidBST(_ root: TreeNode?) -> Bool {
+//        return isValidBST(root, lower: nil, upper: nil)
+//    }
+//    
+//    private func isValidBST(_ node: TreeNode?, lower: Int?, upper: Int?) -> Bool {
+//        guard let node = node else {
+//            return true
+//        }
+//        
+//        if let lower = lower, node.val <= lower {
+//            return false
+//        }
+//        
+//        if let upper = upper, node.val >= upper {
+//            return false
+//        }
+//        
+//        return isValidBST(node.left, lower: lower, upper: node.val) &&
+//               isValidBST(node.right, lower: node.val, upper: upper)
+//    }
+//}
