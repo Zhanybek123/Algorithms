@@ -3758,3 +3758,23 @@ class Solution {
 //               isValidBST(node.right, lower: node.val, upper: upper)
 //    }
 //}
+
+
+// MARK: -Validate Binary Search Tree. Depth First Searh (Pracrice)
+
+//
+//class Solution {
+//    func isValidBST(_ root: TreeNode?) -> Bool {
+//        isValid(root, nil, nil)
+//    }
+//    private func isValid(_ root: TreeNode?, _ min: Int?, _ max: Int?) -> Bool {
+//        guard let root = root else { return true }
+//
+//        if let min = min, min >= root.val { return false }
+//        if let max = max, max <= root.val { return false }
+//
+//        return isValid(root.left, min, root.val) && isValid(root.right, root.val, max)
+//    }
+//}
+
+
