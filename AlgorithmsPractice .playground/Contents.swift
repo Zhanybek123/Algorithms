@@ -3778,3 +3778,29 @@ class Solution {
 //}
 
 
+//MARK: Kth Smallest Element in a BST
+
+//class Solution {
+//    func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+//        var k = k
+//        var result: Int?
+//
+//        func inorder(_ node: TreeNode?) {
+//            guard let node = node else { return }
+//
+//            inorder(node.left)
+//            
+//            k -= 1
+//            if k == 0 {
+//                result = node.val
+//                return
+//            }
+//            
+//            inorder(node.right)
+//        }
+//
+//        inorder(root)
+//        return result ?? -1
+//    }
+//}
+//
