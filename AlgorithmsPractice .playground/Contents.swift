@@ -3804,3 +3804,33 @@ class Solution {
 //    }
 //}
 //
+
+
+
+//MARK: -Kth Smallest Element in a BST(Pracrice, Recursion)
+
+//class Solution {
+//    func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+//        var k = k
+//        var result = 0
+//        var root = root
+//
+//        func findK(_ root: TreeNode?) {
+//            print(root?.val ?? "nil")
+//            guard let root = root else { return }
+//
+//            findK(root.left)
+//
+//            k -= 1
+//            if k == 0 {
+//                print(root.val)
+//                 result = root.val
+//                 return
+//            }
+//            findK(root.right)
+//        }
+//
+//        findK(root)
+//        return result
+//    }
+//}
