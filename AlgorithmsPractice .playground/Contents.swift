@@ -3834,3 +3834,30 @@ class Solution {
 //        return result
 //    }
 //}
+
+
+// MARK: -Kth smallest element in BST (practice not a Recursive approach)
+
+
+//class Solution {
+//    func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+//        guard let root = root else { return -1 }
+//        var stack = [TreeNode]()
+//        var k = k
+//        var current: TreeNode? = root
+//
+//        while current != nil || !stack.isEmpty {
+//            while let node = current {
+//                stack.append(node)
+//                current = node.left
+//            }
+//            current = stack.removeLast()
+//            k -= 1
+//            if k == 0 {
+//                return current!.val
+//            }
+//            current = current?.right
+//        }
+//        return -1
+//    }
+//}
