@@ -3861,3 +3861,19 @@ class Solution {
 //        return -1
 //    }
 //}
+
+// MARK: -Invert Binary Tree (Recursion practice, Preorder Traversal) 
+
+//class Solution {
+//    func invertTree(_ root: TreeNode?) -> TreeNode? {
+//        guard root != nil else { return nil }
+//        
+//        var temp: TreeNode? = root
+//        temp = root?.left
+//        root?.left = root?.right
+//        root?.right = temp
+//        invertTree(root?.left)
+//        invertTree(root?.right)
+//        return root
+//    }
+//}
