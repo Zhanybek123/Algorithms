@@ -3862,7 +3862,7 @@ class Solution {
 //    }
 //}
 
-// MARK: -Invert Binary Tree (Recursion practice, Preorder Traversal) 
+// MARK: -Invert Binary Tree (Recursion practice, Preorder Traversal)
 
 //class Solution {
 //    func invertTree(_ root: TreeNode?) -> TreeNode? {
@@ -3876,4 +3876,15 @@ class Solution {
 //        invertTree(root?.right)
 //        return root
 //    }
+//}
+
+
+// MARK: -MaxDepth of binary tree (Practice Recursion)
+
+//class Solution {
+//func maxDepth(_ root: TreeNode?) -> Int {
+//   guard let root = root else { return 0 }
+//   
+//    return max(maxDepth(root.left), maxDepth(root.right)) + 1
+//}
 //}
