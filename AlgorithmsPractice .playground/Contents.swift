@@ -3888,3 +3888,31 @@ class Solution {
 //    return max(maxDepth(root.left), maxDepth(root.right)) + 1
 //}
 //}
+
+
+// MARK: -f
+
+//class Solution {
+//    func maxDepth(_ root: TreeNode?) -> Int {
+//        guard let root = root else { return 0 }
+//    
+//        var count = 0
+//        var queue = [root]
+//
+//        while !queue.isEmpty {
+//            for _ in 0..<queue.count {
+//                let node = queue.removeFirst()
+//
+//                if let left = node.left {
+//                    queue.append(left)
+//                }
+//                if let right = node.right {
+//                    queue.append(right)
+//                }
+//            }
+//            count += 1
+//        }
+//        return count
+//    }
+//}
+//
