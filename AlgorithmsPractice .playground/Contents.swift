@@ -3916,3 +3916,25 @@ class Solution {
 //    }
 //}
 //
+
+
+// MARK: -MaxDepth of BST (Practice DFS, Iterative using tuped stack)
+
+//class Solution {
+//    func maxDepth(_ root: TreeNode?) -> Int {
+//        var stack = [(node: root, depth: 1)]
+//        var result = 0
+//
+//        while !stack.isEmpty {
+//            let (node, depth) = stack.removeLast()
+//            if let node = node {
+//                result = max(result, depth)
+//
+//                stack.append((node.left, depth + 1))
+//                stack.append((node.right, depth + 1))
+//            }
+//        }
+//
+//        return result
+//    }
+//}
