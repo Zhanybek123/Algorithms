@@ -3938,3 +3938,24 @@ class Solution {
 //        return result
 //    }
 //}
+
+// MARK: -Same tree (Practice)
+
+//class Solution {
+//    func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+//        if p == nil && q == nil {
+//            return true
+//        }
+//        if let p = p, let q = q {
+//            if p.val != q.val {
+//                return false
+//            }
+//        }
+//        if p == nil || q == nil {
+//            return false
+//        }
+//        let left = isSameTree(p?.left, q?.left)
+//        let right = isSameTree(p?.right, q?.right)
+//        return left && right
+//    }
+//}
