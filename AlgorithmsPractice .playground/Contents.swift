@@ -3999,3 +3999,27 @@ class Solution {
 //        return false
 //    }
 //}
+
+
+// MARK: -Subtree of Another Tree (Practice)
+
+//class Solution {
+//    func isSubtree(_ root: TreeNode?, _ subRoot: TreeNode?) -> Bool {
+//        if subRoot == nil { return true }
+//        if root == nil { return false }
+//        
+//        if sameTree(root, subRoot) {
+//            print("same tree:", sameTree(root, subRoot))
+//            return true
+//        }
+//        print("isSubtree:", isSubtree(root?.left, subRoot) && isSubtree(root?.right, subRoot))
+//        return isSubtree(root?.left, subRoot) || isSubtree(root?.right, subRoot)
+//    }
+//    private func sameTree(_ tree: TreeNode?, _ sub: TreeNode?) -> Bool {
+//        if tree == nil && sub == nil { return true }
+//        if tree?.val == sub?.val {
+//            return sameTree(tree?.left, sub?.left) && sameTree(tree?.right, sub?.right)
+//        }
+//        return false
+//    }
+//}
