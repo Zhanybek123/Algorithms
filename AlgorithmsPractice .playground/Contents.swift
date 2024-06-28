@@ -4023,3 +4023,23 @@ class Solution {
 //        return false
 //    }
 //}
+
+
+// MARK: -Lowest Common Ancestor of a Binary Search Tree (Practice)
+
+//class Solution {
+//    func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+//        var root = root
+//        while root != nil {
+//            print(root?.val)
+//            if let curRoot = root, let pVal = p?.val, let qVal = q?.val {
+//                if curRoot.val < pVal && curRoot.val < qVal {
+//                    root = curRoot.right
+//                } else if curRoot.val > pVal && curRoot.val > qVal {
+//                    root = curRoot.left
+//                } else { return root }
+//            }
+//        }
+//        return nil
+//    }
+//}
