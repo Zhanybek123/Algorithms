@@ -4102,3 +4102,33 @@ class Solution {
 //        return result
 //    }
 //}
+
+
+// MARK: -Validate Binary Search Tree (Practice inordered traversal)
+
+
+//class Solution {
+//    func isValidBST(_ root: TreeNode?) -> Bool {
+//        isBST(root, nil, nil)
+//    }
+//    private func isBST(_ node: TreeNode?, _ low: Int?, _ high: Int?) -> Bool {
+//        guard let node = node else { return true }
+//        
+//        if !isBST(node.left, low, node.val) { return false }
+//        var current = node.val
+//        if let low = low {
+//            if low >= current {
+//                return false
+//            }
+//        }
+//        if let high = high {
+//            if high <= current {
+//                return false
+//            }
+//        }
+//        print("node left:", node.left?.val, "low:", low, "node val:", node.val)
+//        print("node right:", node.right?.val, "node val:", node.val, "high:", high)
+//        if !isBST(node.right, node.val, high) { return false }
+//        return true
+//    }
+//}
