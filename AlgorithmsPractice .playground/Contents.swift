@@ -4153,3 +4153,27 @@ class Solution {
 //        return true
 //    }
 //}
+
+
+// MARK: -Kth Smallest Element in a BST (Practice)
+// We need to use an aditional helper function to properly handle "count" property
+
+//class Solution {
+//    func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+//        guard let root = root else { return -1 }
+//        var count = k
+//        var result = 0
+//        findKth(root)
+//        return result
+//        func findKth(_ node: TreeNode?) {
+//            guard let node = node else { return }
+//            findKth(node.left)
+//            count -= 1
+//            if count == 0 {
+//                result = node.val
+//                return
+//            }
+//            findKth(node.right)
+//        }
+//    }
+//}
