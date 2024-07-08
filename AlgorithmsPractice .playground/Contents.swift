@@ -4177,3 +4177,39 @@ class Solution {
 //        }
 //    }
 //}
+
+
+
+//MARK: -Construct Binary Tree from Preorder and Inorder Traversal
+
+//class Solution {
+//    func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
+//        var preorderIndex = 0
+//        var inorderIndexMap = [Int: Int]()
+//        
+//        // Build a hashmap to store value -> its index relations
+//        for (index, value) in inorder.enumerated() {
+//            inorderIndexMap[value] = index
+//        }
+//        
+//        func buildSubTree(_ left: Int, _ right: Int) -> TreeNode? {
+//            // If there are no elements to construct the tree
+//            if left > right { return nil }
+//            
+//            // Select the preorderIndex element as the root and increment it
+//            let rootValue = preorder[preorderIndex]
+//            preorderIndex += 1
+//            
+//            // Build the root node
+//            let root = TreeNode(rootValue)
+//            
+//            // Recursively build the left and right subtrees
+//            root.left = buildSubTree(left, inorderIndexMap[rootValue]! - 1)
+//            root.right = buildSubTree(inorderIndexMap[rootValue]! + 1, right)
+//            
+//            return root
+//        }
+//        
+//        return buildSubTree(0, inorder.count - 1)
+//    }
+//}
