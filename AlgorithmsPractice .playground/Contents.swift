@@ -4213,3 +4213,33 @@ class Solution {
 //        return buildSubTree(0, inorder.count - 1)
 //    }
 //}
+
+
+// MARK: -Construct Binary Tree from Preorder and Inorder Traversal (Practice)
+
+
+//class Solution {
+//    func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
+//        var preorderIndex = 0
+//        var inorderIndexDictionary: Dictionary<Int, Int> = [:]
+//
+//        for (index, value) in inorder.enumerated() {
+//            inorderIndexDictionary[value] = index
+//        }
+//
+//        func createSubTree(_ start: Int, _ end: Int) -> TreeNode? {
+//            guard start <= end else { return nil }
+//
+//            var nodeValue = preorder[preorderIndex]
+//            preorderIndex += 1
+//
+//            var node = TreeNode(nodeValue)
+//
+//            node.left = createSubTree(start, inorderIndexDictionary[nodeValue]! - 1)
+//            node.right = createSubTree(inorderIndexDictionary[nodeValue]! + 1, end)
+//            print(node)
+//            return node
+//        }
+//        return createSubTree(0, inorder.count - 1)
+//    }
+//}
