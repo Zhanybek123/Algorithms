@@ -4243,3 +4243,37 @@ class Solution {
 //        return createSubTree(0, inorder.count - 1)
 //    }
 //}
+
+
+
+// MARK: -Build a Bianary Tree with preopder and inorder traversal array of Int (Practice)
+
+//class Solution {
+//    func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
+//        guard !preorder.isEmpty, !inorder.isEmpty else { return nil }
+//
+//        var preorderIndex = 0
+//        var inorderIndexDictionary: Dictionary<Int, Int> = [:]
+//
+//        for (index, value) in inorder.enumerated() {
+//            inorderIndexDictionary[value] = index
+//        }
+//
+//        return buildSubTree( 0, inorder.count - 1)
+//
+//        func buildSubTree(_ start: Int, _ end: Int) -> TreeNode? {
+//            guard start <= end else { return nil }
+//
+//            var rootValue = preorder[preorderIndex]
+//            preorderIndex += 1
+//
+//            let root = TreeNode(rootValue)
+//            let inorderIndex = inorderIndexDictionary[rootValue]
+//
+//            root.left = buildSubTree(start, inorderIndex! - 1)
+//            root.right = buildSubTree(inorderIndex! + 1, end)
+//
+//            return root
+//        }
+//    }
+//}
