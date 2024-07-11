@@ -4277,3 +4277,33 @@ class Solution {
 //        }
 //    }
 //}
+
+
+//MARK: -Binary Tree Maximum Path Sum
+
+//
+//class Solution {
+//    private var maxSum = Int.min
+//
+//    func maxPathSum(_ root: TreeNode?) -> Int {
+//        _ = maxGain(root)
+//        return maxSum
+//    }
+//
+//    private func maxGain(_ node: TreeNode?) -> Int {
+//        guard let node = node else { return 0 }
+//
+//        // Recursively call maxGain for left and right subtrees
+//        let leftGain = max(maxGain(node.left), 0)
+//        let rightGain = max(maxGain(node.right), 0)
+//
+//        // The path that passes through the node and both children
+//        let newPathSum = node.val + leftGain + rightGain
+//
+//        // Update the global maximum path sum
+//        maxSum = max(maxSum, newPathSum)
+//
+//        // Return the maximum gain that this node and one of its subtrees can contribute
+//        return node.val + max(leftGain, rightGain)
+//    }
+//}
