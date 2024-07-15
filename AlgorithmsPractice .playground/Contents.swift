@@ -4444,3 +4444,64 @@ class Solution {
 //    
 //   
 //
+
+
+//MARK: -Cerialize and Decerialize From Tree into String and ViceVersa Part IIII  (STILL COOKING!)
+
+//
+//
+//class Codec {
+//    func serialize(_ root: TreeNode?) -> String {
+//        guard let root = root else { return "nil" }
+//        
+//        var queue = [root]
+//        var result = ""
+//
+//        while !queue.isEmpty {
+//            var level = ""
+//            for _ in 0..<queue.count {
+//                let node = queue.removeFirst()
+//                if let left = node.left?.val {
+//                    let intoString = String(left)
+//                    level = level + intoString
+//                    queue.append(node.left!)
+//                } else if let right = node.right?.val {
+//                    let intoString = String(right)
+//                    level = level + " " + intoString
+//                    queue.append(node.left!)
+//                } else {
+//                    level = level + " " + "nil"
+//                    return level
+//                }
+//            }
+//            result = result + level
+//        }
+//        return result
+//        }
+//
+//        func deserialize(_ data: String) -> TreeNode? {
+//            "1 2 3 nil nil 4 5"
+//            //  Convert into dict
+//            //  -[
+//            //     [ 1: "1" ]
+//            //     [ 2: "2" ]
+//            //     [ 3: "3" ]
+//            //     [ 4: "nil" ]
+//            //     [ 5: "nil" ]
+//            //     [ 6: "4" ]
+//            //     [ 7: "5"  ]
+//
+//            // [1, 2, 3, nil, nil 4, 5]
+//
+//            func createBinaryTree(_ value: [Int?]) -> TreeNode? {
+//                guard let value = value else { return nil }
+//                var count = 0
+//                var root = TreeNode(value[count])
+//
+//
+//            }
+//        }
+//    }
+//    
+//   
+//
