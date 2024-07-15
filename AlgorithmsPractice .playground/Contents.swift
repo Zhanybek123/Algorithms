@@ -4404,3 +4404,43 @@ class Solution {
 //   
 //   
 //
+//MARK: -Cerialize and Decerialize From Tree into String and ViceVersa Part III  (COOKED!)
+
+//
+//class Codec {
+//    func serialize(_ root: TreeNode?) -> String {
+//        guard let root = root else { return "nil" }
+//        
+//        var queue = [root]
+//        var result = ""
+//
+//        while !queue.isEmpty {
+//            var level = ""
+//            for _ in 0..<queue.count {
+//                let node = queue.removeFirst()
+//                if let left = node.left?.val {
+//                    let intoString = String(left)
+//                    level = level + intoString
+//                    queue.append(node.left!)
+//                } else if let right = node.right?.val {
+//                    let intoString = String(right)
+//                    level = level + " " + intoString
+//                    queue.append(node.left!)
+//                } else {
+//                    level = level + " " + "nil"
+//                    return level
+//                }
+//            }
+//            result = result + level
+//        }
+//        return result
+//        }
+//
+//         func deserialize(_ data: String) -> TreeNode? {
+//            "1 2 3 nil nil 4 5"
+//            
+//        }
+//    }
+//    
+//   
+//
