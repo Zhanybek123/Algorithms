@@ -4330,3 +4330,34 @@ class Solution {
 //            return node.val + max(leftNode, rightNode)
 //    }
 //}
+
+
+// MARK: -Cerialize and Decerialize From Tree into String and ViceVersa 
+
+
+class Codec {
+    func serialize(_ root: TreeNode?) -> String {
+        guard let root = root else { return "nil" }
+        
+        var queue = [root]
+        var result = ""
+
+        while !queue.isEmpty {
+            var level = ""
+            for _ in 0..<queue.count {
+                let node = queue.removeFirst()
+                if let left = node.left?.val {
+                    let intoString = String(left)
+                    level = level + intoString
+                }
+                if  let right = node.right?.val {
+
+                }
+            }
+        }
+
+        }
+         func deserialize(_ data: String) -> TreeNode? {
+        
+        }
+    }
