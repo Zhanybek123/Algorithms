@@ -4332,32 +4332,75 @@ class Solution {
 //}
 
 
-// MARK: -Cerialize and Decerialize From Tree into String and ViceVersa 
+// MARK: -Cerialize and Decerialize From Tree into String and ViceVersa
+//
+//
+//class Codec {
+//    func serialize(_ root: TreeNode?) -> String {
+//        guard let root = root else { return "nil" }
+//        
+//        var queue = [root]
+//        var result = ""
+//
+//        while !queue.isEmpty {
+//            var level = ""
+//            for _ in 0..<queue.count {
+//                let node = queue.removeFirst()
+//                if let left = node.left?.val {
+//                    let intoString = String(left)
+//                    level = level + intoString
+//                }
+//                if  let right = node.right?.val {
+//
+//                }
+//            }
+//        }
+//
+//        }
+//         func deserialize(_ data: String) -> TreeNode? {
+//        
+//        }
+//    }
 
 
-class Codec {
-    func serialize(_ root: TreeNode?) -> String {
-        guard let root = root else { return "nil" }
-        
-        var queue = [root]
-        var result = ""
+//MARK: -Cerialize and Decerialize From Tree into String and ViceVersa Part II
 
-        while !queue.isEmpty {
-            var level = ""
-            for _ in 0..<queue.count {
-                let node = queue.removeFirst()
-                if let left = node.left?.val {
-                    let intoString = String(left)
-                    level = level + intoString
-                }
-                if  let right = node.right?.val {
 
-                }
-            }
-        }
-
-        }
-         func deserialize(_ data: String) -> TreeNode? {
-        
-        }
-    }
+//class Codec {
+//    func serialize(_ root: TreeNode?) -> String {
+//        guard let root = root else { return "nil" }
+//        
+//        var queue = [root]
+//        var result = ""
+//
+//        while !queue.isEmpty {
+//            var level = ""
+//            for _ in 0..<queue.count {
+//                let node = queue.removeFirst()
+//                if let left = node.left?.val {
+//                    let intoString = String(left)
+//                    level = level + intoString
+//                    queue.append(left)
+//                }
+//                if else let right = node.right?.val {
+//                    let intoString = String(right)
+//                    level = level + " " + intoString
+//                    queue.append(right)
+//                } else {
+//                    level = level + " " + "null"
+//                    return levell
+//                }
+//            }
+//            result = result + level
+//        }
+//        return result
+//        }
+//
+//         func deserialize(_ data: String) -> TreeNode? {
+//            
+//        }
+//    }
+//    
+//   
+//   
+//
