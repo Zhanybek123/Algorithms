@@ -4505,3 +4505,65 @@ class Solution {
 //    
 //   
 //
+
+
+
+
+// Serialize and Deserialize Binary Tree (GPT Solution)
+
+
+//
+//class Codec {
+//
+//    func serialize(_ root: TreeNode?) -> String {
+//        guard let root = root else { return "nil" }
+//        
+//        var queue = [root]
+//        var result = [String]()
+//        
+//        while !queue.isEmpty {
+//            let node = queue.removeFirst()
+//            if let node = node {
+//                result.append(String(node.val))
+//                queue.append(node.left)
+//                queue.append(node.right)
+//            } else {
+//                result.append("nil")
+//            }
+//        }
+//        
+//        return result.joined(separator: ",")
+//    }
+//
+//    func deserialize(_ data: String) -> TreeNode? {
+//        let values = data.split(separator: ",").map { String($0) }
+//        guard !values.isEmpty else { return nil }
+//        if values[0] == "nil" { return nil }
+//        
+//        var index = 0
+//        let root = TreeNode(Int(values[index])!)
+//        index += 1
+//        
+//        var queue = [root]
+//        
+//        while !queue.isEmpty {
+//            let node = queue.removeFirst()
+//            
+//            if index < values.count, values[index] != "nil" {
+//                let leftNode = TreeNode(Int(values[index])!)
+//                node.left = leftNode
+//                queue.append(leftNode)
+//            }
+//            index += 1
+//            
+//            if index < values.count, values[index] != "nil" {
+//                let rightNode = TreeNode(Int(values[index])!)
+//                node.right = rightNode
+//                queue.append(rightNode)
+//            }
+//            index += 1
+//        }
+//        
+//        return root
+//    }
+//}
