@@ -4574,9 +4574,132 @@ class Solution {
 // let values = data.split(separator: ",").map { String($0) }
 //    .map { String($0) }
 
-next episode prep
-still brewing 
+//HEAPS
 
-still...
-Brewing?
-brew again 
+
+//
+//class MedianFinder {
+//    private var maxHeap: Heap<Int>
+//    private var minHeap: Heap<Int>
+//
+//    init() {
+//        maxHeap = Heap(sort: >)  // max-heap to store the lower half of the numbers
+//        minHeap = Heap(sort: <)  // min-heap to store the upper half of the numbers
+//    }
+//
+//    func addNum(_ num: Int) {
+//        if maxHeap.isEmpty || num <= maxHeap.peek()! {
+//            maxHeap.insert(num)
+//        } else {
+//            minHeap.insert(num)
+//        }
+//
+//        // Balance the heaps
+//        if maxHeap.count > minHeap.count + 1 {
+//            minHeap.insert(maxHeap.remove()!)
+//        } else if minHeap.count > maxHeap.count {
+//            maxHeap.insert(minHeap.remove()!)
+//        }
+//    }
+//
+//    func findMedian() -> Double {
+//        if maxHeap.count == minHeap.count {
+//            return Double(maxHeap.peek()! + minHeap.peek()!) / 2.0
+//        } else {
+//            return Double(maxHeap.peek()!)
+//        }
+//    }
+//}
+//
+//struct Heap<T> {
+//    var elements: [T]
+//    let sort: (T, T) -> Bool
+//
+//    var isEmpty: Bool {
+//        return elements.isEmpty
+//    }
+//
+//    var count: Int {
+//        return elements.count
+//    }
+//
+//    func peek() -> T? {
+//        return elements.first
+//    }
+//
+//    init(sort: @escaping (T, T) -> Bool) {
+//        self.sort = sort
+//        self.elements = []
+//    }
+//
+//    func parentIndex(of index: Int) -> Int {
+//        return (index - 1) / 2
+//    }
+//
+//    func leftChildIndex(of index: Int) -> Int {
+//        return (index * 2) + 1
+//    }
+//
+//    func rightChildIndex(of index: Int) -> Int {
+//        return (index * 2) + 2
+//    }
+//
+//    mutating func insert(_ value: T) {
+//        elements.append(value)
+//        siftUp(from: elements.count - 1)
+//    }
+//
+//    mutating func remove() -> T? {
+//        guard !elements.isEmpty else { return nil }
+//        if elements.count == 1 {
+//            return elements.removeLast()
+//        } else {
+//            let value = elements[0]
+//            elements[0] = elements.removeLast()
+//            siftDown(from: 0)
+//            return value
+//        }
+//    }
+//
+//    mutating func siftUp(from index: Int) {
+//        var childIndex = index
+//        let child = elements[childIndex]
+//        var parentIndex = self.parentIndex(of: childIndex)
+//
+//        while childIndex > 0 && sort(child, elements[parentIndex]) {
+//            elements[childIndex] = elements[parentIndex]
+//            childIndex = parentIndex
+//            parentIndex = self.parentIndex(of: childIndex)
+//        }
+//
+//        elements[childIndex] = child
+//    }
+//
+//    mutating func siftDown(from index: Int) {
+//        var parentIndex = index
+//        while true {
+//            let leftChildIndex = self.leftChildIndex(of: parentIndex)
+//            let rightChildIndex = leftChildIndex + 1
+//            var optionalParentSwapIndex: Int?
+//
+//            if leftChildIndex < elements.count {
+//                if sort(elements[leftChildIndex], elements[parentIndex]) {
+//                    optionalParentSwapIndex = leftChildIndex
+//                }
+//            }
+//
+//            if rightChildIndex < elements.count {
+//                if sort(elements[rightChildIndex], elements[optionalParentSwapIndex ?? parentIndex]) {
+//                    optionalParentSwapIndex = rightChildIndex
+//                }
+//            }
+//
+//            guard let parentSwapIndex = optionalParentSwapIndex else {
+//                return
+//            }
+//
+//            elements.swapAt(parentIndex, parentSwapIndex)
+//            parentIndex = parentSwapIndex
+//        }
+//    }
+//}
